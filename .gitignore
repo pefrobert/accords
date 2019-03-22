@@ -13,3 +13,6 @@ platforms/
 plugins/
 res/
 www/
+
+# Misc
+_docs/

@@ -18,6 +18,12 @@ gulp.task('js', function () {
     .pipe(gulp.dest('www/js'));
 });
 
+gulp.task('img', function () {
+  return gulp.src('src/img/*.*')
+    /* ici les plugins Gulp à exécuter */
+    .pipe(gulp.dest('www/img'));
+});
+
 
 // Tâche "minify" = minification CSS (destination -> destination)
 gulp.task('minifyCSS', function () {
@@ -49,7 +55,7 @@ gulp.task('htmlbeautify', function(){
 
 
 // Tâche "build"
-gulp.task('build', ['css', 'js', 'nunjucks', 'htmlbeautify']);
+gulp.task('build', ['css', 'js', 'img', 'nunjucks']);
 
 // Tâche "prod" = Build + minify
 gulp.task('prod', ['build',  'minifyCSS']);
@@ -58,6 +64,8 @@ gulp.task('prod', ['build',  'minifyCSS']);
 gulp.task('watch', function () {
   gulp.watch('src/css/*.css', ['build']);
   gulp.watch('src/html/*.html', ['build']);
+  gulp.watch('src/html/templates/*.njk', ['build']);
   gulp.watch('src/js/*.js', ['build']);
+  // gulp.watch('src/img/*.*', ['build']);
   gulp.watch('src/html/template/*.njk', ['build']);
 });
