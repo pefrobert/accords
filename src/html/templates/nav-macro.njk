@@ -1,6 +1,6 @@
 {% macro active(activePage='read') %}
 <div class="nav-item section-read {%if activePage == 'read' %} active {% endif %}">
-	<a href="#">
+	<a href="read.index.html">
 		<span class="icon">
 			<img src="img/icon-read.svg" alt="">
 		</span>
@@ -8,7 +8,7 @@
 	</a>
 </div>
 <div class="nav-item section-talk {%if activePage == 'talk' %} active {% endif %}">
-	<a href="#">
+	<a href="talk.index.html">
 		<span class="icon">
 			<img src="img/icon-talk.svg" alt="">
 		</span>
@@ -16,11 +16,19 @@
 	</a>
 </div>
 <div class="nav-item section-write {%if activePage == 'write' %} active {% endif %}">
-	<a href="#">
+	<a href="write.index.html">
 		<span class="icon">
 			<img src="img/icon-write.svg" alt="">
 		</span>
 		<span class="label">J'écris</span>
+	</a>
+</div>
+<div class="nav-item section-notes {%if activePage == 'notes' %} active {% endif %}">
+	<a href="notes.index.html">
+		<span class="icon">
+			<img src="img/icon-notes.svg" alt="">
+		</span>
+		<span class="label">Mes notes</span>
 	</a>
 </div>
 {% endmacro %}

@@ -1,0 +1,57 @@
+{% extends "base.njk" %}
+
+{% block head_title %}J'écris — ACCORDs{% endblock %}
+{% block body_class %}write{% endblock %}
+{% block parent_page %}index.html{% endblock %}
+
+{% block content %}
+
+<div class="section-intro">
+	<img src="img/icon-write.svg" class="section-icon" alt="">
+	<p class="app-name">ACCORDs</p>
+	<h1>J'écris</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis in nam voluptatibus quos, rerum, dicta rem impedit laudantium esse, nihil ut alias sint, voluptates deleniti exercitationem. Voluptatibus in, tempore quibusdam.</p>
+</div>
+
+<div class="section-summary">
+	<div class="section-entry section-main">
+		<a href="">
+			<h2>Mes données et ma santé</h2>
+			<div class="desc">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eum in saepe eos distinctio ullam voluptatum assumenda quasi pariatur ab, ratione, dolorum repellendus.</p>
+			</div>
+		</a>
+	</div>
+	<div class="section-entry section-main">
+		<a href="">
+			<h2>Mes valeurs, priorités et craintes</h2>
+			<div class="desc">
+				<p>Assumenda quasi pariatur ab, ratione, dolorum repellendus, similique optio laborum natus cumque exercitationem aliquam.</p>
+			</div>
+		</a>
+	</div>
+	<div class="section-entry section-main">
+		<a href="">
+			<h2>Mes préférences en cas d'urgence</h2>
+			<div class="desc">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eum in saepe eos distinctio ullam voluptatum assumenda quasi pariatur ab, ratione, dolorum repellendus, similique optio laborum natus cumque exercitationem aliquam.</p>
+			</div>
+		</a>
+	</div>
+	<div class="section-entry section-secondary">
+		<a href="">
+			<h2>Validité du document</h2>
+		</a>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('write')}}
+{% endblock %}
+
+{% block footer_javascript %}
+<!-- <script type="text/javascript" src="js/index.js"></script> -->
+{% endblock %}
