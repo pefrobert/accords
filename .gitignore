@@ -1,0 +1,15 @@
+# Eclipse files
+.classpath
+.project
+
+# Node.js files
+node_modules/
+package-lock.*
+
+# Cordova files
+bin/
+hooks/
+platforms/
+plugins/
+res/
+www/
