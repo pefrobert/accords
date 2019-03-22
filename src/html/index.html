@@ -1,15 +1,25 @@
 {% extends "base.njk" %}
 
-{% block head_title %}Index page{% endblock %}
+{% block head_title %}ACCORDs{% endblock %}
 
 {% block content %}
-<h1>Apache Cordova</h1>
-<div id="deviceready" class="blink">
-    <p class="event listening">Connecting to Device</p>
-    <p class="event received">Device is Ready</p>
+
+<div class="welcome">
+	<img src="img/accords-icon.png" class="logo" alt="">
+	<h1>Bienvenue dans ACCORDs</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis in nam voluptatibus quos, rerum, dicta rem impedit laudantium esse, nihil ut alias sint, voluptates deleniti exercitationem. Voluptatibus in, tempore quibusdam.</p>
 </div>
+
+{% endblock %}
+
+{% block navigation %}
+
+{% import 'nav-macro.njk' as nav %}
+{{nav.active('home')}}
+
 {% endblock %}
 
 {% block footer_javascript %}
-<script type="text/javascript" src="js/index.js"></script>
+<!-- <script type="text/javascript" src="js/index.js"></script> -->
 {% endblock %}
+

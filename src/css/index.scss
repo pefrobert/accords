@@ -1,21 +1,7 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+$accent1: #00c7b3;
+$accent2: #7ecc4b;
+$accent3: #ffb023;
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -24,50 +10,27 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+
+    background-color:#fff;
+    background-image:linear-gradient(top, #eee 0%, #fff 100%);
+    background-image:-webkit-linear-gradient(top, #eee 0%, #fff 100%);
+    background-image:-ms-linear-gradient(top, #eee 0%, #fff 100%);
     background-image:-webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
+        color-stop(0, #eee),
+        color-stop(1, #fff)
     );
-    background-attachment:fixed;
+
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
-}
 
 h1 {
     font-size:24px;
@@ -78,38 +41,116 @@ h1 {
     text-align:center;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+/* Portrait layout (default) */
+$menu-height: 56px;
+$page-vpadding: 15px;
+.page {
+    width: 100vw;
+    min-height: 100vh;
+    padding: $page-vpadding 15px;
+    padding-bottom: $page-vpadding + $menu-height;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+.app {}
+
+.welcome {
+    .logo {
+        display: block;
+        margin: 25px auto;
+        max-width: 50vw;
+    }
+    h1 {
+        margin: 25px 0;
+    }
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
+// main navigation
+.main-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    line-height: 1;
+    background-color: #fff;
+    .nav-item {
+        flex: 0 0 33.33%;
+        text-align: center;
+        border-color: #eeecea;
+        border-style: solid;
+        border-width: 0;
+        border-top-width: 1px;
+        a {
+            display: block;
+            height: 55px;
+            padding: 10px 10px 0;
+            color: #706f6a;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 0;
+            border-top-width: 1px;
+        }
+        .icon {
+            display: block;
+            height: 16px;
+            margin: 0 auto 6px;
+            text-decoration: none;
+            img {
+                display: block;
+                width: auto;
+                height: 20px;
+                margin: 0 auto;
+            }
+        }
+        .label {
+        }
+
+        &.section-read {
+            &:hover {
+                background-color: mix($accent1, #fff, 10%);
+            }
+            &.active,
+            &.active a {
+                border-color: $accent1;
+            }
+        }
+        &.section-talk {
+            &:hover {
+                background-color: mix($accent2, #fff, 15%);
+            }
+            &.active,
+            &.active a {
+                border-color: $accent2;
+            }
+        }
+        &.section-write {
+            &:hover {
+                background-color: mix($accent3, #fff, 20%);
+            }
+            &.active,
+            &.active a {
+                border-color: $accent3;
+            }
+        }
+    }
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .page {
+        padding-bottom: $page-vpadding;
+        padding-top: $page-vpadding + $menu-height;
+    }
+    .main-nav {
+        top: 0;
+        bottom: auto;
+        .nav-item,
+        .nav-item a {
+            border-top-width: 0;
+            border-bottom-width: 1px;
+        }
+    }
 }

@@ -1,0 +1,26 @@
+{% macro active(activePage='read') %}
+<div class="nav-item section-read {%if activePage == 'read' %} active {% endif %}">
+	<a href="#">
+		<span class="icon">
+			<img src="img/icon-read.svg" alt="">
+		</span>
+		<span class="label">Je m'informe</span>
+	</a>
+</div>
+<div class="nav-item section-talk {%if activePage == 'talk' %} active {% endif %}">
+	<a href="#">
+		<span class="icon">
+			<img src="img/icon-talk.svg" alt="">
+		</span>
+		<span class="label">J'en parle</span>
+	</a>
+</div>
+<div class="nav-item section-write {%if activePage == 'write' %} active {% endif %}">
+	<a href="#">
+		<span class="icon">
+			<img src="img/icon-write.svg" alt="">
+		</span>
+		<span class="label">J'écris</span>
+	</a>
+</div>
+{% endmacro %}
