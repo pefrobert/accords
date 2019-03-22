@@ -1,0 +1,44 @@
+{% extends "base.njk" %}
+
+{% block head_title %}Mes notes — ACCORDs{% endblock %}
+{% block body_class %}notes{% endblock %}
+{% block parent_page %}index.html{% endblock %}
+
+{% block content %}
+
+<div class="section-intro">
+	<img src="img/icon-notes.svg" class="section-icon" alt="">
+	<p class="app-name">ACCORDs</p>
+	<h1>Mes notes</h1>
+	<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis in nam voluptatibus quos, rerum, dicta rem impedit laudantium esse, nihil ut alias sint, voluptates deleniti exercitationem. Voluptatibus in, tempore quibusdam.</p> -->
+</div>
+
+<div class="section-summary">
+	<div class="section-entry section-main">
+		<a href="">
+			<h2>Mes sélection</h2>
+<!-- 			<div class="desc">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eum in saepe eos distinctio ullam voluptatum assumenda quasi pariatur ab, ratione, dolorum repellendus.</p>
+			</div> -->
+		</a>
+	</div>
+	<div class="section-entry section-main">
+		<a href="">
+			<h2>Mes remarques ou questions</h2>
+<!-- 			<div class="desc">
+				<p>Assumenda quasi pariatur ab, ratione, dolorum repellendus, similique optio laborum natus cumque exercitationem aliquam.</p>
+			</div> -->
+		</a>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('notes')}}
+{% endblock %}
+
+{% block footer_javascript %}
+<!-- <script type="text/javascript" src="js/index.js"></script> -->
+{% endblock %}

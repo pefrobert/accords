@@ -1,0 +1,60 @@
+{% extends "base.njk" %}
+
+{% block head_title %}Je m'informe — ACCORDs{% endblock %}
+{% block body_class %}read{% endblock %}
+{% block parent_page %}index.html{% endblock %}
+
+{% block content %}
+
+<div class="section-intro">
+	<img src="img/icon-read.svg" class="section-icon" alt="">
+	<p class="app-name">ACCORDs</p>
+	<h1>Je m'informe</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis in nam voluptatibus quos, rerum, dicta rem impedit laudantium esse, nihil ut alias sint, voluptates deleniti exercitationem. Voluptatibus in, tempore quibusdam.</p>
+</div>
+
+<div class="section-summary">
+	<div class="section-entry section-main">
+		<a href="">
+			<h2>Les fondamentaux</h2>
+			<div class="desc">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eum in saepe eos distinctio ullam voluptatum assumenda quasi pariatur ab, ratione, dolorum repellendus.</p>
+			</div>
+		</a>
+	</div>
+	<div class="section-entry section-main">
+		<a href="">
+			<h2>Histoires vécues</h2>
+			<div class="desc">
+				<p>Assumenda quasi pariatur ab, ratione, dolorum repellendus, similique optio laborum natus cumque exercitationem aliquam.</p>
+			</div>
+		</a>
+	</div>
+
+	<div class="section-entry section-secondary">
+		<a href="">
+			<h2>Glossaire</h2>
+		</a>
+	</div>
+	<div class="section-entry section-secondary">
+		<a href="">
+			<h2>Aspects légaux</h2>
+		</a>
+	</div>
+	<div class="section-entry section-secondary">
+		<a href="">
+			<h2>À propos de cette app</h2>
+		</a>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('read')}}
+{% endblock %}
+
+{% block footer_javascript %}
+<!-- <script type="text/javascript" src="js/index.js"></script> -->
+{% endblock %}
