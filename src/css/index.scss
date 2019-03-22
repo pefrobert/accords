@@ -8,6 +8,8 @@ $accent2-dark: mix($accent2, #000, 75%);
 $accent3-dark: mix($accent3, #000, 75%);
 $accent4-dark: mix($accent4, #000, 75%);
 
+$accent1-light: mix($accent1, #fff, 35%);
+
 $text1: #444; // petit texte, couleur principale
 $text2: #777; // grand texte, sous-titres
 $text3: #999; // éléments désactivés
@@ -22,19 +24,10 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
 
     background-color:#fff;
-    background-image:linear-gradient(top, #eee 0%, #fff 100%);
-    background-image:-webkit-linear-gradient(top, #eee 0%, #fff 100%);
-    background-image:-ms-linear-gradient(top, #eee 0%, #fff 100%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #eee),
-        color-stop(1, #fff)
-    );
 
     color: $text1;
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 1.3;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 
     width: 100%;
@@ -42,6 +35,19 @@ body {
     margin: 0;
     padding: 0;
 }
+// body.home {
+//     background-image:linear-gradient(top, #eee 0%, #fff 100%);
+//     background-image:-webkit-linear-gradient(top, #eee 0%, #fff 100%);
+//     background-image:-ms-linear-gradient(top, #eee 0%, #fff 100%);
+//     background-image:-webkit-gradient(
+//         linear,
+//         left top,
+//         left bottom,
+//         color-stop(0, #eee),
+//         color-stop(1, #fff)
+//     );
+// }
+
 
 img {
     height: auto;
@@ -73,8 +79,6 @@ $page-vpadding: 15px;
     padding-bottom: $page-vpadding + $menu-height;
 }
 
-.app {}
-
 .welcome {
     .logo {
         display: block;
@@ -86,13 +90,14 @@ $page-vpadding: 15px;
     }
 }
 
-// main navigation
+// navigation
 .main-nav {
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     display: flex;
+    font-size: 12px;
     line-height: 1;
     background-color: #fff;
     .nav-item {
@@ -183,11 +188,18 @@ $page-vpadding: 15px;
     background-color: $accent4;
     a {
         position: absolute;
+        padding: 19px;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
         z-index: 1;
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 22px;
+            height: 22px;
+        }
     }
 }
 
@@ -237,6 +249,7 @@ $page-vpadding: 15px;
         margin-bottom: 25px;
         a {
             display: block;
+            padding-bottom: 12px;
             border-radius: 10px;
             background-color: rgba(0,0,0,.04);
             &:hover {
@@ -244,7 +257,7 @@ $page-vpadding: 15px;
             }
         }
         h2 {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
         .desc {
             color: $text2;
@@ -257,11 +270,126 @@ $page-vpadding: 15px;
     .section-secondary {
         a {}
         h2 {
-            color: $accent1-dark;
+            // color: $accent1-dark;
             font-size: 18px;
         }
     }
 }
+
+// glossary
+.section-glossary {
+    dl {
+        margin: 10px 0;
+        padding: 10px 0 20px;
+        border-bottom: 1px dotted #999;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    dt {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: $accent1-dark;
+        // font-weight: bold;
+    }
+    dd {
+        // margin-bottom: 10px;
+        p {}
+        .syns {
+            margin-bottom: 15px;
+            padding: 2px 5px;
+            font-size: 12px;
+            background-color: #eee;
+            border-radius: 3px;
+            .content {
+                // display: inline-block;
+                // padding: 0 2px;
+                // color: #fff;
+                // border-radius: 2px;
+                // background-color: $accent1-dark;
+            }
+        }
+        .source {
+            margin-top: 15px;
+            font-size: 12px;
+            // text-align: right;
+            a {
+                color: $accent1-dark;
+                text-decoration: none;
+            }
+        }
+        .label {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+    }
+}
+
+// bookmarking
+.bookmark-btn {
+    display: inline-block;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+    border-radius: 10px;
+    background: transparent url('../img/icon-bookmark-off.svg') no-repeat 50% 50% scroll;
+    background-size: 1em 1em;
+    vertical-align: text-bottom;
+    &:hover {
+        background-color: $accent1-light;
+    }
+    &.on {
+        background-image: url('../img/icon-bookmark-on.svg');
+    }
+}
+
+// form elements
+textarea {
+    padding: 5px 10px;
+    font-family: sans-serif;
+    resize: vertical;
+}
+*::-webkit-input-placeholder {font-size: 12px;}
+*:-moz-placeholder {font-size: 12px;}
+*:placeholder {font-size: 12px;}
+
+
+// notes section
+body.notes {
+    .section-intro {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.notes-section {
+    margin-bottom: 25px;
+    & > h2 {
+        margin-bottom: 10px;
+        color: $accent4;
+        font-weight: normal;
+    }
+    .notes-bookmarks {
+        .no-data {
+            text-align: center;
+            font-style: italic;
+            margin: 15px 0;
+        }
+        .tip {
+            min-height: 30px;
+            font-size: 14px;
+            padding: 5px 10px 5px 35px;
+            background: #eee url('../img/icon-tip.svg') no-repeat 5px 5px scroll;
+            background-size: 25px auto;
+        }
+    }
+    .notes-freetext {
+        textarea {
+            width: 100%;
+            min-height: 100px;
+        }
+    }
+}
+
 
 // color variations
 body.read {
@@ -275,7 +403,6 @@ body.read {
     //     color-stop(0, mix($accent1, #fff, 10%)),
     //     color-stop(1, #fff)
     // );
-    background: #fff;
     .back-nav {
         background-color: $accent1;
     }
@@ -294,7 +421,6 @@ body.talk {
     //     color-stop(0, mix($accent2, #fff, 10%)),
     //     color-stop(1, #fff)
     // );
-    background: #fff;
     .back-nav {
         background-color: $accent2;
     }
@@ -313,7 +439,6 @@ body.write {
     //     color-stop(0, mix($accent3, #fff, 10%)),
     //     color-stop(1, #fff)
     // );
-    background: #fff;
     .back-nav {
         background-color: $accent3;
     }
@@ -332,7 +457,6 @@ body.notes {
     //     color-stop(0, mix($accent4, #fff, 10%)),
     //     color-stop(1, #fff)
     // );
-    background: #fff;
     .back-nav {
         background-color: $accent4;
     }
