@@ -4,12 +4,27 @@
 {% block body_class %}home{% endblock %}
 {% block parent_page %}index.html{% endblock %}
 
+{% block head_javascript %}
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
+{% endblock %}
+
 {% block content %}
 
 <div class="welcome">
 	<img src="img/accords-icon.png" class="logo" alt="">
-	<h1>Bienvenue dans ACCORDs</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis in nam voluptatibus quos, rerum, dicta rem impedit laudantium esse, nihil ut alias sint, voluptates deleniti exercitationem. Voluptatibus in, tempore quibusdam.</p>
+	<h1>
+		Bienvenue dans ACCORDs
+		<div class="subtitle">L’app pour aider patients, proches et soignants à accorder les objectifs de soin</div>
+	</h1>
+
+	<div class="teaser-slogans" id="teaser-slogans">
+		<div class="slogan"><div class="slogan-inner">En cas d’urgence grave, vos proches sauraient-ils quoi décider à votre place&nbsp;?</div></div>
+		<div class="slogan"><div class="slogan-inner">Avez-vous rempli vos directives anticipées&nbsp;?</div></div>
+		<div class="slogan"><div class="slogan-inner">Vous voulez en parler avec votre médecin&nbsp;? Qui commence&nbsp;?</div></div>
+		<div class="slogan"><div class="slogan-inner">Et si je changeais d’avis au dernier moment&nbsp;?</div></div>
+		<div class="slogan"><div class="slogan-inner">Parler de la mort ensemble, est-ce qu’on ose&nbsp;?</div></div>
+	</div>
 </div>
 
 {% endblock %}
@@ -17,8 +32,4 @@
 {% block navigation %}
 	{% import 'nav-macro.njk' as nav %}
 	{{nav.active('home')}}
-{% endblock %}
-
-{% block footer_javascript %}
-<!-- <script type="text/javascript" src="js/index.js"></script> -->
 {% endblock %}
