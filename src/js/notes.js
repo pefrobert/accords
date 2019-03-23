@@ -3,7 +3,8 @@ var notesGlossary = new Vue({
 	data: {
 		art : artJson,
 		bookmarks : bookmarksManager.load(),
-		glossary : glossaryJson
+		glossary : glossaryJson,
+		vecu : vecuJson
 	},
   	render: function (createElement) {
 		if (this.bookmarks.length) {
@@ -49,6 +50,27 @@ var notesGlossary = new Vue({
 					])
 				);
 			}
+
+			// Vecu
+			var vecu = this.vecu;
+			var bookmarksVecu = _.filter(this.bookmarks, function(el){
+				return el.type == "vecu";
+			});
+			if(bookmarksVecu.length){
+
+				html.push(
+					createElement('div', {class : {'group section-read' : true}},[
+						createElement('h3', 'Histoires Vécues'),
+						createElement('ul', bookmarksVecu.map(function (bookmark) {
+							var term = _.find(vecu, function(item, index, list){
+								return item.id == bookmark.target;
+							});
+							return createElement('li',{class : {'vecu-item' : true}, domProps: {innerHTML: term.description}});
+						}))
+					])
+				);
+			}
+
 			return createElement('div',html);
 		} else {
 			return createElement('p', {class : {'tip' : true}},[
