@@ -349,6 +349,10 @@ $page-vpadding: 15px;
 
 
 // glossary
+.glossary-dfn {
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
 dl.glossary-item {
     dt {
         font-size: 20px;
@@ -694,6 +698,7 @@ textarea {
     .action {
         button {
             position: relative;
+            cursor: pointer;
             border: none;
             padding: 10px 20px;
             color: #fff;
@@ -718,6 +723,55 @@ textarea {
     }
 }
 
+// amorces
+.amorces {
+    margin-bottom: 50px;
+    h3 {
+        margin: 50px 0 20px;
+        font-weight: bold;
+        color: $accent2-dark;
+    }
+    ul {}
+    a {
+        color: $accent2-dark;
+    }
+    .amorce {
+        position: relative;
+        margin-bottom: 30px;
+        margin-right: 50px;
+        padding: 10px 30px 10px 15px;
+        background-color: #eee;
+        border-radius: 5px;
+        .bookmark-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            font-size: 20px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 25px;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-top-color: #eee;
+            border-top-width: 10px;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+            margin-left: 50px;
+            background-color: $accent2-light;
+            &::after {
+                left: auto;
+                right: 25px;
+                border-top-color: $accent2-light;
+            }
+        }
+    }
+}
+
 // notes section
 body.notes {
     .section-intro {
@@ -732,6 +786,9 @@ body.notes {
         color: $accent4;
         font-weight: normal;
     }
+    a {
+        color: $accent4-dark;
+    }
     .notes-bookmarks {
         .no-data {
             text-align: center;
@@ -744,6 +801,61 @@ body.notes {
             padding: 5px 10px 5px 35px;
             background: #eee url('../img/icon-tip.svg') no-repeat 5px 5px scroll;
             background-size: 25px auto;
+        }
+        .group {
+            margin-bottom: 25px;
+            padding: 5px 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            & > h3 {
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: $accent4-dark;
+            }
+        }
+        .bookmark-item {
+            position: relative;
+            padding: 10px 0;
+            padding-left: 30px;
+            &::before {
+                content: '';
+                position: absolute;
+                left: -1px;
+                top: 9px;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+                border-radius: 4px;
+                background: transparent url('../img/icon-bookmark-on.svg') no-repeat 50% 50% scroll;
+                background-size: 24px 24px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 30%;
+                right: 30%;
+                bottom: -1px;
+                height: 2px;
+                background-color: $accent4-dark;
+            }
+            &:last-child::after {
+                display: none;
+            }
+        }
+        .section-read {
+            .bookmark-item::before {
+                background-image: url('../img/icon-bookmark-on-read.svg');
+            }
+        }
+        .section-talk {
+            .bookmark-item::before {
+                background-image: url('../img/icon-bookmark-on-talk.svg');
+            }
+        }
+        .section-write {
+            .bookmark-item::before {
+                background-image: url('../img/icon-bookmark-on-write.svg');
+            }
         }
     }
     .notes-freetext {

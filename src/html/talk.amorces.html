@@ -13,13 +13,15 @@
 
 	<div class="section-content section-amorces">
 		{% for section, amorceList in amorces | groupby("sectionId") %}
-		<div class="amorce">
+		<div class="amorces">
 			<h3>{{ section }}</h3>
 			<ul>
 			{% for amorce in amorceList %}
-			<li class="amorce-item"><span class="bookmark-btn" data-type="amorce" data-target="{{ amorce.id }}"></span>{{ amorce.amorces | safe }}</li>
+				<li class="amorce">
+					<span class="bookmark-btn" data-type="amorce" data-target="{{ amorce.id }}"></span>
+					{{ amorce.amorces | safe }}</li>
 			{% endfor %}
-			</ul>				
+			</ul>
 		</div>
 		{% endfor %}
 	</div>
