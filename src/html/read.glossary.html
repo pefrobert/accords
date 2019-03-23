@@ -14,14 +14,14 @@
 	{% for definition in glossary %}
 		<dl class="glossary-item" id="glossary-{{ definition.id }}">
 			<dt>
-				{{ definition.terme }}
+				<a name="{{definition.id}}"></a>{{ definition.terme }}
 				<span class="bookmark-btn" data-type="glossary" data-target="{{ definition.id }}"></span>
 			</dt>
 			<dd>
 			{% if definition.synonymes.length %}
 				<p class="syns"><span class="label">Synonymes :</span> <span class="content">{{ definition.synonymes }}</span></p>
 			{% endif %}
-			<p>{{ definition.definition }}</p>
+			<p>{{ definition.definition | safe }}</p>
 			{% if definition.source %}
 				<p class="source"><span class="label">Source :</span> {{ definition.source | urlize | safe }}</p>
 			{% endif %}

@@ -1,186 +1,132 @@
 [
   {
-    "id": "acp",
-    "terme": "Advance Care Planning",
-    "synonymes": "Projet Anticipé des Soins, Plan de Soins Anticipé ou Planification Anticipée du Projet Thérapeutique ; Planification Anticipée des Soins ou Planification Préalable des Soins",
-    "definition": "Processus dans lequel les patients et, le cas échéant, leurs proches discutent avec les professionnels de la santé des stratégies et des objectifs thérapeutiques, les définissent et les adaptent régulièrement au déroulement concret de la maladie",
-    "source": "ASSM, 2018 https://www.assm.ch/fr/Ethique.html",
-    "commentaires": ""
+    "id": "discernement",
+    "terme": "Capacité de discernement",
+    "definition": "Capacité d'une personne à comprendre une situation, les choix qui s'offrent à lui et leurs conséquences, ainsi qu'à finalement prendre une décision raisonnable. Elle est présente ou absente (ex: coma) pour une situation à un moment donné.",
+    "synonymes": "",
+    "source": "ASSM, 2018\nhttps://www.assm.ch/fr/Ethique.html",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
   },
   {
-    "id": "directive",
+    "id": "da",
     "terme": "Directives anticipées",
-    "synonymes": "advanced directives",
-    "definition": "Les directives anticipées représentent un moyen de communication entre le patient, le médecin, les soignants, les personnes mentionnées dans les directives anticipées (représentants) et les proches. Elles sont un instrument d’autodétermination. Une personne capable de discernement peut y consigner les mesures médicales auxquelles elle entend consentir ou non au cas où elle deviendrait incapable de discernement.",
-    "source": "https://www.assm.ch/fr/Ethique.html",
-    "commentaires": "Photo d'un document ?"
-  },
-  {
-    "id": "dialyse",
-    "terme": "Dialyse",
-    "synonymes": "",
-    "definition": "La dialyse est une intervention médicale permettant de nettoyer le sang lorsque les reins ne peuvent plus s’en charger.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
-  },
-  {
-    "id": "don",
-    "terme": "Don d'organes",
-    "synonymes": "",
-    "definition": "Le don d’organes signifie le prélèvement chirurgical d’organes ou de tissus d’une personne (le donneur d’organe) pour les transférer dans le corps d’une autre personne (le receveur).",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
-  },
-  {
-    "id": "fragilisation",
-    "terme": "Fragilisation",
-    "synonymes": "",
-    "definition": "La fragilisation est un état de santé associé au vieillissement, qui se manifeste en une série de problèmes de santé qui augmentent la vulnérabilité d’une personne. La fragilisation peut être entraînée par une foule de maladies ou d’états de santé — même les petits problèmes de santé qui paraissent anodins peuvent provoquer d’importants changements dans l’état ou le fonctionnement d’une personne. On associe souvent la fragilisation à une perte marquée des fonctions physiques, mentales et sociales de la personne.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "definition": "Les directives anticipées (DA) représentent un moyen de communication écrite entre le patient, le médecin, les soignants, les personnes mentionnées dans les directives anticipées (<a class=\"glossary-dfn\" href=\"read.glossary.html#representant\">représentant</a>) et les proches. Une personne ayant sa <a class=\"glossary-dfn\" href=\"read.glossary.html#discernement\">capacité de discernement</a> peut y consigner les mesures médicales auxquelles elle entend consentir ou non au cas où elle deviendrait incapable de discernement.",
+    "synonymes": "Advanced directives",
+    "source": "ASSM, 2013\nhttps://www.assm.ch/fr/Ethique.html",
+    "commentaires": "",
+    "AVIS experts": "Orienter psy! Neuroleptique",
+    "Colonne1": ""
   },
   {
     "id": "imu",
     "terme": "Instructions Médicales d'Urgences",
-    "synonymes": "",
-    "definition": "Format de documentation écrite des @Objectifs de Soins@ (incluant l’@attitude@ vis-à-vis de la @RCP@ en cas d’@ACR@) dans le Dossier Patient Intégré des HUG. Les instructions médicales pour les cas d’urgence permettent de clarifier les questions qui doivent éventuellement être tranchées en cas d’urgence.",
-    "source": "OFSP, 2018 https://www.pallnetz.ch/cm_data/Rahmenkonzept_Gesundheitl_Vorausplanung_FR.pdf",
-    "commentaires": ""
+    "definition": "Dans le dossier patient intégré des HUG, les instructions médicales d'urgence sont le format de documentation écrite des <a class=\"glossary-dfn\" href=\"read.glossary.html#objectifs\">objectifs de soins</a> en cas d'urgence. Par exemple, les instructions médicales d'urgences incluent l'attitude à adopter vis-à-vis de la <a class=\"glossary-dfn\" href=\"read.glossary.html#reanimation\">réanimation</a> en cas d'arrêt cardiaque.",
+    "synonymes": "Instructions Médicales pour les cas d'urgence",
+    "source": "OFSP, 2018\nhttps://www.pallnetz.ch/cm_data/Rahmenkonzept_Gesundheitl_Vorausplanung_FR.pdf, ASSM, 2018\nhttps://www.assm.ch/fr/Ethique.html",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
   },
   {
-    "id": "intraveinseuse",
-    "terme": "Intraveineuse",
-    "synonymes": "",
-    "definition": "L’intraveineuse (IV) est un mode d’administration de liquides par voie veineuse (dans la main ou dans une autre partie du corps).",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "id": "lat",
+    "terme": "Limitations et arrêts  thérapeutiques",
+    "definition": "Décisions de ne pas débuter (limitations) et décisions d'interrompre (arrêts) un ou plusieurs traitements.  La mort peut survenir si ces traitements maintiennent artificiellement en vie (ex: <a class=\"glossary-dfn\" href=\"read.glossary.html#ventilation\">ventilation assistée</a>)",
+    "synonymes": "Limitations et arrêts de traitement",
+    "source": "",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
   },
   {
-    "id": "maintien",
-    "terme": "Maintien des fonctions vitales",
-    "synonymes": "",
-    "definition": "Le maintien des fonctions vitales au moyen d’interventions médicales est le recours à des procédures médicales ou chirurgicales artificielles (sonde alimentaire, ventilateur, dialyse, médication, RCR) pour réanimer un patient ou le maintenir en vie, et sans lesquelles il mourrait.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
-  },
-  {
-    "id": "maladie-mortelle",
-    "terme": "Maladie mortelle",
-    "synonymes": "",
-    "definition": "Une maladie mortelle est un état de santé ne pouvant être guéri, causé par une blessure ou un état physiologique; même avec des mesures de maintien en vie, une maladie mortelle mène au décès après quelques semaines ou quelques mois — les mesures de maintien en vie ne font que retarder le décès.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
-  },
-  {
-    "id": "confort",
-    "terme": "Mesures visant le confort",
-    "synonymes": "",
-    "definition": "Les mesures visant le confort sont des traitements (analgésiques, soutien psychologique, soins physiques, oxygène, etc.) visant à rendre le patient confortable, et non à le garder en vie ou à guérir une maladie.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
-  },
-  {
-    "id": "mort-naturelle",
-    "terme": "Mort naturelle",
-    "synonymes": "",
-    "definition": "Choisir une mort naturelle, c’est prendre la décision de ne recevoir AUCUN traitement ni intervention qui pourrait retarder le décès. Cette décision s’applique seulement à l’approche d’un décès par causes naturelles, et n’a aucune incidence sur les traitements de confort (médicaments contre la douleur, oxygène, etc.), qui sont toujours maintenus.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
-  },
-  {
-    "id": "objectifs-soins",
+    "id": "objectifs",
     "terme": "Objectifs de soins",
-    "synonymes": "",
-    "definition": "- Dans le langage commun, désignent les objectifs que la prise en soins vise à atteindre : les élaborer ensemble, patients, proches et professionnels de santé est une étape essentielle de la démarche de l’advance care planning / projet de soins anticipé.\n- Aux HUG, dans les @Instructions Médicales d’Urgence@ du dossier patient intégré (DPI), ils désignent en termes standardisés les soins et procédures qui seraient mis en œuvre et/ou qui feraient l’objet d’une limitation et le type d’unité qui semblent les plus appropriés au cas où surviendrait une éventuelle urgence.",
-    "source": "",
-    "commentaires": ""
-  },
-  {
-    "id": "ordres-rcp",
-    "terme": "Ordres de ne pas tenter de RCP",
-    "synonymes": "",
-    "definition": "Ordre médical intégré aux Objectifs de Soins* des Instructions Médicales d’Urgences*. Il est une forme de limitation de soins qui ne porte que sur la RCP en cas d’ACR, pas sur d’autres procédures (ex : chirurgie) ou décisions (ex : admission aux soins intensifs). \nSynonyme : ordre « NTBR » (Not To Be Resuscitated)",
-    "source": "",
-    "commentaires": ""
-  },
-  {
-    "id": "procurations",
-    "terme": "procurations relatives au soin de la personne et relatives aux biens",
-    "synonymes": "",
-    "definition": "Les procurations relatives au soin de la personne et relatives aux biens sont des documents que l’on signe pour légalement désigner une personne qui pourra prendre des décisions en notre nom si on en devient incapable. Ces documents signés devant témoin portent des noms différents d’une province et d’un territoire à l’autre, comme procuration perpétuelle, mandat d’inaptitude, directive personnelle, etc.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "definition": "Ils désignent les objectifs que la prise en soins vise à atteindre. Ces objectifs sont idéalement décidés en partenariat entre patients et professionels de santé. \nAux HUG, dans les <a class=\"glossary-dfn\" href=\"read.glossary.html#imu\">Instructions Médicales d’Urgence</a>, ils désignent les soins et procédures qui seraient mis en œuvre ou <a class=\"glossary-dfn\" href=\"read.glossary.html#lat\">limités</a> ainsi que les services hospitaliers les plus appropriés au cas où surviendrait une éventuelle urgence (ex: <a class=\"glossary-dfn\" href=\"read.glossary.html#soins-intensifs\">soins intensifs</a>, <a class=\"glossary-dfn\" href=\"read.glossary.html#soins-palliatifs\">soins palliatifs</a>...).",
+    "synonymes": "Goals of care",
+    "source": "ASSM, 2018\nhttps://www.assm.ch/fr/Ethique.html",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
   },
   {
     "id": "psa",
     "terme": "Projet de Soins Anticipé",
-    "synonymes": "Projet Anticipé des Soins, Plan de Soins Anticipé ou Planification Anticipée du Projet Thérapeutique ; Planification Anticipée des Soins ou Planification Préalable des Soins",
-    "definition": "Processus dans lequel les patients et, le cas échéant, leurs proches discutent avec les professionnels de la santé des stratégies et des objectifs thérapeutiques, les définissent et les adaptent régulièrement au déroulement concret de la maladie",
-    "source": "https://www.assm.ch/fr/Ethique.html",
-    "commentaires": ""
+    "definition": "Processus dans lequel les personnes et/ou leurs proches discutent avec les professionnels de santé des <a class=\"glossary-dfn\" href=\"read.glossary.html#objectifs\">objectifs de soins</a>, les définissent et les adaptent régulièrement. \nAux HUG, il est écrit dans le dossier des patients sous forme d'<a class=\"glossary-dfn\" href=\"read.glossary.html\">instructions médicales d'urgence</a>, de projet de soins et de <a class=\"glossary-dfn\" href=\"read.glossary.html\">directives anticipées</a>.",
+    "synonymes": "Projet Anticipé des Soins, Plan de Soins Anticipé, Planification Anticipée du Projet Thérapeutique,  Planification Anticipée des Soins,  Planification Préalable des Soins",
+    "source": "ASSM, 2018\nhttps://www.assm.ch/fr/Ethique.html",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
   },
   {
-    "id": "rcp",
-    "terme": "réanimation cardio-respiratoire",
-    "synonymes": "",
-    "definition": "La réanimation cardio-respiratoire (RCR) est une intervention médicale visant à redémarrer le battement cardiaque et la respiration d’un patient lorsque son cœur et ses poumons ont subitement cessé de fonctionner. La RCR comprend notamment le recours au bouche-à-bouche, aux compressions thoraciques, à la défibrillation ou à un ventilateur. La RCR peut être utile dans certaines circonstances, mais pas toujours.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
-  },
-  {
-    "id": "representant",
+    "id": "representatant",
     "terme": "Représentant thérapeutique",
-    "synonymes": "mandataire",
-    "definition": "Un mandataire est une personne qui peut prendre des décisions médicales au nom d’un être cher qui n’est plus en mesure de le faire lui-même. Le mandataire est parfois appelé fondé de pouvoir, représentant, agent, détenteur d’une procuration relative au soin de la personne, décideur au nom d’autrui, etc.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "definition": "L’auteur de <a class=\"glossary-dfn\" href=\"read.glossary.html#da\">directives anticipe?es</a> peut de?signer une personne qui de?cidera du traitement me?dical a? sa place si lui-me?me n’est plus en mesure de le faire. Il peut s’agir d’un proche, de son me?decin ou d’une autre personne. Si aucun représentant thérapeutique n'est désigné, l'ordre légal est le suivant: <a class=\"glossary-dfn\" href=\"read.glossary.html#legal\">voir ici</a>.",
+    "synonymes": "",
+    "source": "ASSM, 2013\nhttps://www.assm.ch/fr/Ethique.html, HUG\nhttps://www.hug-ge.ch/soins-intensifs/lexique-soins-intensifs",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
   },
   {
-    "id": "résidence",
-    "terme": "résidence de soins palliatifs",
+    "id": "soins-intensifs",
+    "terme": "Soins intensifs",
+    "definition": "Service hospitalier où des soins sont donnés aux personnes ayant une ou plusieurs urgences menaçant le pronostic vital (ex : coma, arrêt cardiaque, pneumonie sévère). Certains traitements visent à maintenir en vie artificiellement (ex: <a class=\"glossary-dfn\" href=\"read.glossary.html#ventilation\">ventilation assistée</a>, dialyse).",
     "synonymes": "",
-    "definition": "Une résidence de soins palliatifs (ou maison, établissement, etc.) est un endroit qui rappelle la maison, où les adultes et enfants atteints de maladies mortelles reçoivent des soins et services de fin de vie. (Adaptation du manuel sur les services à la clientèle des CASC, septembre 2006.)",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "source": "HUG\nhttps://www.hug-ge.ch/soins-intensifs/lexique-soins-intensifs",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
   },
   {
-    "id": "soin-fin-vie",
-    "terme": "soins de fin de vie",
+    "id": "soins-palliatifs",
+    "terme": "Soins palliatifs",
+    "definition": "Les soins palliatifs sont des soins qui visent le confort de la personne et le soulagement de sa douleur physique et souffrance psychique. Ils peuvent comprendre des traitements et des soins ainsi qu'un soutien  à la personne, sa famille et ses proches.",
     "synonymes": "",
-    "definition": "Les soins de fin de vie sont les soins de santé prodigués à la fin de la vie d’une personne; ces soins sont axés sur les volontés exprimées par la personne quant à la façon dont elle souhaite vivre les derniers jours ou les dernières semaines de sa vie.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "source": "ASSM, 2018\nhttps://www.assm.ch/fr/Ethique.html",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": "MUST HAVE"
   },
   {
-    "id": "soin-palliatifs",
-    "terme": "soins palliatifs",
-    "synonymes": "",
-    "definition": "Les soins palliatifs sont des soins qui visent à soulager la souffrance et à améliorer la qualité de vie d’une personne. Les soins palliatifs sont prodigués pour aider les patients et leurs proches : à faire face aux problèmes physiques, psychologiques, sociaux, spirituels et pratiques de la maladie, ainsi qu’aux attentes, besoins, espoirs et craintes qui y sont associés; à se préparer à accomplir les tâches de fin de vie souhaitées par le patient et à affronter l’étape de la mort; et à surmonter le sentiment de perte et le chagrin pendant la maladie et le deuil. Les soins palliatifs sont des soins axés sur le confort de la personne et sur le soulagement de sa douleur; ils peuvent comprendre des médicaments, des traitements et des soins physiques et psychosociaux destinés tant à la personne malade qu’à sa famille et ses proches aidants.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "id": "reanimation",
+    "terme": "Réanimation",
+    "definition": "Procédure de soins d’urgence en cas d’arrêt cardiaque incluant selon les cas : massage cardiaque, défibrillation (« choc électrique »), ventilation assistée (« intubation ») et/ou traitements pharmacologiques.",
+    "synonymes": "Réanimation Cardio-Respiratoire (RCP)",
+    "source": "",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": "MUST HAVE"
   },
   {
-    "id": "sonde",
-    "terme": "sonde alimentaire",
+    "id": "acharnement",
+    "terme": "Acharnement thérapeutique",
+    "definition": "Terme souvent employé dans le langage courant et les directives anticipées pour désigner des soins estimés excessifs. A éviter car il est vague et ne permet pas de guider les décisions de soins.",
     "synonymes": "",
-    "definition": "La sonde alimentaire est un tube utilisé pour nourrir une personne qui n’est plus capable d’avaler.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "source": "",
+    "commentaires": "",
+    "AVIS experts": "terme confusionant",
+    "Colonne1": ""
   },
   {
-    "id": "symptomes",
-    "terme": "symptômes",
+    "id": "ventilation",
+    "terme": "Ventilation assistée",
+    "definition": "Procédure médicale consistant à assister ou remplacer la respiration (= ventilation) à l'aide d'une machine (= ventilateur) reliée au patient par une sonde d'intubation (ventilation invasive) ou d’un masque facial (ventilation non-invasive). Cette procédure peut être utilisée en <a class=\"glossary-dfn\" href=\"read.glossary.html#soins-intensifs\">soins intensifs</a> mais également au bloc opératoire pour une anesthésie générale.",
     "synonymes": "",
-    "definition": "Les symptômes sont les signes d’un mauvais état de santé (exemples : douleur, vomissements, perte d’appétit, fièvre élevée, etc.).",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "source": "HUG\nhttps://www.hug-ge.ch/soins-intensifs/lexique-soins-intensifs",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
   },
   {
-    "id": "ventilateur",
-    "terme": "ventilateur",
+    "id": "legal",
+    "terme": "ordre légal",
+    "definition": "En l'absence de directives anticipées, sont habilités à représenter la personne incapable de discernement, dans l’ordre: (1) le curateur qui a la tâche de la représenter dans le domaine médical, (2) son conjoint ou son partenaire enregistré, s’il fait ménage commun avec elle ou s’il lui fournit une assistance personnelle régulière, (3)  la personne qui fait ménage commun avec elle*, (4) ses descendants*, (5) ses père et mère*, (6) ses frères et sœurs* (*Uniquement si ces personnes fournissent une assistance personnelle régulière a` la personne incapable de discernement).",
     "synonymes": "",
-    "definition": "Un ventilateur est un appareil de respiration servant à aider une personne devenue incapable de respirer d’elle-même.",
-    "source": "http://www.myspeakupplan.ca/fr/preparer-mon-plan/#gf_7",
-    "commentaires": ""
+    "source": "",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
   }
 ]
