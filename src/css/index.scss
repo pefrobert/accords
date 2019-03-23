@@ -83,14 +83,65 @@ $page-vpadding: 15px;
     padding-bottom: $page-vpadding + $menu-height;
 }
 
-.w7lcome {
+.welcome {
     .logo {
         display: block;
-        margin: 25px auto;
+        margin: 25px auto 10px;
         max-width: 50vw;
     }
     h1 {
-        margin: 25px 0;
+        margin: 10px 0 35px;
+        .subtitle {
+            margin-top: 20px;
+            color: #777;
+            font-size: 16px;
+            font-style: italic;
+        }
+    }
+    .teaser-slogans {
+        width: 100vw;
+        margin: 35px -15px 15px;
+        position: relative;
+        overflow: hidden;
+        .slogan {
+            position: absolute;
+            top: 0;
+            width: 100vw;
+            padding-left: 35px;
+            padding-right: 35px;
+            visibility: hidden;
+            transition: all .5s ease-out;
+            transition-property: left, opacity;
+            &.next {
+                opacity: 0;
+                left: -120vw;
+                z-index: 5;
+                // transform: scale(2);
+            }
+            &.active {
+                opacity: 1;
+                left: 0;
+                z-index: 3;
+                // transform: scale(1);
+            }
+            &.last {
+                opacity: 0;
+                left: 120vw;
+                z-index: 1;
+                transition-duration: 1.5s;
+            }
+        }
+        .slogan-inner {
+            padding: 10px 15px 12px;
+            color: #fff;
+            font-size: 22px;
+            font-family: serif;
+            line-height: 1;
+            text-align: center;
+            background-color: $accent1-dark;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px -10px rgba(0,0,0,1);
+        }
     }
 }
 
@@ -245,7 +296,6 @@ $page-vpadding: 15px;
         line-height: 1;
         font-family: 'Roboto Condensed', sans-serif;
     }
-    p {}
 }
 
 .section-summary {
@@ -281,7 +331,6 @@ $page-vpadding: 15px;
         }
         .desc {
             color: $text2;
-            p {}
         }
     }
     .section-main + .section-secondary {
@@ -296,6 +345,21 @@ $page-vpadding: 15px;
     }
 }
 
+.content-text {
+    p {
+        margin: 20px 0;
+    }
+    ul, ol {
+        margin-left: 20px;
+    }
+    ul {
+        list-style: square;
+    }
+    li {
+        margin: 10px 0;
+    }
+}
+
 
 // glossary
 dl.glossary-item {
@@ -305,7 +369,6 @@ dl.glossary-item {
         color: $accent1-dark;
     }
     dd {
-        p {}
         .syns {
             margin-bottom: 15px;
             padding: 2px 5px;
@@ -402,19 +465,18 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-writ
 
 // legal aspects
 .section-legal {
-    p {
-        margin: 20px 0;
-    }
-    ol {
-        margin-left: 20px;
-    }
-    ul {
-        margin-left: 20px;
-        list-style: square;
-    }
-    li {
-        margin: 10px 0;
-    }
+    // p {
+    //     margin: 20px 0;
+    // }
+    // ol {
+    //     margin-left: 20px;
+    // }
+    // ul {
+    //     margin-left: 20px;
+    // }
+    // li {
+    //     margin: 10px 0;
+    // }
 }
 .legal-intro {
     font-style: italic;
@@ -466,7 +528,6 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-writ
             border: 8px solid #fff;
             border-color: #fff #fff $accent1 $accent1;
         }
-        p {}
         strong {
             display: inline-block;
             font-size: 24px;
@@ -648,6 +709,9 @@ body.read {
     //     color-stop(0, mix($accent1, #fff, 10%)),
     //     color-stop(1, #fff)
     // );
+    .content-text a {
+        color: $accent1-dark;
+    }
     .back-nav {
         background-color: $accent1;
     }
@@ -666,6 +730,9 @@ body.talk {
     //     color-stop(0, mix($accent2, #fff, 10%)),
     //     color-stop(1, #fff)
     // );
+    .content-text a {
+        color: $accent2-dark;
+    }
     .back-nav {
         background-color: $accent2;
     }
@@ -684,6 +751,9 @@ body.write {
     //     color-stop(0, mix($accent3, #fff, 10%)),
     //     color-stop(1, #fff)
     // );
+    .content-text a {
+        color: $accent3-dark;
+    }
     .back-nav {
         background-color: $accent3;
     }
@@ -702,6 +772,9 @@ body.notes {
     //     color-stop(0, mix($accent4, #fff, 10%)),
     //     color-stop(1, #fff)
     // );
+    .content-text a {
+        color: $accent4-dark;
+    }
     .back-nav {
         background-color: $accent4;
     }
