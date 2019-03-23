@@ -12,12 +12,26 @@
 	</div>
 
 	<div class="section-content section-amorces">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius reprehenderit delectus in incidunt at, quis molestiae! Omnis nostrum odio veritatis libero adipisci neque dolor, consequatur tenetur rerum, recusandae, in fugit.</p>
+		{% for section, amorceList in amorces | groupby("sectionId") %}
+		<div class="amorce">
+			<h3>{{ section }}</h3>
+			<ul>
+			{% for amorce in amorceList %}
+			<li class="amorce-item"><span class="bookmark-btn" data-type="amorce" data-target="{{ amorce.id }}"></span>{{ amorce.amorces | safe }}</li>
+			{% endfor %}
+			</ul>				
+		</div>
+		{% endfor %}
 	</div>
-
 {% endblock %}
 
 {% block navigation %}
 	{% import 'nav-macro.njk' as nav %}
 	{{nav.active('talk')}}
 {% endblock %}
+
+
+{% block footer_javascript %}
+	<script type="text/javascript" src="js/bookmarks.js"></script>
+{% endblock %}
+
