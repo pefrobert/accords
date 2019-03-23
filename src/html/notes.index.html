@@ -4,6 +4,10 @@
 {% block body_class %}notes{% endblock %}
 {% block parent_page %}index.html{% endblock %}
 
+{% block head_javascript %}
+<script type="text/javascript" src="js/vue.min.js"></script>
+{% endblock %}
+
 {% block content %}
 
 <div class="section-intro">
@@ -16,8 +20,9 @@
 <div class="notes-section">
 	<h2>Mes sélections</h2>
 	<div class="notes-bookmarks no-bookmark">
-		<p class="no-data">Aucune sélection pour l'instant.</p>
-		<p class="tip">Utilisez le bouton "marque-page" <span class="bookmark-btn"></span>, que vous trouverez dans diverses pages de l'app, pour réunir ici des contenus que vous souhaitez mettre de côté &mdash;par exemple pour y revenir et les approfondir, parce que vous les trouvez intéressants, ou pour en discuter avec des proches.</p>
+
+		<div id="notes-bookmarks"></div>
+
 	</div>
 </div>
 
@@ -36,5 +41,9 @@
 {% endblock %}
 
 {% block footer_javascript %}
-<!-- <script type="text/javascript" src="js/index.js"></script> -->
+<script type="text/javascript" id="glossaryJson">
+	var glossaryJson = {{ glossaryString | safe }} ;
+</script>
+<script type="text/javascript" src="js/bookmarks.js"></script>
+<script type="text/javascript" src="js/notes.js"></script>
 {% endblock %}

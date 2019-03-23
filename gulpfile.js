@@ -6,7 +6,8 @@ var fs = require('fs');
 var plugins = require('gulp-load-plugins')(); // tous les plugins de package.json
 
 var templateData = {
-  glossary : JSON.parse(fs.readFileSync('src/data/read.glossary.json'))
+  glossary : JSON.parse(fs.readFileSync('src/data/read.glossary.json')),
+  glossaryString : fs.readFileSync('src/data/read.glossary.json'),
 };
 
 console.log(plugins);
