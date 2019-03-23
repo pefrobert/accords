@@ -1,6 +1,6 @@
 {% extends "base.njk" %}
 
-{% block title %}Mes préférences en cas d'urgence — ACCORDs{% endblock %}
+{% block title %}Mes préférences — ACCORDs{% endblock %}
 {% block body_class %}write{% endblock %}
 {% block parent_page %}write.index.html{% endblock %}
 
@@ -8,11 +8,21 @@
 	<div class="section-intro">
 		<img src="img/icon-write.svg" class="section-icon" alt="">
 		<p class="app-name">ACCORDs</p>
-		<h1>Mes préférences en cas d'urgence</h1>
+		<h1>Mes préférences</h1>
+		<p style="text-align: center;">Pour anticiper les soins et les urgences</p>
 	</div>
 
 	<div class="section-content section-urgences">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius reprehenderit delectus in incidunt at, quis molestiae! Omnis nostrum odio veritatis libero adipisci neque dolor, consequatur tenetur rerum, recusandae, in fugit.</p>
+
+		<nav class="pager">
+			<div class="pager-item prev">
+				<a href="write.valeurs.html">
+					<span class="label">Étape précédente</span>
+					<span class="subtitle">Que faut-il savoir de moi</span>
+				</a>
+			</div>
+		</nav>
 	</div>
 
 {% endblock %}
