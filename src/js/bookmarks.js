@@ -12,13 +12,14 @@ var bookmarksManager = {
 		
 		this.bookmarks = this.load();
 
-		_.each(elements.getElementsByClassName(this.className), function(element, index, list){
+		var manager = this;
+		_.each(elements.getElementsByClassName(manager.className), function(element, index, list){
 			var type = element.dataset.type;
 			var target = element.dataset.target;
-
-			_.each(this.bookmarks, function(bookmark, index, list){
-				if(bookmark.type == element.dataset.type && bookmark.target == element.dataset.target){
-					element.classList.add(this.classNameSelected);
+			_.each(manager.bookmarks, function(bookmark, index, list){
+				console.log(this);
+				if(bookmark.type == type && bookmark.target == target){
+					element.classList.add(manager.classNameSelected);
 				}
 			});
 			element.addEventListener('click', bookmarksManager.onClick, false);
