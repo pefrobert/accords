@@ -1,0 +1,23 @@
+{% extends "base.njk" %}
+
+{% block title %}L'essentiel — ACCORDs{% endblock %}
+{% block body_class %}read{% endblock %}
+{% block parent_page %}read.index.html{% endblock %}
+
+{% block content %}
+	<div class="section-intro">
+		<img src="img/icon-read.svg" class="section-icon" alt="">
+		<p class="app-name">ACCORDs</p>
+		<h1>L'essentiel</h1>
+	</div>
+
+	<div class="section-content section-essentiel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius reprehenderit delectus in incidunt at, quis molestiae! Omnis nostrum odio veritatis libero adipisci neque dolor, consequatur tenetur rerum, recusandae, in fugit.</p>
+	</div>
+
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('read')}}
+{% endblock %}

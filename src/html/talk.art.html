@@ -1,0 +1,23 @@
+{% extends "base.njk" %}
+
+{% block title %}Les soins anticipés dans l'art — ACCORDs{% endblock %}
+{% block body_class %}talk{% endblock %}
+{% block parent_page %}talk.index.html{% endblock %}
+
+{% block content %}
+	<div class="section-intro">
+		<img src="img/icon-talk.svg" class="section-icon" alt="">
+		<p class="app-name">ACCORDs</p>
+		<h1>Les soins anticipés dans l'art</h1>
+	</div>
+
+	<div class="section-content section-art">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius reprehenderit delectus in incidunt at, quis molestiae! Omnis nostrum odio veritatis libero adipisci neque dolor, consequatur tenetur rerum, recusandae, in fugit.</p>
+	</div>
+
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('talk')}}
+{% endblock %}
