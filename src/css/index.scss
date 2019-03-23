@@ -8,7 +8,10 @@ $accent2-dark: mix($accent2, #000, 75%);
 $accent3-dark: mix($accent3, #000, 75%);
 $accent4-dark: mix($accent4, #000, 75%);
 
-$accent1-light: mix($accent1, #fff, 35%);
+$accent1-light: mix($accent1, #fff, 20%);
+$accent2-light: mix($accent2, #fff, 35%);
+$accent3-light: mix($accent3, #fff, 20%);
+$accent4-light: mix($accent4, #fff, 35%);
 
 $text1: #444; // petit texte, couleur principale
 $text2: #777; // grand texte, sous-titres
@@ -79,7 +82,7 @@ $page-vpadding: 15px;
     padding-bottom: $page-vpadding + $menu-height;
 }
 
-.welcome {
+.w7lcome {
     .logo {
         display: block;
         margin: 25px auto;
@@ -383,6 +386,9 @@ dl.glossary-item {
     p {
         margin: 20px 0;
     }
+    ol {
+        margin-left: 20px;
+    }
     ul {
         margin-left: 20px;
         list-style: square;
@@ -410,15 +416,168 @@ dl.glossary-item {
     padding-left: 15%;
 }
 
+
+// true stories
+.section-vecu {
+    .vignettes {
+        position: relative;
+        margin: 25px -15px;
+    }
+    .vignettes-nav {
+        .next {}
+        .prev {}
+    }
+    .vignettes-list {
+        padding: 0 15px;
+    }
+    .vignette {
+        position: relative;
+        margin-bottom: 25px;
+        padding: 12px 15px;
+        line-height: 1.4;
+        background: $accent1-light;
+        overflow: hidden;
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border: 8px solid #fff;
+            border-color: #fff #fff $accent1 $accent1;
+        }
+        p {}
+        strong {
+            display: inline-block;
+            font-size: 24px;
+            line-height: 18.2px;
+            font-weight: bold;
+            color: $accent1-dark;
+        }
+    }
+    .img-side {
+        width: 50%;
+        margin-bottom: 3px;$
+        img {
+            display: block;
+        }
+        &.left {
+            float: left;
+            margin-right: 15px;
+            margin-left: -15px;
+        }
+        &.right {
+            float: right;
+            margin-right: -15px;
+            margin-left: 15px;
+        }
+        &:first-child {
+            margin-top: -12px;
+        }
+    }
+    .img-wide {
+        margin: 15px -15px -12px;
+        img {
+            display: block;
+        }
+    }
+}
+
 // form elements
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
 textarea {
+    width: 100%;
     padding: 5px 10px;
+    font-size: 16px;
+    line-height: 1.4;
     font-family: sans-serif;
+    border: 1px solid #bbb;
+    &:focus {
+        border-color: $accent3-dark;
+        background-color: $accent3-light;
+    }
+}
+textarea {
+    min-height: 70px;
     resize: vertical;
 }
 *::-webkit-input-placeholder {font-size: 12px;}
 *:-moz-placeholder {font-size: 12px;}
 *:placeholder {font-size: 12px;}
+
+.form-section-title {
+    margin: 35px 0 25px;
+    color: $accent3-dark;
+    font-size: 20px;
+    // font-weight: normal;
+}
+
+.form-item {
+    margin: 25px 0;
+    .form-label {
+        margin-bottom: 5px;
+    }
+    .form-input {}
+}
+
+.pager {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    .pager-item {
+        flex: 0 0 50%;
+        a {
+            position: relative;
+            display: block;
+            color: $text1;
+            text-decoration: none;
+            padding: 5px 10px 20px;
+            background-color: $accent3-light;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 36px;
+                height: 36px;
+                bottom: -18px;
+                right: 5px;
+                background: transparent url('../img/nav-next.svg') no-repeat 50% 50% scroll;
+                background-size: contain;
+                opacity: .35;
+            }
+        }
+        .label {
+            display: block;
+            font-weight: bold;
+            color: $accent3-dark;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            display: block;
+            font-size: 12px;
+            line-height: 1;
+        }
+        &.prev {
+            padding-right: 5px;
+            a::after {
+                right: auto;
+                left: 5px;
+                background-image: url('../img/nav-prev.svg');
+            }
+        }
+        &.next {
+            padding-left: 5px;
+            text-align: right;
+            &:first-child {
+                margin-left: auto;
+            }
+        }
+    }
+}
 
 
 // notes section
