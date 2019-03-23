@@ -3,14 +3,14 @@
     "ID": "descendants",
     "Type": "Film",
     "Titre": "The Descendants",
-    "Resume": "Réalisé par Alexander Payne en 2011. À Honolulu, son épouse Elizabeth étant tombée dans le coma à la suite d'un accident de bateau, Matt se retrouve face à des questions de @limitations de soins@. Avocat, il est chargé par sa famille de mettre en vente des terres familiales (les dernières plages tropicales vierges des îles, héritées de ses ancêtres hawaiiens), prend en charge ses deux filles qu'il avait délaissées, puis se confronte à l'amant de sa femme à la faveur d'une escapade familiale sur l'île Kauai...",
+    "Resume": "Réalisé par Alexander Payne en 2011. À Honolulu, son épouse Elizabeth étant tombée dans le coma à la suite d'un accident de bateau, Matt se retrouve face à des questions de <a class=\"glossary-dfn\" class=\"glossary-dfn\" href=\"read.glossary.html#lat\">limitations de soins</a>. Avocat, il est chargé par sa famille de mettre en vente des terres familiales (les dernières plages tropicales vierges des îles, héritées de ses ancêtres hawaiiens), prend en charge ses deux filles qu'il avait délaissées, puis se confronte à l'amant de sa femme à la faveur d'une escapade familiale sur l'île Kauai...",
     "Image": "descendants.jpg"
   },
   {
     "ID": "big-fish",
     "Type": "Film",
     "Titre": "Big fish",
-    "Resume": "Réalisé par Tim Burton en 2003. Un fils se rend dans la maison familiale au chevet de son père en fin de vie, qui a souhaité un @arrêt des thérapeutiques@. En conflit avec ce dernier depuis des années, le père tient à raconter une dernière fois à son fils les grands faits d’armes de sa vie.",
+    "Resume": "Réalisé par Tim Burton en 2003. Un fils se rend dans la maison familiale au chevet de son père en fin de vie, qui a souhaité un <a class=\"glossary-dfn\" href=\"read.glossary.html#acharnement\">arrêt des thérapeutiques</a>. En conflit avec ce dernier depuis des années, le père tient à raconter une dernière fois à son fils les grands faits d’armes de sa vie.",
     "Image": "bigfish.jpg"
   },
   {
@@ -24,14 +24,14 @@
     "ID": "extremis",
     "Type": "Documentaire",
     "Titre": "Extremis",
-    "Resume": "Réalisé par Dan Krauss en 2016. Public averti. Court-métrage documentaire au cœur d’un service de @soins intensifs@. Le réalisateur suit les soignants, les patients et leur famille, dans des situations de vie extrêmes, tous confrontés à des choix vitaux. Des tranches de vies qui nous rappelle qu’en matière de @projet anticipé de soins@, il n’y a pas de ligne toute tracée.",
+    "Resume": "Réalisé par Dan Krauss en 2016. Public averti. Court-métrage documentaire au cœur d’un service de <a class=\"glossary-dfn\" href=\"read.glossary.html#soins-intensifs\">soins intensifs</a>. Le réalisateur suit les soignants, les patients et leur famille, dans des situations de vie extrêmes, tous confrontés à des choix vitaux. Des tranches de vies qui nous rappelle qu’en matière de <a class=\"glossary-dfn\" href=\"read.glossary.html#psa\">projet anticipé de soins</a>, il n’y a pas de ligne toute tracée.",
     "Image": "extremis.jpg"
   },
   {
     "ID": "endgame",
     "Type": "Documentaire",
     "Titre": "Fin de partie, repenser la vie et la mort",
-    "Resume": "Réalisé par Rob Epstein et Jeffrey Friedman en 2018. Court-métrage documentaire retraçant les parcours de patients accompagnés dans leurs @projets anticipés de soins@ par leurs proches et leurs soignants.",
+    "Resume": "Réalisé par Rob Epstein et Jeffrey Friedman en 2018. Court-métrage documentaire retraçant les parcours de patients accompagnés dans leurs <a class=\"glossary-dfn\" href=\"read.glossary.html#psa\">projets anticipés de soins</a> par leurs proches et leurs soignants.",
     "Image": "endgame.jpg"
   },
   {
@@ -52,7 +52,7 @@
     "ID": "pas-fini",
     "Type": "Théâtre",
     "Titre": "J'ai pas fini",
-    "Resume": "Pièce d’Eric Masserey. Mise en scène par Jacques Maître. 2016. Iris, dynamique quinquagénaire helvétique, a décidé de ne pas finir comme sa sœur, captive à l’hôpital. Elle a rendez-vous avec son assureur afin de rédiger ses @directives anticipées@, « pour plus de sécurité !». Pas si simple ! La pièce parle de nos libertés et de nos peurs, de l’individualisme et de protocoles de soins qui priment sur l’accompagnement et sur le respect de notre propre destin.",
+    "Resume": "Pièce d’Eric Masserey. Mise en scène par Jacques Maître. 2016. Iris, dynamique quinquagénaire helvétique, a décidé de ne pas finir comme sa sœur, captive à l’hôpital. Elle a rendez-vous avec son assureur afin de rédiger ses <a class=\"glossary-dfn\" href=\"read.glossary.html#da\">directives anticipées</a>, « pour plus de sécurité !». Pas si simple ! La pièce parle de nos libertés et de nos peurs, de l’individualisme et de protocoles de soins qui priment sur l’accompagnement et sur le respect de notre propre destin.",
     "Image": "pasfini.jpg"
   },
   {

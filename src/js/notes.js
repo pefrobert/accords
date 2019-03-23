@@ -51,7 +51,11 @@ var notesGlossary = new Vue({
 			}
 			return createElement('div',html);
 		} else {
-			return '<p class="tip">Utilisez le bouton "marque-page" <span class="bookmark-btn"></span>, que vous trouverez dans diverses pages de l\'app, pour réunir ici des contenus que vous souhaitez mettre de côté &mdash;par exemple pour y revenir et les approfondir, parce que vous les trouvez intéressants, ou pour en discuter avec des proches.</p>';
+			return createElement('p', {class : {'tip' : true}},[
+					'Utilisez le bouton "marque-page"',
+					createElement('span', {class : {'bookmark-btn' : true}}, ''),
+					', que vous trouverez dans diverses pages de l\'app, pour réunir ici des contenus que vous souhaitez mettre de côté par exemple pour y revenir et les approfondir, parce que vous les trouvez intéressants, ou pour en discuter avec des proches.' 
+				]);
 		}
 	}
 });

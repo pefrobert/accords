@@ -20,7 +20,7 @@
 			</dt>
 			<dd>
 				<p class="syns"><span class="label">Type :</span> <span class="content">{{ item.Type }}</span></p>
-				<p>{{ item.Resume }}</p>
+				<p>{{ item.Resume | safe}}</p>
 				<img alt="{{ item.Titre }}" src="img/art/{{item.Image}}"/>
 			</dd>
 		</dl>
