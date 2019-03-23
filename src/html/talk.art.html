@@ -13,17 +13,17 @@
 
 	<div class="section-content section-art">
 		{% for item in art %}
-		<dl class="art-item" id="art-{{ item.ID }}">
-			<dt>
+		<div class="art-item" id="art-{{ item.ID }}">
+			<h2>
 				{{ item.Titre }}
 				<span class="bookmark-btn" data-type="art" data-target="{{ item.ID }}"></span>
-			</dt>
-			<dd>
-				<p class="syns"><span class="label">Type :</span> <span class="content">{{ item.Type }}</span></p>
-				<p>{{ item.Resume | safe}}</p>
-				<img alt="{{ item.Titre }}" src="img/art/{{item.Image}}"/>
-			</dd>
-		</dl>
+			</h2>
+			<div class="art-content">
+				<img alt="{{ item.Titre }}" src="img/art/{{item.Image}}" class="poster"/>
+				<p class="type"><span class="content">{{ item.Type }}</span></p>
+				<p class="summary">{{ item.Resume | safe}}</p>
+			</div>
+		</div>
 		{% endfor %}
 	</div>
 

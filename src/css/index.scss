@@ -12,7 +12,7 @@ $accent4-dark: mix($accent4, #000, 75%);
 $accent1-light: mix($accent1, #fff, 20%);
 $accent2-light: mix($accent2, #fff, 35%);
 $accent3-light: mix($accent3, #fff, 20%);
-$accent4-light: mix($accent4, #fff, 35%);
+$accent4-light: mix($accent4, #fff, 10%);
 
 $text1: #444; // petit texte, couleur principale
 $text2: #777; // grand texte, sous-titres
@@ -39,19 +39,6 @@ body {
     margin: 0;
     padding: 0;
 }
-// body.home {
-//     background-image:linear-gradient(top, #eee 0%, #fff 100%);
-//     background-image:-webkit-linear-gradient(top, #eee 0%, #fff 100%);
-//     background-image:-ms-linear-gradient(top, #eee 0%, #fff 100%);
-//     background-image:-webkit-gradient(
-//         linear,
-//         left top,
-//         left bottom,
-//         color-stop(0, #eee),
-//         color-stop(1, #fff)
-//     );
-// }
-
 
 img {
     height: auto;
@@ -63,13 +50,13 @@ h1 {
     font-size: 30px;
     text-align: center;
     font-weight: 700;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 }
 
 h2 {
     font-size: 24px;
     font-weight: 700;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 }
 
 /* Portrait layout (default) */
@@ -294,7 +281,7 @@ $page-vpadding: 15px;
         margin-bottom: 35px;
         font-weight: bold;
         line-height: 1;
-        font-family: 'Roboto Condensed', sans-serif;
+        font-family: 'Roboto Condensed', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     }
 }
 
@@ -450,9 +437,6 @@ dl.glossary-item {
     background: transparent url('../img/icon-bookmark-off.svg') no-repeat 50% 50% scroll;
     background-size: 1em 1em;
     vertical-align: text-bottom;
-    &:hover {
-        background-color: $accent1-light;
-    }
     &.on {
         background-image: url('../img/icon-bookmark-on.svg');
     }
@@ -461,6 +445,51 @@ dl.glossary-item {
 body.read .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-read.svg');}
 body.talk .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-talk.svg');}
 body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-write.svg');}
+
+
+// art section
+.section-art {
+    margin-bottom: 35px;
+    .art-item {
+        clear: both;
+        // margin-bottom: 25px;
+        a {
+            color: $accent2-dark;
+        }
+        h2 {
+            padding-top: 25px;
+            color: $accent2;
+            font-weight: normal;
+            line-height: 1;
+            margin-bottom: 10px;
+            overflow: hidden;
+            .bookmark-btn {
+                float: right;
+            }
+        }
+        .art-content {}
+        .poster {
+            float: left;
+            max-width: 40%;
+            margin-right: 15px;
+            margin-bottom: 3px;
+        }
+        .type {
+            margin-bottom: 10px;
+            padding: 2px 10px;
+            font-size: 12px;
+            text-align: right;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: bold;
+            background-color: $accent2-dark;
+            .label {
+                font-weight: normal;
+            }
+        }
+        .summary {}
+    }
+}
 
 
 // legal aspects
@@ -574,20 +603,20 @@ textarea {
     padding: 5px 10px;
     font-size: 16px;
     line-height: 1.4;
-    font-family: sans-serif;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     border: 1px solid #bbb;
     &:focus {
         border-color: $accent3-dark;
         background-color: $accent3-light;
     }
+    &::-webkit-input-placeholder {font-size: 12px;}
+    &:-moz-placeholder {font-size: 12px;}
+    &:placeholder {font-size: 12px;}
 }
 textarea {
     min-height: 70px;
     resize: vertical;
 }
-*::-webkit-input-placeholder {font-size: 12px;}
-*:-moz-placeholder {font-size: 12px;}
-*:placeholder {font-size: 12px;}
 
 .form-section-title {
     margin: 35px 0 25px;
@@ -659,6 +688,35 @@ textarea {
     }
 }
 
+.actions {
+    margin: 25px 0;
+    text-align: right;
+    .action {
+        button {
+            position: relative;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            line-height: 16px;
+            font-weight: bold;
+            font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+            background: $accent4-dark;
+            border-radius: 5px;
+        }
+        .export-data {
+            padding-left: 36px;
+            &::before {
+                content: '';
+                width: 24px;
+                height: 24px;
+                background: transparent url('../img/icon-pdf.svg') no-repeat 50% 50% scroll;
+                position: absolute;
+                left: 6px;
+                top: 6px;
+            }
+        }
+    }
+}
 
 // notes section
 body.notes {
@@ -699,16 +757,16 @@ body.notes {
 
 // color variations
 body.read {
-    // background-image:linear-gradient(top,         mix($accent1, #fff, 10%) 0%, #fff 100%);
-    // background-image:-webkit-linear-gradient(top, mix($accent1, #fff, 10%) 0%, #fff 100%);
-    // background-image:-ms-linear-gradient(top,     mix($accent1, #fff, 10%) 0%, #fff 100%);
-    // background-image:-webkit-gradient(
-    //     linear,
-    //     left top,
-    //     left bottom,
-    //     color-stop(0, mix($accent1, #fff, 10%)),
-    //     color-stop(1, #fff)
-    // );
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+        &:focus {
+            border-color: $accent1-dark;
+            background-color: $accent1-light;
+        }
+    }
     .content-text a {
         color: $accent1-dark;
     }
@@ -718,18 +776,21 @@ body.read {
     .section-summary .section-entry h2 {
         color: $accent1-dark;
     }
+    .actions .action button {
+        background-color: $accent1-dark;
+    }
 }
 body.talk {
-    // background-image:linear-gradient(top,         mix($accent2, #fff, 10%) 0%, #fff 100%);
-    // background-image:-webkit-linear-gradient(top, mix($accent2, #fff, 10%) 0%, #fff 100%);
-    // background-image:-ms-linear-gradient(top,     mix($accent2, #fff, 10%) 0%, #fff 100%);
-    // background-image:-webkit-gradient(
-    //     linear,
-    //     left top,
-    //     left bottom,
-    //     color-stop(0, mix($accent2, #fff, 10%)),
-    //     color-stop(1, #fff)
-    // );
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+        &:focus {
+            border-color: $accent2-dark;
+            background-color: $accent2-light;
+        }
+    }
     .content-text a {
         color: $accent2-dark;
     }
@@ -739,18 +800,21 @@ body.talk {
     .section-summary .section-entry h2 {
         color: $accent2-dark;
     }
+    .actions .action button {
+        background-color: $accent2-dark;
+    }
 }
 body.write {
-    // background-image:linear-gradient(top,         mix($accent3, #fff, 10%) 0%, #fff 100%);
-    // background-image:-webkit-linear-gradient(top, mix($accent3, #fff, 10%) 0%, #fff 100%);
-    // background-image:-ms-linear-gradient(top,     mix($accent3, #fff, 10%) 0%, #fff 100%);
-    // background-image:-webkit-gradient(
-    //     linear,
-    //     left top,
-    //     left bottom,
-    //     color-stop(0, mix($accent3, #fff, 10%)),
-    //     color-stop(1, #fff)
-    // );
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+        &:focus {
+            border-color: $accent3-dark;
+            background-color: $accent3-light;
+        }
+    }
     .content-text a {
         color: $accent3-dark;
     }
@@ -760,18 +824,21 @@ body.write {
     .section-summary .section-entry h2 {
         color: $accent3-dark;
     }
+    .actions .action button {
+        background-color: $accent3-dark;
+    }
 }
 body.notes {
-    // background-image:linear-gradient(top,         mix($accent4, #fff, 10%) 0%, #fff 100%);
-    // background-image:-webkit-linear-gradient(top, mix($accent4, #fff, 10%) 0%, #fff 100%);
-    // background-image:-ms-linear-gradient(top,     mix($accent4, #fff, 10%) 0%, #fff 100%);
-    // background-image:-webkit-gradient(
-    //     linear,
-    //     left top,
-    //     left bottom,
-    //     color-stop(0, mix($accent4, #fff, 10%)),
-    //     color-stop(1, #fff)
-    // );
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+        &:focus {
+            border-color: $accent4-dark;
+            background-color: $accent4-light;
+        }
+    }
     .content-text a {
         color: $accent4-dark;
     }
@@ -780,6 +847,9 @@ body.notes {
     }
     .section-summary .section-entry h2 {
         color: $accent4-dark;
+    }
+    .actions .action button {
+        background-color: $accent4-dark;
     }
 }
 
