@@ -24,7 +24,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('img', function () {
-  return gulp.src('src/img/*.*')
+  return gulp.src('src/img/**/*.*')
     /* ici les plugins Gulp à exécuter */
     .pipe(gulp.dest('www/img'));
 });
