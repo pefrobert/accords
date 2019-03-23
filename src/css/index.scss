@@ -1,7 +1,8 @@
-$accent1: #00c7b3;
-$accent2: #7ecc4b;
-$accent3: #ffb023;
-$accent4: #ff005a;
+// couleurs aussi utilisées dans les fichiers SVG *-color.svg et icon-bookmark-on-*.svg
+$accent1: #00c7b3; // read
+$accent2: #7ecc4b; // talk
+$accent3: #ffb023; // write
+$accent4: #ff005a; // notes
 
 $accent1-dark: mix($accent1, #000, 75%);
 $accent2-dark: mix($accent2, #000, 75%);
@@ -134,12 +135,26 @@ $page-vpadding: 15px;
                 height: 20px;
                 margin: 0 auto;
             }
+            .color {
+                display: none;
+            }
         }
         .label {
             display: block;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        &.active {
+            .icon {
+                img {
+                    display: none;
+                }
+                .color {
+                    display: block;
+                }
+            }
         }
 
         &.section-read {
@@ -368,7 +383,7 @@ dl.glossary-item {
     width: 1.1em;
     height: 1.1em;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 4px;
     background: transparent url('../img/icon-bookmark-off.svg') no-repeat 50% 50% scroll;
     background-size: 1em 1em;
     vertical-align: text-bottom;
@@ -379,6 +394,10 @@ dl.glossary-item {
         background-image: url('../img/icon-bookmark-on.svg');
     }
 }
+
+body.read .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-read.svg');}
+body.talk .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-talk.svg');}
+body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-write.svg');}
 
 
 // legal aspects
@@ -458,7 +477,7 @@ dl.glossary-item {
     }
     .img-side {
         width: 50%;
-        margin-bottom: 3px;$
+        margin-bottom: 3px;
         img {
             display: block;
         }
@@ -536,18 +555,18 @@ textarea {
             display: block;
             color: $text1;
             text-decoration: none;
-            padding: 5px 10px 20px;
+            padding: 5px 10px 35px;
             background-color: $accent3-light;
             &::after {
                 content: '';
                 position: absolute;
                 width: 36px;
                 height: 36px;
-                bottom: -18px;
+                bottom: 0;
                 right: 5px;
                 background: transparent url('../img/nav-next.svg') no-repeat 50% 50% scroll;
                 background-size: contain;
-                opacity: .35;
+                opacity: .5;
             }
         }
         .label {

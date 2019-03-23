@@ -1,6 +1,6 @@
 {% extends "base.njk" %}
 
-{% block title %}Mes valeurs, priorités et craintes — ACCORDs{% endblock %}
+{% block title %}Que faut-il savoir de moi — ACCORDs{% endblock %}
 {% block body_class %}write{% endblock %}
 {% block parent_page %}write.index.html{% endblock %}
 
@@ -8,11 +8,26 @@
 	<div class="section-intro">
 		<img src="img/icon-write.svg" class="section-icon" alt="">
 		<p class="app-name">ACCORDs</p>
-		<h1>Mes valeurs, priorités et craintes</h1>
+		<h1>Que faut-il savoir de moi</h1>
 	</div>
 
 	<div class="section-content section-valeurs">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius reprehenderit delectus in incidunt at, quis molestiae! Omnis nostrum odio veritatis libero adipisci neque dolor, consequatur tenetur rerum, recusandae, in fugit.</p>
+
+		<nav class="pager">
+			<div class="pager-item prev">
+				<a href="write.mydata.html">
+					<span class="label">Étape précédente</span>
+					<span class="subtitle">Qui je suis</span>
+				</a>
+			</div>
+			<div class="pager-item next">
+				<a href="write.soins.html">
+					<span class="label">Étape suivante</span>
+					<span class="subtitle">Mes préférences</span>
+				</a>
+			</div>
+		</nav>
 	</div>
 
 {% endblock %}
