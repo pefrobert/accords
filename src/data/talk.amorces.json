@@ -1,0 +1,47 @@
+[
+  {
+    "id": "entourage-1",
+    "sectionId": "Basez-vous sur des expériences de votre entourage :",
+    "amorces": "« Mme X. vient de mourir. Sa disparition m'a beaucoup touchée et ouvert plein de questions dans mon esprit. Est-ce que tu aurais un moment pour en discuter ? »"
+  },
+  {
+    "id": "entourage-2",
+    "sectionId": "Basez-vous sur des expériences de votre entourage :",
+    "amorces": "« Te souviens-tu de ma voisine Paulette, renversée par une voiture et qui a été maintenue en vie artificiellement. Je me demande comment ses proches ont géré cette situation et s’ils en avaient parlé avant ? Et si ça m’arrivait…»"
+  },
+  {
+    "id": "media-1",
+    "sectionId": "Inspirez-vous d’exemple vus dans les médias :",
+    "amorces": "« As-tu entendu parler de cet homme qui est resté dans le coma pendant des années ? Je ne voudrais jamais que cela m’arrive à moi… »"
+  },
+  {
+    "id": "media-2",
+    "sectionId": "Inspirez-vous d’exemple vus dans les médias :",
+    "amorces": "« As-tu entendu parler de cette famille qui s’est querellée au sujet des soins de leur mère ? ça m’a fait réaliser que nous devrions parler de ces questions, je ne voudrais pas que toi et tes sœurs, vous vous disputiez à propos de mes soins. »"
+  },
+  {
+    "id": "medecin-1",
+    "sectionId": "Parlez-en à votre médecin avec vos mots et sans retenue :",
+    "amorces": "« J'ai été très malade ces derniers temps et je me fais du souci pour l'avenir. Est-ce que nous pourrions en discuter ? »"
+  },
+  {
+    "id": "medecin-2",
+    "sectionId": "Parlez-en à votre médecin avec vos mots et sans retenue :",
+    "amorces": "« J'ai peur de devenir une charge pour ma famille et mes amis si mon état de santé se complique. Est-ce qu'on pourrait en parler ? »"
+  },
+  {
+    "id": "medecin-3",
+    "sectionId": "Parlez-en à votre médecin avec vos mots et sans retenue :",
+    "amorces": "« Je viens de répondre à des questions dans cette app. Pourrions-nous les lire ensemble ? Je voulais aussi clarifier certain points ….»"
+  },
+  {
+    "id": "proche-1",
+    "sectionId": "Parlez-en à vos proches sans détour :",
+    "amorces": "« J'ai encore deux trois rêves à réaliser sur cette terre. J'aimerais t'en parler. »"
+  },
+  {
+    "id": "proche-2",
+    "sectionId": "Parlez-en à vos proches sans détour :",
+    "amorces": "« Mon médecin m’a conseillé de réfléchir à mes <a class=\"glossary-dfn\" href=\"read.glossary.html#objectifs\">objectifs de soins</a> et éventuellement rédiger mes <a class=\"glossary-dfn\" href=\"read.glossary.html#da\">directives anticipées</a>. Pourrais-tu m’aider ? »"
+  }
+]

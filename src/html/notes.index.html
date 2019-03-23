@@ -48,6 +48,7 @@
 
 {% block footer_javascript %}
 <script type="text/javascript" id="glossaryJson">
+	var amorcesJson = {{ amorcesString | safe }} ;
 	var artJson = {{ artString | safe }} ;
 	var glossaryJson = {{ glossaryString | safe }} ;
 	var vecuJson = {{ vecuString | safe }} ;

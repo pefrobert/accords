@@ -1,6 +1,7 @@
 var notesGlossary = new Vue({
 	el: '#notes-bookmarks',
 	data: {
+		amorces : amorcesJson,
 		art : artJson,
 		bookmarks : bookmarksManager.load(),
 		glossary : glossaryJson,
@@ -11,6 +12,25 @@ var notesGlossary = new Vue({
 			console.log(this.bookmarks);
 
 			var html = [];
+
+			// Amorces
+			var amorces = this.amorces;
+			var bookmarksAmorces = _.filter(this.bookmarks, function(el){
+				return el.type == "amorce";
+			});
+			if(bookmarksAmorces.length){
+				html.push(
+					createElement('div', {class : {'group section-talk' : true}},[
+						createElement('h3', 'Amorces de discussions'),
+						createElement('ul', bookmarksAmorces.map(function (bookmark) {
+							var term = _.find(amorces, function(item, index, list){
+								return item.id == bookmark.target;
+							});
+							return createElement('li',{class : {'amorce-item' : true}, domProps: {innerHTML: term.sectionId + ' : ' + term.amorces}});
+						}))
+					])
+				);
+			}
 
 			// Art
 			var art = this.art;
@@ -74,14 +94,14 @@ var notesGlossary = new Vue({
 			return createElement('div',html);
 		} else {
 			return createElement('div',{},[
-					createElement('p', {class : {'no-data' : true}}, 'Aucune sélection pour l\'instant.'),
-					createElement('p', {class : {'tip' : true}},[
-						'Utilisez le bouton "marque-page"',
-						createElement('span', {class : {'bookmark-btn' : true}}, ''),
-						', que vous trouverez dans diverses pages de l\'app, pour réunir ici des contenus que vous souhaitez mettre de côté par exemple pour y revenir et les approfondir, parce que vous les trouvez intéressants, ou pour en discuter avec des proches.' 
+				createElement('p', {class : {'no-data' : true}}, 'Aucune sÃ©lection pour l\'instant.'),
+				createElement('p', {class : {'tip' : true}},[
+					'Utilisez le bouton "marque-page"',
+					createElement('span', {class : {'bookmark-btn' : true}}, ''),
+					', que vous trouverez dans diverses pages de l\'app, pour rÃ©unir ici des contenus que vous souhaitez mettre de cÃ´tÃ© par exemple pour y revenir et les approfondir, parce que vous les trouvez intÃ©ressants, ou pour en discuter avec des proches.' 
 
-					])
-				]);
+				])
+			]);
 		}
 	}
 });
