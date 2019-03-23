@@ -26,7 +26,7 @@ var notesGlossary = new Vue({
 							var term = _.find(amorces, function(item, index, list){
 								return item.id == bookmark.target;
 							});
-							return createElement('li',{class : {'amorce-item' : true}, domProps: {innerHTML: term.sectionId + ' : ' + term.amorces}});
+							return createElement('li',{class : {'bookmark-item amorce-item' : true}, domProps: {innerHTML: '<strong>' + term.sectionId + '</strong> ' + term.amorces}});
 						}))
 					])
 				);
@@ -45,7 +45,7 @@ var notesGlossary = new Vue({
 							var term = _.find(art, function(item, index, list){
 								return item.ID == bookmark.target;
 							});
-							return createElement('li',{class : {'art-item' : true}, domProps: {innerHTML: term.Titre + ' : ' + term.Resume}});
+							return createElement('li',{class : {'bookmark-item art-item' : true}, domProps: {innerHTML: '<strong>' + term.Titre + '</strong> - ' + term.Resume}});
 						}))
 					])
 				);
@@ -65,7 +65,7 @@ var notesGlossary = new Vue({
 							var term = _.find(glossary, function(item, index, list){
 								return item.id == bookmark.target;
 							});
-							return createElement('li',{class : {'glossary-item' : true}, domProps: {innerHTML: term.terme + ' : ' + term.definition}});
+							return createElement('li',{class : {'bookmark-item glossary-item' : true}, domProps: {innerHTML: '<strong>' + term.terme + '</strong> : ' + term.definition}});
 						}))
 					])
 				);
@@ -85,7 +85,7 @@ var notesGlossary = new Vue({
 							var term = _.find(vecu, function(item, index, list){
 								return item.id == bookmark.target;
 							});
-							return createElement('li',{class : {'vecu-item' : true}, domProps: {innerHTML: term.description}});
+							return createElement('li',{class : {'bookmark-item vecu-item' : true}, domProps: {innerHTML: term.description}});
 						}))
 					])
 				);
@@ -94,11 +94,11 @@ var notesGlossary = new Vue({
 			return createElement('div',html);
 		} else {
 			return createElement('div',{},[
-				createElement('p', {class : {'no-data' : true}}, 'Aucune sÃ©lection pour l\'instant.'),
+				createElement('p', {class : {'no-data' : true}}, 'Aucune sélection pour l\'instant.'),
 				createElement('p', {class : {'tip' : true}},[
 					'Utilisez le bouton "marque-page"',
 					createElement('span', {class : {'bookmark-btn' : true}}, ''),
-					', que vous trouverez dans diverses pages de l\'app, pour rÃ©unir ici des contenus que vous souhaitez mettre de cÃ´tÃ© par exemple pour y revenir et les approfondir, parce que vous les trouvez intÃ©ressants, ou pour en discuter avec des proches.' 
+					', que vous trouverez dans diverses pages de l\'app, pour réunir ici des contenus que vous souhaitez mettre de côté par exemple pour y revenir et les approfondir, parce que vous les trouvez intéressants, ou pour en discuter avec des proches.'
 
 				])
 			]);
