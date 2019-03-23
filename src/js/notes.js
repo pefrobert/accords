@@ -24,7 +24,7 @@ var notesGlossary = new Vue({
 							var term = _.find(art, function(item, index, list){
 								return item.ID == bookmark.target;
 							});
-							return createElement('li',{class : {'art-item' : true}}, term.Titre + ' : ' + term.Resume);
+							return createElement('li',{class : {'art-item' : true}, domProps: {innerHTML: term.Titre + ' : ' + term.Resume}});
 						}))
 					])
 				);
@@ -44,7 +44,7 @@ var notesGlossary = new Vue({
 							var term = _.find(glossary, function(item, index, list){
 								return item.id == bookmark.target;
 							});
-							return createElement('li',{class : {'glossary-item' : true}}, term.terme + ' : ' + term.definition);
+							return createElement('li',{class : {'glossary-item' : true}, domProps: {innerHTML: term.terme + ' : ' + term.definition}});
 						}))
 					])
 				);
