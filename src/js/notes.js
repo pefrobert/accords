@@ -1,6 +1,7 @@
 var notesGlossary = new Vue({
 	el: '#notes-bookmarks',
 	data: {
+		art : artJson,
 		bookmarks : bookmarksManager.load(),
 		glossary : glossaryJson
 	},

@@ -42,6 +42,7 @@
 
 {% block footer_javascript %}
 <script type="text/javascript" id="glossaryJson">
+	var artJson = {{ artString | safe }} ;
 	var glossaryJson = {{ glossaryString | safe }} ;
 </script>
 <script type="text/javascript" src="js/bookmarks.js"></script>

@@ -12,7 +12,19 @@
 	</div>
 
 	<div class="section-content section-art">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius reprehenderit delectus in incidunt at, quis molestiae! Omnis nostrum odio veritatis libero adipisci neque dolor, consequatur tenetur rerum, recusandae, in fugit.</p>
+		{% for item in art %}
+		<dl class="art-item" id="art-{{ item.ID }}">
+			<dt>
+				{{ item.Titre }}
+				<span class="bookmark-btn" data-type="art" data-target="{{ item.ID }}"></span>
+			</dt>
+			<dd>
+				<p class="syns"><span class="label">Type :</span> <span class="content">{{ item.Type }}</span></p>
+				<p>{{ item.Resume }}</p>
+				<img alt="{{ item.Titre }}" src="img/art/{{item.Image}}"/>
+			</dd>
+		</dl>
+		{% endfor %}
 	</div>
 
 {% endblock %}
@@ -20,4 +32,8 @@
 {% block navigation %}
 	{% import 'nav-macro.njk' as nav %}
 	{{nav.active('talk')}}
+{% endblock %}
+
+{% block footer_javascript %}
+	<script type="text/javascript" src="js/bookmarks.js"></script>
 {% endblock %}
