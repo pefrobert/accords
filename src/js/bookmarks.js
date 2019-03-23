@@ -1,43 +1,57 @@
-var bookmarkItem = 'bookmarks';
-var bookmarkClass = 'bookmark';
-var bookmarkSelectedClass = 'bookmark-selected';
+var bookmarksManager = {
 
-var bookmarks = JSON.parse(localStorage.getItem(bookmarkItem)) || [];
+	className : 'bookmark-btn',
+	classNameSelected : 'on',
 
-/*
-bookmark.source
-bookmark.key
- */
+	bookmarks : [],
 
-_.each(document.getElementsByClassName(bookmarkClass), function(element, index, list){
-	var source = element.dataset.source;
-	var key = element.dataset.key;
-
-	// Init bookmark
-	_.each(bookmarks, function(bookmark, index, list){
-		if(bookmark.key == element.dataset.key && bookmark.source == element.dataset.source){
-			element.classList.add(bookmarkSelectedClass);
+	initialize : function(elements){
+		if(elements == null){
+			elements = document;
 		}
-	});
+		
+		this.bookmarks = this.load();
 
-	element.addEventListener('click', function(el) {
-		var source = this.dataset.source;
-		var key = this.dataset.key;
+		_.each(elements.getElementsByClassName(this.className), function(element, index, list){
+			var type = element.dataset.type;
+			var target = element.dataset.target;
 
-		if(this.classList.contains(bookmarkSelectedClass)){
+			_.each(this.bookmarks, function(bookmark, index, list){
+				if(bookmark.type == element.dataset.type && bookmark.target == element.dataset.target){
+					element.classList.add(this.classNameSelected);
+				}
+			});
+			element.addEventListener('click', bookmarksManager.onClick, false);
+		});
+	},
+
+	load : function(){
+		return JSON.parse(localStorage.getItem("bookmarks")) || [];
+	},
+
+	save : function(bookmarks){
+		localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+	},
+
+	onClick : function(element) {
+		var type = this.dataset.type;
+		var target = this.dataset.target;
+
+		if(this.classList.contains(bookmarksManager.classNameSelected)){
 			// Remove bookmark
-			this.classList.remove(bookmarkSelectedClass);
-			bookmarks = _.filter(bookmarks, function(bookmark, index, list){
+			this.classList.remove(bookmarksManager.classNameSelected);
+			bookmarksManager.bookmarks = _.filter(bookmarksManager.bookmarks, function(bookmark, index, list){
 				console.log(bookmark);
-				return (bookmark.source != source) || (bookmark.key != key);
+				return (bookmark.type != type) || (bookmark.target != target);
 			})
 		} else{
 			// Add bookmark
-			this.classList.add(bookmarkSelectedClass);
-			bookmarks.push(this.dataset);
+			this.classList.add(bookmarksManager.classNameSelected);
+			bookmarksManager.bookmarks.push(this.dataset);
 		}
-		localStorage.setItem(bookmarkItem, JSON.stringify(bookmarks));
-	});
-}); 
+		bookmarksManager.save(bookmarksManager.bookmarks);
+	}
 
+}
 
+bookmarksManager.initialize();
