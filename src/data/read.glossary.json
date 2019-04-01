@@ -1,8 +1,18 @@
 [
   {
+    "id": "acharnement",
+    "terme": "Acharnement thérapeutique",
+    "definition": "Terme souvent employé dans le langage courant et les directives anticipées pour désigner des soins estimés excessifs. A éviter car il est vague et ne permet pas de guider les décisions de soins.",
+    "synonymes": "",
+    "source": "",
+    "commentaires": "",
+    "AVIS experts": "terme confusionant",
+    "Colonne1": ""
+  },
+  {
     "id": "discernement",
     "terme": "Capacité de discernement",
-    "definition": "Capacité d'une personne à comprendre une situation, les choix qui s'offrent à lui et leurs conséquences, ainsi qu'à finalement prendre une décision raisonnable. Elle est présente ou absente (ex: coma) pour une situation à un moment donné.",
+    "definition": "Capacité d'une personne à comprendre une situation, les choix qui s'offrent à elle et leurs conséquences, ainsi qu'à finalement prendre une décision raisonnable. Elle est présente ou absente (ex: coma) pour une situation à un moment donné.",
     "synonymes": "",
     "source": "ASSM, 2018\nhttps://www.assm.ch/fr/Ethique.html",
     "commentaires": "",
@@ -50,14 +60,34 @@
     "Colonne1": ""
   },
   {
+    "id": "legal",
+    "terme": "Ordre légal pour représenter une personne incapable de discernement",
+    "definition": "En l'absence de directives anticipées, sont habilités à représenter la personne incapable de discernement, dans l’ordre:<ol><li>le curateur qui a la tâche de la représenter dans le domaine médical</li><li>son conjoint ou son partenaire enregistré, s’il fait ménage commun avec elle ou s’il lui fournit une assistance personnelle régulière</li><li>la personne qui fait ménage commun avec elle*</li><li>ses descendants*</li><li>ses père et mère*</li><li>ses frères et sœurs*</li></ol>(*Uniquement si ces personnes fournissent une assistance personnelle régulière a` la personne incapable de discernement).",
+    "synonymes": "",
+    "source": "",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": ""
+  },
+  {
     "id": "psa",
     "terme": "Projet de Soins Anticipé",
-    "definition": "Processus dans lequel les personnes et/ou leurs proches discutent avec les professionnels de santé des <a class=\"glossary-dfn\" href=\"read.glossary.html#objectifs\">objectifs de soins</a>, les définissent et les adaptent régulièrement. \nAux HUG, il est écrit dans le dossier des patients sous forme d'<a class=\"glossary-dfn\" href=\"read.glossary.html\">instructions médicales d'urgence</a>, de projet de soins et de <a class=\"glossary-dfn\" href=\"read.glossary.html\">directives anticipées</a>.",
+    "definition": "Processus dans lequel les personnes et/ou leurs proches discutent avec les professionnels de santé des <a class=\"glossary-dfn\" href=\"read.glossary.html#objectifs\">objectifs de soins</a>, les définissent et les adaptent régulièrement. \nAux HUG, il est écrit dans le dossier des patients sous forme d'<a class=\"glossary-dfn\" href=\"read.glossary.html#imu\">instructions médicales d'urgence</a>, de projet de soins et de <a class=\"glossary-dfn\" href=\"read.glossary.html#da\">directives anticipées</a>.",
     "synonymes": "Projet Anticipé des Soins, Plan de Soins Anticipé, Planification Anticipée du Projet Thérapeutique,  Planification Anticipée des Soins,  Planification Préalable des Soins",
     "source": "ASSM, 2018\nhttps://www.assm.ch/fr/Ethique.html",
     "commentaires": "",
     "AVIS experts": "",
     "Colonne1": ""
+  },
+  {
+    "id": "reanimation",
+    "terme": "Réanimation",
+    "definition": "Procédure de soins d’urgence en cas d’arrêt cardiaque incluant selon les cas : massage cardiaque, défibrillation (« choc électrique »), ventilation assistée (« intubation ») et/ou traitements pharmacologiques.",
+    "synonymes": "Réanimation Cardio-Respiratoire (RCP)",
+    "source": "",
+    "commentaires": "",
+    "AVIS experts": "",
+    "Colonne1": "MUST HAVE"
   },
   {
     "id": "representatant",
@@ -90,41 +120,11 @@
     "Colonne1": "MUST HAVE"
   },
   {
-    "id": "reanimation",
-    "terme": "Réanimation",
-    "definition": "Procédure de soins d’urgence en cas d’arrêt cardiaque incluant selon les cas : massage cardiaque, défibrillation (« choc électrique »), ventilation assistée (« intubation ») et/ou traitements pharmacologiques.",
-    "synonymes": "Réanimation Cardio-Respiratoire (RCP)",
-    "source": "",
-    "commentaires": "",
-    "AVIS experts": "",
-    "Colonne1": "MUST HAVE"
-  },
-  {
-    "id": "acharnement",
-    "terme": "Acharnement thérapeutique",
-    "definition": "Terme souvent employé dans le langage courant et les directives anticipées pour désigner des soins estimés excessifs. A éviter car il est vague et ne permet pas de guider les décisions de soins.",
-    "synonymes": "",
-    "source": "",
-    "commentaires": "",
-    "AVIS experts": "terme confusionant",
-    "Colonne1": ""
-  },
-  {
     "id": "ventilation",
     "terme": "Ventilation assistée",
     "definition": "Procédure médicale consistant à assister ou remplacer la respiration (= ventilation) à l'aide d'une machine (= ventilateur) reliée au patient par une sonde d'intubation (ventilation invasive) ou d’un masque facial (ventilation non-invasive). Cette procédure peut être utilisée en <a class=\"glossary-dfn\" href=\"read.glossary.html#soins-intensifs\">soins intensifs</a> mais également au bloc opératoire pour une anesthésie générale.",
     "synonymes": "",
     "source": "HUG\nhttps://www.hug-ge.ch/soins-intensifs/lexique-soins-intensifs",
-    "commentaires": "",
-    "AVIS experts": "",
-    "Colonne1": ""
-  },
-  {
-    "id": "legal",
-    "terme": "ordre légal",
-    "definition": "En l'absence de directives anticipées, sont habilités à représenter la personne incapable de discernement, dans l’ordre: (1) le curateur qui a la tâche de la représenter dans le domaine médical, (2) son conjoint ou son partenaire enregistré, s’il fait ménage commun avec elle ou s’il lui fournit une assistance personnelle régulière, (3)  la personne qui fait ménage commun avec elle*, (4) ses descendants*, (5) ses père et mère*, (6) ses frères et sœurs* (*Uniquement si ces personnes fournissent une assistance personnelle régulière a` la personne incapable de discernement).",
-    "synonymes": "",
-    "source": "",
     "commentaires": "",
     "AVIS experts": "",
     "Colonne1": ""
