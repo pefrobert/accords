@@ -16,63 +16,35 @@
 
 		<h2>Pour prendre les décisions me concernant :</h2>
 
-		<div class="form-item form-item-radio">
-			<div class="form-label">
-				Si j'ai ma <a class="glossary-dfn" href="read.glossary.html#discernement">capacité de discernement</a>, je voudrais :
-			</div>
-			<div class="form-input">
-				<input type="radio" name="perso" value="perso"><label for="perso">Décider par moi-même </label>
-         		<br>
-         		<input type="radio" id="huey" name="discernement" value="autre"><label for="autre">Associer une ou des personnes</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-soins-1"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldRadio(
+			"Si j'ai ma " + _glossary.linkTo('capacité de discernement', 'discernement') + ", je voudrais :"
+			, "discernement"
+			, [{id : 'myself', value : 'myself', label : 'Décider par moi-même'}
+				, {id : 'other', value : 'other', label : 'Associer une ou des personnes'}]
+			, true) }}
 
-		<div class="form-item form-item-radio">
-			<div class="form-label">
-				Si je n'ai plus ma <a class="glossary-dfn" href="read.glossary.html#discernement">capacité de discernement</a> à cause d'un évènement aigu (ex: coma, accident, attaque cérébrale), je souhaiterais :
-			</div>
-			<div class="form-input">
-				<input type="radio" name="perso" value="perso"><label for="perso">Désigner mon <a class="glossary-dfn" href="read.glossary.html#representant">représentant thérapeutique</a> afin de décider pour moi</label>
-         		<br>
-         		<input type="radio" id="ordre" name="ordre" value="ordre"><label for="autre">Que mon représentant soit désigné selon l'<a class="glossary-dfn" href="read.glossary.html#ordre">ordre légal</a></label>
-         		<br>
-         		<input type="radio" id="personne" name="personne" value="personne"><label for="personne">Je souhaite que certaines personnes ne soient pas impliquées</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-soins-2"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldRadio(
+			"Si je n'ai plus ma " + _glossary.linkTo('capacité de discernement', 'discernement') + " à cause d'un évènement aigu (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais :"
+			, "no-discernement"
+			, [{id : 'representant', value : 'representant', label : 'Désigner mon ' + _glossary.linkTo('représentant thérapeutique', 'representant') + ' afin de décider pour moi'}
+				, {id : 'ordre', value : 'ordre', label : "Que mon représentant soit désigné selon l'" + _glossary.linkTo('ordre légal', 'legal') + '' }
+				, {id : 'nobody', value : 'nobody', label : 'Je souhaite que certaines personnes ne soient pas impliquées' }]
+			, true) }}
 
-		<div class="form-item form-item-radio">
-			<div class="form-label">
-				Si mon cœur s'arrêtait soudainement (arrêt cardiaque), je dirais plutôt :</div>
-			<div class="form-input">
-				<input type="radio" name="perso" value="perso"><label for="perso">Que c'est "tant mieux", c'est la "belle mort", que l"on me laisse tranquille", "c'est une délivrance"... </label>
-         		<br>
-         		<input type="radio" id="ordre" name="ordre" value="ordre"><label for="autre">Que l'on fasse tout ce qui indiqué d'un point de vue médical si j'ai des bonnes chances de retrouver mes capacités d'avant</label>
-         		<br>
-         		<input type="radio" id="personne" name="personne" value="personne"><label for="personne">Que l'on fasse l'impossible même si les chances de récupération sont très faibles ou nulles</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-soins-3"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldRadio(
+			"Si mon cœur s'arrêtait soudainement (arrêt cardiaque), je dirais plutôt :"
+			, "arret-cardiaque"
+			, [{id : 'tantmieux', value : 'tantmieux', label : 'Que c\'est "tant mieux", c\'est la "belle mort", que l\'on me laisse tranquille", "c\'est une délivrance" …'}
+				, {id : 'chance', value : 'chance', label : "Que l'on fasse tout ce qui indiqué d'un point de vue médical si j'ai des bonnes chances de retrouver mes capacités d'avant" }
+				, {id : 'impossible', value : 'impossible', label : "Que l'on fasse l'impossible même si les chances de récupération sont très faibles ou nulles" }]
+			, true) }}
 
-		<div class="form-item form-item-radio">
-			<div class="form-label">
-				Si j'étais en soins palliatifs et devais avoir besoin de traitements contre la douleur, je dirais plutôt : </div>
-			<div class="form-input">
-				<input type="radio" name="perso" value="perso"><label for="perso">Que l'on fasse tout ce qui indiqué d'un point de vue médical pour me soulager, même si cela devait me faire perdre conscience voire mourir.</label>
-         		<br>
-         		<input type="radio" id="ordre" name="ordre" value="ordre"><label for="autre">Que je préfère rester conscient et pouvoir communiquer, même si cela devait me laisser encore des douleurs .</label>         		
-			</div>
-			<div class="form-input">
-				<textarea id="form-soins-4"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldRadio(
+			"Si j'étais en soins palliatifs et devais avoir besoin de traitements contre la douleur, je dirais plutôt :"
+			, "douleur"
+			, [{id : 'tout', value : 'tout', label : "Que l'on fasse tout ce qui indiqué d'un point de vue médical pour me soulager, même si cela devait me faire perdre conscience voire mourir."}
+				, {id : 'conscient', value : 'conscient', label : "Que je préfère rester conscient et pouvoir communiquer, même si cela devait me laisser encore des douleurs." }]
+			, true) }}
 
 		<div class="actions">
 			<div class="action export">
