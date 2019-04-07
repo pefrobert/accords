@@ -2,6 +2,9 @@
 .classpath
 .project
 
+#Sublime files
+package.sublime-workspace
+
 # Node.js files
 node_modules/
 package-lock.*
