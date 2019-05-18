@@ -9,7 +9,7 @@ var bookmarksManager = {
 		if(elements == null){
 			elements = document;
 		}
-		
+
 		this.bookmarks = this.load();
 
 		var manager = this;

@@ -50,13 +50,19 @@ h1 {
     font-size: 30px;
     text-align: center;
     font-weight: 700;
+    line-height: 1.1;
     font-family: 'Roboto Condensed', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 }
 
 h2 {
     font-size: 24px;
     font-weight: 700;
+    line-height: 1.1;
     font-family: 'Roboto Condensed', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: $accent1-dark;
 }
 
 /* Portrait layout (default) */
@@ -437,6 +443,7 @@ dl.glossary-item {
     width: 1.1em;
     height: 1.1em;
     cursor: pointer;
+    font-size: 20px;
     border-radius: 4px;
     background: transparent url('../img/icon-bookmark-off.svg') no-repeat 50% 50% scroll;
     background-size: 1em 1em;
@@ -522,12 +529,12 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-writ
     }
 }
 .legal-q {
-    padding-right: 15%;
+    padding-right: 10%;
     color: $accent1-dark;
     font-weight: bold;
 }
 .legal-a {
-    padding-left: 15%;
+    padding-left: 10%;
 }
 
 
@@ -634,7 +641,32 @@ textarea {
     .form-label {
         margin-bottom: 5px;
     }
-    .form-input {}
+}
+.form-item-radio {
+    .form-input {
+        margin: 10px 0;
+    }
+    .form-input-radio {
+        position: relative;
+        margin: 5px 0;
+        input {
+            position: absolute;
+            left: 5px;
+            top: 7px;
+        }
+        label {
+            display: block;
+            padding: 5px 0 5px 25px;
+            border-radius: 2px;
+        }
+        input:checked + label {
+            background-color: $accent3-light;
+        }
+    }
+}
+.form-notice {
+    text-align: center;
+    font-style: italic;
 }
 
 .pager {
@@ -746,7 +778,7 @@ textarea {
             position: absolute;
             right: 5px;
             top: 5px;
-            font-size: 20px;
+            // font-size: 20px;
         }
         &::after {
             content: '';
@@ -879,7 +911,7 @@ body.read {
             background-color: $accent1-light;
         }
     }
-    .content-text a {
+    .section-content a {
         color: $accent1-dark;
     }
     .back-nav {
@@ -903,7 +935,7 @@ body.talk {
             background-color: $accent2-light;
         }
     }
-    .content-text a {
+    .section-content a {
         color: $accent2-dark;
     }
     .back-nav {
@@ -927,7 +959,7 @@ body.write {
             background-color: $accent3-light;
         }
     }
-    .content-text a {
+    .section-content a {
         color: $accent3-dark;
     }
     .back-nav {
@@ -938,6 +970,12 @@ body.write {
     }
     .actions .action button {
         background-color: $accent3-dark;
+    }
+    .form-label {
+        color: #666;
+        strong {
+            color: $accent3-dark;
+        }
     }
 }
 body.notes {
@@ -951,7 +989,7 @@ body.notes {
             background-color: $accent4-light;
         }
     }
-    .content-text a {
+    .section-content a {
         color: $accent4-dark;
     }
     .back-nav {

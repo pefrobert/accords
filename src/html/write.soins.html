@@ -14,17 +14,17 @@
 
 	<div class="section-content section-form section-urgences">
 
-		<h2>Pour prendre les décisions me concernant :</h2>
+		<h2>Pour prendre les décisions me concernant&nbsp;:</h2>
 
 		{{ _form.fieldRadio(
-			"Si j'ai ma " + _glossary.linkTo('capacité de discernement', 'discernement') + ", je voudrais :"
+			"<strong>Si j'ai ma " + _glossary.linkTo('capacité de discernement', 'discernement') + "</strong>, je voudrais&nbsp;:"
 			, "discernement"
 			, [{id : 'myself', value : 'myself', label : 'Décider par moi-même'}
 				, {id : 'other', value : 'other', label : 'Associer une ou des personnes'}]
 			, true) }}
 
 		{{ _form.fieldRadio(
-			"Si je n'ai plus ma " + _glossary.linkTo('capacité de discernement', 'discernement') + " à cause d'un évènement aigu (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais :"
+			"<strong>Si je n'ai plus ma " + _glossary.linkTo('capacité de discernement', 'discernement') + "</strong> à cause d'un <strong>évènement aigu</strong> (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais&nbsp;:"
 			, "no-discernement"
 			, [{id : 'representant', value : 'representant', label : 'Désigner mon ' + _glossary.linkTo('représentant thérapeutique', 'representant') + ' afin de décider pour moi'}
 				, {id : 'ordre', value : 'ordre', label : "Que mon représentant soit désigné selon l'" + _glossary.linkTo('ordre légal', 'legal') + '' }
@@ -32,7 +32,7 @@
 			, true) }}
 
 		{{ _form.fieldRadio(
-			"Si mon cœur s'arrêtait soudainement (arrêt cardiaque), je dirais plutôt :"
+			"<strong>Si mon cœur s'arrêtait soudainement</strong> (arrêt cardiaque), je dirais plutôt&nbsp;:"
 			, "arret-cardiaque"
 			, [{id : 'tantmieux', value : 'tantmieux', label : 'Que c\'est "tant mieux", c\'est la "belle mort", que l\'on me laisse tranquille", "c\'est une délivrance" …'}
 				, {id : 'chance', value : 'chance', label : "Que l'on fasse tout ce qui indiqué d'un point de vue médical si j'ai des bonnes chances de retrouver mes capacités d'avant" }
@@ -40,11 +40,15 @@
 			, true) }}
 
 		{{ _form.fieldRadio(
-			"Si j'étais en soins palliatifs et devais avoir besoin de traitements contre la douleur, je dirais plutôt :"
+			"<strong>Si j'étais en soins palliatifs</strong> et devais avoir besoin de <strong>traitements contre la douleur</strong>, je dirais plutôt&nbsp;:"
 			, "douleur"
 			, [{id : 'tout', value : 'tout', label : "Que l'on fasse tout ce qui indiqué d'un point de vue médical pour me soulager, même si cela devait me faire perdre conscience voire mourir."}
 				, {id : 'conscient', value : 'conscient', label : "Que je préfère rester conscient et pouvoir communiquer, même si cela devait me laisser encore des douleurs." }]
 			, true) }}
+
+		<div class="form-notice">
+			(D'autres questions seront ajoutées par la suite.)
+		</div>
 
 		<div class="actions">
 			<div class="action export">

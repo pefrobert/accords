@@ -27,6 +27,12 @@ var slideTeasers = {
 			}
 			t.addClass('next').css('visibility', 'visible');
 		});
+		this.root.on('click', function () {
+			var text = slideTeasers.root.data('invite');
+			if (text) {
+				alert(text);
+			}
+		});
 		this.root.css('height', this.maxHeight + 20);
 		this.root.find('.slogan').eq(0).addClass('active').removeClass('next');
 		this.delayInterval = setInterval(function() {

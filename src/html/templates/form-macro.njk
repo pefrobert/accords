@@ -13,8 +13,9 @@
 		<div class="form-label">{{ label | safe}}</div>
 		<div class="form-input">
 		{% for option in options %}
+			<div class="form-input-radio">
 			{{ inputRadio(option.id, name, option.value, option.label) }}
-			{% if loop.last %}{% else %}<br>{% endif %}
+			</div>
  		{% endfor %}
 		</div>
 		{% if includeTextArea %}

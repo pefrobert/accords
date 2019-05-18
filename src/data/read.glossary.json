@@ -12,7 +12,7 @@
   {
     "id": "discernement",
     "terme": "Capacité de discernement",
-    "definition": "Capacité d'une personne à comprendre une situation, les choix qui s'offrent à elle et leurs conséquences, ainsi qu'à finalement prendre une décision raisonnable. Elle est présente ou absente (ex: coma) pour une situation à un moment donné.",
+    "definition": "Capacité d'une personne à comprendre une situation, les choix qui s'offrent à elle et leurs conséquences, ainsi qu'à finalement prendre une décision raisonnable. Elle est présente ou absente (ex&nbsp;: coma) pour une situation à un moment donné.",
     "synonymes": "",
     "source": "ASSM, 2018\nhttps://www.assm.ch/fr/Ethique.html",
     "commentaires": "",
@@ -42,7 +42,7 @@
   {
     "id": "lat",
     "terme": "Limitations et arrêts  thérapeutiques",
-    "definition": "Décisions de ne pas débuter (limitations) et décisions d'interrompre (arrêts) un ou plusieurs traitements.  La mort peut survenir si ces traitements maintiennent artificiellement en vie (ex: <a class=\"glossary-dfn\" href=\"read.glossary.html#ventilation\">ventilation assistée</a>)",
+    "definition": "Décisions de ne pas débuter (limitations) et décisions d'interrompre (arrêts) un ou plusieurs traitements.  La mort peut survenir si ces traitements maintiennent artificiellement en vie (ex&nbsp;: <a class=\"glossary-dfn\" href=\"read.glossary.html#ventilation\">ventilation assistée</a>)",
     "synonymes": "Limitations et arrêts de traitement",
     "source": "",
     "commentaires": "",
@@ -52,7 +52,7 @@
   {
     "id": "objectifs",
     "terme": "Objectifs de soins",
-    "definition": "Ils désignent les objectifs que la prise en soins vise à atteindre. Ces objectifs sont idéalement décidés en partenariat entre patients et professionels de santé. \nAux HUG, dans les <a class=\"glossary-dfn\" href=\"read.glossary.html#imu\">Instructions Médicales d’Urgence</a>, ils désignent les soins et procédures qui seraient mis en œuvre ou <a class=\"glossary-dfn\" href=\"read.glossary.html#lat\">limités</a> ainsi que les services hospitaliers les plus appropriés au cas où surviendrait une éventuelle urgence (ex: <a class=\"glossary-dfn\" href=\"read.glossary.html#soins-intensifs\">soins intensifs</a>, <a class=\"glossary-dfn\" href=\"read.glossary.html#soins-palliatifs\">soins palliatifs</a>...).",
+    "definition": "Ils désignent les objectifs que la prise en soins vise à atteindre. Ces objectifs sont idéalement décidés en partenariat entre patients et professionels de santé. \nAux HUG, dans les <a class=\"glossary-dfn\" href=\"read.glossary.html#imu\">Instructions Médicales d’Urgence</a>, ils désignent les soins et procédures qui seraient mis en œuvre ou <a class=\"glossary-dfn\" href=\"read.glossary.html#lat\">limités</a> ainsi que les services hospitaliers les plus appropriés au cas où surviendrait une éventuelle urgence (ex&nbsp;: <a class=\"glossary-dfn\" href=\"read.glossary.html#soins-intensifs\">soins intensifs</a>, <a class=\"glossary-dfn\" href=\"read.glossary.html#soins-palliatifs\">soins palliatifs</a>...).",
     "synonymes": "Goals of care",
     "source": "ASSM, 2018\nhttps://www.assm.ch/fr/Ethique.html",
     "commentaires": "",
@@ -62,7 +62,7 @@
   {
     "id": "legal",
     "terme": "Ordre légal pour représenter une personne incapable de discernement",
-    "definition": "En l'absence de directives anticipées, sont habilités à représenter la personne incapable de discernement, dans l’ordre:<ol><li>le curateur qui a la tâche de la représenter dans le domaine médical</li><li>son conjoint ou son partenaire enregistré, s’il fait ménage commun avec elle ou s’il lui fournit une assistance personnelle régulière</li><li>la personne qui fait ménage commun avec elle*</li><li>ses descendants*</li><li>ses père et mère*</li><li>ses frères et sœurs*</li></ol>(*Uniquement si ces personnes fournissent une assistance personnelle régulière a` la personne incapable de discernement).",
+    "definition": "En l'absence de directives anticipées, sont habilités à représenter la personne incapable de discernement, dans l’ordre&nbsp;:<ol><li>le curateur qui a la tâche de la représenter dans le domaine médical</li><li>son conjoint ou son partenaire enregistré, s’il fait ménage commun avec elle ou s’il lui fournit une assistance personnelle régulière</li><li>la personne qui fait ménage commun avec elle*</li><li>ses descendants*</li><li>ses père et mère*</li><li>ses frères et sœurs*</li></ol>(*Uniquement si ces personnes fournissent une assistance personnelle régulière a` la personne incapable de discernement).",
     "synonymes": "",
     "source": "",
     "commentaires": "",
@@ -82,7 +82,7 @@
   {
     "id": "reanimation",
     "terme": "Réanimation",
-    "definition": "Procédure de soins d’urgence en cas d’arrêt cardiaque incluant selon les cas : massage cardiaque, défibrillation (« choc électrique »), ventilation assistée (« intubation ») et/ou traitements pharmacologiques.",
+    "definition": "Procédure de soins d’urgence en cas d’arrêt cardiaque incluant selon les cas&nbsp;: massage cardiaque, défibrillation (« choc électrique »), ventilation assistée (« intubation ») et/ou traitements pharmacologiques.",
     "synonymes": "Réanimation Cardio-Respiratoire (RCP)",
     "source": "",
     "commentaires": "",
@@ -92,7 +92,7 @@
   {
     "id": "representatant",
     "terme": "Représentant thérapeutique",
-    "definition": "L’auteur de <a class=\"glossary-dfn\" href=\"read.glossary.html#da\">directives anticipe?es</a> peut de?signer une personne qui de?cidera du traitement me?dical a? sa place si lui-me?me n’est plus en mesure de le faire. Il peut s’agir d’un proche, de son me?decin ou d’une autre personne. Si aucun représentant thérapeutique n'est désigné, l'ordre légal est le suivant: <a class=\"glossary-dfn\" href=\"read.glossary.html#legal\">voir ici</a>.",
+    "definition": "L’auteur de <a class=\"glossary-dfn\" href=\"read.glossary.html#da\">directives anticipées</a> peut désigner une personne qui, en concertation avec les médecins, décidera du traitement médical à sa place si lui-même n’est plus en mesure de le faire. Il peut s’agir d’un proche, de son médecin ou d’une autre personne. Si aucun représentant thérapeutique n'est désigné, l'ordre légal est le suivant&nbsp;: <a class=\"glossary-dfn\" href=\"read.glossary.html#legal\">voir ici</a>.",
     "synonymes": "",
     "source": "ASSM, 2013\nhttps://www.assm.ch/fr/Ethique.html, HUG\nhttps://www.hug-ge.ch/soins-intensifs/lexique-soins-intensifs",
     "commentaires": "",
@@ -102,7 +102,7 @@
   {
     "id": "soins-intensifs",
     "terme": "Soins intensifs",
-    "definition": "Service hospitalier où des soins sont donnés aux personnes ayant une ou plusieurs urgences menaçant le pronostic vital (ex : coma, arrêt cardiaque, pneumonie sévère). Certains traitements visent à maintenir en vie artificiellement (ex: <a class=\"glossary-dfn\" href=\"read.glossary.html#ventilation\">ventilation assistée</a>, dialyse).",
+    "definition": "Service hospitalier où des soins sont donnés aux personnes ayant une ou plusieurs urgences menaçant le pronostic vital (ex&nbsp;: coma, arrêt cardiaque, pneumonie sévère). Certains traitements visent à maintenir en vie artificiellement (ex&nbsp;: <a class=\"glossary-dfn\" href=\"read.glossary.html#ventilation\">ventilation assistée</a>, dialyse).",
     "synonymes": "",
     "source": "HUG\nhttps://www.hug-ge.ch/soins-intensifs/lexique-soins-intensifs",
     "commentaires": "",
