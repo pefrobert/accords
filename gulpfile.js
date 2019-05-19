@@ -4,6 +4,7 @@ var fs = require('fs')
 
 // Include plugins
 var plugins = require('gulp-load-plugins')() // tous les plugins de package.json
+const webpack = require('webpack-stream')
 
 var templateData = {
   amorces: JSON.parse(fs.readFileSync('src/data/talk.amorces.json')),
@@ -35,15 +36,25 @@ gulp.task('csv', function () {
     .pipe(plugins.csv2json({ delimiter: ';' }))
     .pipe(plugins.jsonFormat(2))
     .pipe(plugins.rename({
-      extension: '.js',
-      extname: '.js'
+      extension: '.json',
+      extname: '.json'
     }))
     .pipe(gulp.dest('www/data'))
 })
 
 gulp.task('js', function () {
-  return gulp.src('src/js/*.js')
-    /* ici les plugins Gulp à exécuter */
+  return gulp.src(['src/js/*.js'])
+    .pipe(gulp.dest('www/js'))
+})
+
+gulp.task('js-vendor', function () {
+  return gulp.src('src/js/vendor/*.js')
+    .pipe(gulp.dest('www/js/vendor'))
+})
+
+gulp.task('webpack-accords', function () {
+  return gulp.src('src/js/accords/index.js')
+    .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('www/js'))
 })
 
@@ -78,7 +89,7 @@ gulp.task('nunjucks', function () {
 })
 
 // Tâche "build"
-gulp.task('build', gulp.parallel('css', 'csv', 'js', 'img', 'nunjucks'))
+gulp.task('build', gulp.series('webpack-accords', gulp.parallel('css', 'csv', 'js', 'js-vendor', 'img', 'nunjucks')))
 
 // Tâche "prod" = Build + minify
 gulp.task('prod', gulp.series('clean', gulp.parallel('build', 'minifyCSS')))

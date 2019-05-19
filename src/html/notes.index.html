@@ -4,10 +4,6 @@
 {% block body_class %}notes{% endblock %}
 {% block parent_page %}index.html{% endblock %}
 
-{% block head_javascript %}
-<script type="text/javascript" src="js/vue.min.js"></script>
-{% endblock %}
-
 {% block content %}
 
 <div class="section-intro">
@@ -44,15 +40,4 @@
 {% block navigation %}
 	{% import 'nav-macro.njk' as nav %}
 	{{nav.active('notes')}}
-{% endblock %}
-
-{% block footer_javascript %}
-<script type="text/javascript" id="glossaryJson">
-	var amorcesJson = {{ amorcesString | safe }} ;
-	var artJson = {{ artString | safe }} ;
-	var glossaryJson = {{ glossaryString | safe }} ;
-	var vecuJson = {{ vecuString | safe }} ;
-</script>
-<script type="text/javascript" src="js/bookmarks.js"></script>
-<script type="text/javascript" src="js/notes.js"></script>
 {% endblock %}

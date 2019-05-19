@@ -2,9 +2,9 @@
 <widget id="com.hug.accords" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ACCORDs</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        ACCORDs, l’app pour aider patients, proches et soignants à accorder les objectifs de soin.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+    <author email="pefrobert@hotmail.com" href="https://github.com/pefrobert/accords/">
         Apache Cordova Team
     </author>
     <content src="index.html" />
@@ -23,5 +23,9 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-email-composer" spec="^0.9.2">
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
+    </plugin>
     <engine name="android" spec="^7.1.4" />
+    <engine name="browser" spec="^5.0.4" />
 </widget>
