@@ -1,6 +1,7 @@
 # Eclipse files
 .classpath
 .project
+.settings/
 
 #Sublime files
 package.sublime-workspace
@@ -8,6 +9,9 @@ package.sublime-workspace
 # Node.js files
 node_modules/
 package-lock.*
+.vscode/
+typings/
+jsconfig.json
 
 # Cordova files
 bin/

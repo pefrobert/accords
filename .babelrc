@@ -1,0 +1,15 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": "defaults"
+            }
+        ]
+    ],
+    "plugins": [
+        "dynamic-import-webpack",
+        "syntax-dynamic-import",
+        "transform-runtime"
+    ],
+}

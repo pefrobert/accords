@@ -4,12 +4,19 @@
 {% block body_class %}write{% endblock %}
 {% block parent_page %}write.index.html{% endblock %}
 
+{% block head_javascript %}
+<script type="text/javascript" src="js/vendor/jquery-3.4.1.slim.min.js"></script>
+<script type="text/javascript" src="js/vendor/sisyphus-1.1.3.min.js"></script>
+{% endblock %}
+
 {% block content %}
 	<div class="section-intro">
 		<img src="img/icon-write.svg" class="section-icon" alt="">
 		<p class="app-name">ACCORDs</p>
 		<h1>Qui je suis</h1>
 	</div>
+
+	<form name="write.mydata" id="write.mydata">
 
 	<div class="section-content section-form section-mydata">
 		<div class="form-item form-item-text">
@@ -64,6 +71,14 @@
 
 	</div>
 
+	</form>
+
+{% endblock %}
+
+{% block footer_javascript %}
+<script type="text/javascript">
+	$('form').sisyphus();
+</script>
 {% endblock %}
 
 {% block navigation %}
