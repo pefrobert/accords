@@ -16,7 +16,7 @@
 		<div class="art-item" id="art-{{ item.ID }}">
 			<h2>
 				{{ item.Titre }}
-				<span class="bookmark-btn" data-type="art" data-target="{{ item.ID }}"></span>
+				<bookmark-button type="art" target="{{ item.ID }}"></bookmark-button>
 			</h2>
 			<div class="art-content">
 				<img alt="{{ item.Titre }}" src="img/art/{{item.Image}}" class="poster"/>

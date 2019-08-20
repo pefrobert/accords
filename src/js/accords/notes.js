@@ -1,18 +1,20 @@
 import BookmarkManager from './bookmarkManager.js'
 
 /* global Vue */
-var notes = new Vue({
-  el: '#notes-bookmarks',
-  created () {
-    this.fetchData()
-  },
-  data: {
-    amorces: [],
-    art: [],
-    glossary: [],
-    vecu: [],
+Vue.component('notes', {
+  data: function () {
+    return {
+      amorces: [],
+      art: [],
+      glossary: [],
+      vecu: [],
 
-    bookmarks: 0
+      count: 0
+    }
+  },
+  created: function () {
+    this.fetchData()
+    console.log(this._data)
   },
   methods: {
     fetchData () {
@@ -66,8 +68,7 @@ var notes = new Vue({
           })
         }
       }
-
-      this.bookmarks = this.art.length + this.amorces.length + this.glossary.length + this.vecu.length
+      this.count = this.art.length + this.amorces.length + this.glossary.length + this.vecu.length
     },
     fetchJson: function (url) {
       let json = []
@@ -82,100 +83,16 @@ var notes = new Vue({
       }
       req.send(null)
       return json
-    },
-    renderNotes: function (createElement, bookmarks, title, titleClasses, itemClasses) {
-      return createElement('div', {
-        class: titleClasses
-      }, [
-        createElement('h3', title),
-        createElement('ul', bookmarks.map(function (bookmark) {
-          return createElement('li', {
-            class: itemClasses,
-            domProps: {
-              innerHTML: bookmark
-            }
-          })
-        }))
-      ])
     }
   },
-  render: function (createElement) {
-    if (this.bookmarks > 0) {
-      let html = []
-
-      // Amorces
-      if (this.amorces.length) {
-        let title = 'Amorces de discussions'
-        let titleClasses = {
-          'group section-talk': true
-        }
-        let itemClasses = {
-          'bookmark-item amorce-item': true
-        }
-        html.push(this.renderNotes(createElement, this.amorces, title, titleClasses, itemClasses))
-      }
-
-      // Art
-      if (this.art.length) {
-        let title = 'Les soins anticipés dans l\'art'
-        let titleClasses = {
-          'group section-talk': true
-        }
-        let itemClasses = {
-          'bookmark-item art-item': true
-        }
-        html.push(this.renderNotes(createElement, this.art, title, titleClasses, itemClasses))
-      }
-
-      // Glossary
-      if (this.glossary.length) {
-        let title = 'Glossaire'
-        let titleClasses = {
-          'group section-read': true
-        }
-        let itemClasses = {
-          'bookmark-item glossary-item': true
-        }
-        html.push(this.renderNotes(createElement, this.glossary, title, titleClasses, itemClasses))
-      }
-
-      // Vecu
-      if (this.vecu.length) {
-        let title = 'Histoires Vécues'
-        let titleClasses = {
-          'group section-read': true
-        }
-        let itemClasses = {
-          'bookmark-item vecu-item': true
-        }
-        html.push(this.renderNotes(createElement, this.vecu, title, titleClasses, itemClasses))
-      }
-
-      return createElement('div', html)
-    } else {
-      return createElement('div', {}, [
-        createElement('p', {
-          class: {
-            'no-data': true
-          }
-        }, 'Aucune sélection pour l\'instant.'),
-        createElement('p', {
-          class: {
-            'tip': true
-          }
-        }, [
-          'Utilisez le bouton "marque-page"',
-          createElement('span', {
-            class: {
-              'bookmark-btn': true
-            }
-          }, ''),
-          ', que vous trouverez dans diverses pages de l\'app, pour réunir ici des contenus que vous souhaitez mettre de côté par exemple pour y revenir et les approfondir, parce que vous les trouvez intéressants, ou pour en discuter avec des proches.'
-
-        ])
-      ])
-    }
-  }
+  template: '<div v-if="count>0">' +
+    '<notes-section section="talk" type="amorces" title="Amorces de discussions" v-bind:bookmarks="amorces"></notes-section>' +
+    '<notes-section section="talk" type="art" title="Les soins anticipés dans l\'art" v-bind:bookmarks="art"></notes-section>' +
+    '<notes-section section="read" type="glossary" title="Glossaire" v-bind:bookmarks="glossary"></notes-section>' +
+    '<notes-section section="read" type="vecu" title="Histoires Vécues" v-bind:bookmarks="vecu"></notes-section>' +
+  '</div>' +
+  '<div v-else>' +
+    '<p class="no-data">Aucune sélection pour l\'instant.</p>' +
+    '<p class="tip">Utilisez le bouton "marque-page"<span class="bookmark-btn"></span>, que vous trouverez dans diverses pages de l\'app, pour réunir ici des contenus que vous souhaitez mettre de côté par exemple pour y revenir et les approfondir, parce que vous les trouvez intéressants, ou pour en discuter avec des proches.</p>' +
+  '</div>'
 })
-
-export default notes

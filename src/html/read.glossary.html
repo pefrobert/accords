@@ -16,7 +16,7 @@
 		<dl class="glossary-item" id="glossary-{{ definition.id }}">
 			<dt>
 				<a name="{{definition.id}}"></a>{{ definition.terme }}
-				<span class="bookmark-btn" data-type="glossary" data-target="{{ definition.id }}"></span>
+				<bookmark-button type="glossary" target="{{ definition.id }}"></bookmark-button>
 			</dt>
 			<dd>
 			{% if definition.synonymes.length %}
