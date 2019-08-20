@@ -1,14 +1,13 @@
-import BookmarkElement from './bookmarkElement.js'
-import notes from './notes.js'
+import BookmarkButton from './bookmark-button.js'
+import NotesSection from './notes-section.js'
+import Notes from './notes.js'
 
 var ACCORDs = {
   version: '2019-05-18 22:16:00'
 }
 
-ACCORDs.bookmarkElement = new BookmarkElement()
-ACCORDs.bookmarkElement.initialize()
-
-ACCORDs.notes = notes
+/* global Vue */
+new Vue({ el: '.app' })
 
 window.ACCORDs = ACCORDs
 
