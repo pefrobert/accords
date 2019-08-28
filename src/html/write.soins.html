@@ -24,17 +24,17 @@
 		<h2>Pour prendre les décisions me concernant&nbsp;:</h2>
 
 		{{ _form.fieldRadio(
-			"<strong>Si j'ai ma " + _glossary.linkTo('capacité de discernement', 'discernement') + "</strong>, je voudrais&nbsp;:"
+			"<strong>Si j'ai ma <glossary link=discernement>capacité de discernement</glossary></strong>, je voudrais&nbsp;:"
 			, "discernement"
 			, [{id : 'myself', value : 'myself', label : 'Décider par moi-même'}
 				, {id : 'other', value : 'other', label : 'Associer une ou des personnes'}]
 			, true) }}
 
 		{{ _form.fieldRadio(
-			"<strong>Si je n'ai plus ma " + _glossary.linkTo('capacité de discernement', 'discernement') + "</strong> à cause d'un <strong>évènement aigu</strong> (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais&nbsp;:"
+			"<strong>Si je n'ai plus ma <glossary link=discernement>capacité de discernement</glossary></strong> à cause d'un <strong>évènement aigu</strong> (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais&nbsp;:"
 			, "no-discernement"
-			, [{id : 'representant', value : 'representant', label : 'Désigner mon ' + _glossary.linkTo('représentant thérapeutique', 'representant') + ' afin de décider pour moi'}
-				, {id : 'ordre', value : 'ordre', label : "Que mon représentant soit désigné selon l'" + _glossary.linkTo('ordre légal', 'legal') + '' }
+			, [{id : 'representant', value : 'representant', label : 'Désigner mon <glossary link=representant>représentant thérapeutique</glossary> afin de décider pour moi'}
+				, {id : 'ordre', value : 'ordre', label : "Que mon représentant soit désigné selon l'<glossary link=legal>ordre légal</glossary>" }
 				, {id : 'nobody', value : 'nobody', label : 'Je souhaite que certaines personnes ne soient pas impliquées' }]
 			, true) }}
 

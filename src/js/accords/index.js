@@ -1,4 +1,5 @@
 import BookmarkButton from './bookmark-button.js'
+import Glossary from './glossary.js'
 import NotesSection from './notes-section.js'
 import Notes from './notes.js'
 
