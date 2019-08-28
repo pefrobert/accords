@@ -6,18 +6,6 @@ var fs = require('fs')
 var plugins = require('gulp-load-plugins')() // tous les plugins de package.json
 const webpack = require('webpack-stream')
 
-var templateData = {
-  amorces: JSON.parse(fs.readFileSync('src/data/talk.amorces.json')),
-  amorcesString: fs.readFileSync('src/data/talk.amorces.json'),
-  art: JSON.parse(fs.readFileSync('src/data/talk.art.json')),
-  artString: fs.readFileSync('src/data/talk.art.json'),
-  glossary: JSON.parse(fs.readFileSync('src/data/read.glossary.json')),
-  glossaryString: fs.readFileSync('src/data/read.glossary.json'),
-  vecu: JSON.parse(fs.readFileSync('src/data/read.vecu.json')),
-  vecuString: fs.readFileSync('src/data/read.vecu.json'),
-  timestamp: (new Date()).getUTCMilliseconds()
-}
-
 console.log(plugins)
 
 gulp.task('clean', function () {
@@ -75,6 +63,18 @@ gulp.task('minifyCSS', function () {
 })
 
 gulp.task('nunjucks', function () {
+  let templateData = {
+    amorces: JSON.parse(fs.readFileSync('www/data/talk.amorces.json')),
+    amorcesString: fs.readFileSync('www/data/talk.amorces.json'),
+    art: JSON.parse(fs.readFileSync('www/data/talk.art.json')),
+    artString: fs.readFileSync('www/data/talk.art.json'),
+    glossary: JSON.parse(fs.readFileSync('www/data/read.glossary.json')),
+    glossaryString: fs.readFileSync('www/data/read.glossary.json'),
+    vecu: JSON.parse(fs.readFileSync('www/data/read.vecu.json')),
+    vecuString: fs.readFileSync('www/data/read.vecu.json'),
+    timestamp: (new Date()).getUTCMilliseconds()
+  }
+
   // Gets .html and .nunjucks files in pages
   return gulp.src('src/html/*.html')
     .pipe(plugins.data(function (file) {
@@ -89,7 +89,7 @@ gulp.task('nunjucks', function () {
 })
 
 // Tâche "build"
-gulp.task('build', gulp.series('webpack-accords', gulp.parallel('css', 'csv', 'js', 'js-vendor', 'img', 'nunjucks')))
+gulp.task('build', gulp.series('webpack-accords', 'csv', gulp.parallel('css', 'js', 'js-vendor', 'img', 'nunjucks')))
 
 // Tâche "prod" = Build + minify
 gulp.task('prod', gulp.series('clean', gulp.parallel('build', 'minifyCSS')))
