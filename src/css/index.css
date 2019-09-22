@@ -18,6 +18,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0; }
+  body.overlay-open {
+    overflow: hidden; }
 
 img {
   height: auto;
