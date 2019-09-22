@@ -295,6 +295,22 @@ $page-vpadding: 15px;
     }
 }
 
+.section-intro-more {
+    margin-top: 25px;
+    text-align: right;
+    h2 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: normal;
+    }
+    a {
+        text-decoration: none;
+    }
+    & + .section-intro-more {
+        margin-top: 10px;
+    }
+}
+
 .section-summary {
     .section-entry {
         a {
@@ -370,6 +386,21 @@ dl.glossary-item {
         color: $accent1-dark;
     }
     dd {
+        p {
+            margin: 10px 0;
+        }
+        ul, ol {
+            margin: 10px 0 10px 20px;
+        }
+        ul {
+            list-style: square;
+        }
+        .more {
+            margin: 15px 0 15px 10%;
+            padding: 5px 10px;
+            // font-size: .95em;
+            background-color: #eee;
+        }
         .syns {
             margin-bottom: 15px;
             padding: 2px 5px;
@@ -661,6 +692,7 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-writ
 
 // form elements
 input[type="text"],
+input[type="date"],
 input[type="email"],
 input[type="number"],
 select,
@@ -957,6 +989,7 @@ body.notes {
 // color variations
 body.read {
     input[type="text"],
+    input[type="date"],
     input[type="email"],
     input[type="number"],
     select,
@@ -966,7 +999,7 @@ body.read {
             background-color: $accent1-light;
         }
     }
-    .section-content a {
+    .app a {
         color: $accent1-dark;
     }
     .back-nav {
@@ -981,6 +1014,7 @@ body.read {
 }
 body.talk {
     input[type="text"],
+    input[type="date"],
     input[type="email"],
     input[type="number"],
     select,
@@ -990,7 +1024,7 @@ body.talk {
             background-color: $accent2-light;
         }
     }
-    .section-content a {
+    .app a {
         color: $accent2-dark;
     }
     .back-nav {
@@ -1005,6 +1039,7 @@ body.talk {
 }
 body.write {
     input[type="text"],
+    input[type="date"],
     input[type="email"],
     input[type="number"],
     select,
@@ -1014,7 +1049,7 @@ body.write {
             background-color: $accent3-light;
         }
     }
-    .section-content a {
+    .app a {
         color: $accent3-dark;
     }
     .back-nav {
@@ -1035,6 +1070,7 @@ body.write {
 }
 body.notes {
     input[type="text"],
+    input[type="date"],
     input[type="email"],
     input[type="number"],
     select,
@@ -1044,7 +1080,7 @@ body.notes {
             background-color: $accent4-light;
         }
     }
-    .section-content a {
+    .app a {
         color: $accent4-dark;
     }
     .back-nav {

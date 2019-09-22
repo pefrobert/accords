@@ -1,6 +1,6 @@
 {% extends "base.njk" %}
 
-{% block title %}Qui je suis — ACCORDs{% endblock %}
+{% block title %}Moi et mon entourage — ACCORDs{% endblock %}
 {% block body_class %}write{% endblock %}
 {% block parent_page %}write.index.html{% endblock %}
 
@@ -13,7 +13,7 @@
 	<div class="section-intro">
 		<img src="img/icon-write.svg" class="section-icon" alt="">
 		<p class="app-name">ACCORDs</p>
-		<h1>Qui je suis</h1>
+		<h1>Moi et mon entourage</h1>
 	</div>
 
 	<form name="write.mydata" id="write.mydata">
@@ -21,42 +21,66 @@
 	<div class="section-content section-form section-mydata">
 		<div class="form-item form-item-text">
 			<div class="form-label">
-				<label for="form-mydata-1"><strong>Je m'appelle&nbsp;…</strong></label>
+				<label for="form-mydata-lname"><strong>Mon nom&nbsp;:</strong></label>
 			</div>
 			<div class="form-input">
-				<input type="text" id="form-mydata-1">
+				<input type="text" id="form-mydata-lname">
 			</div>
 		</div>
 		<div class="form-item form-item-text">
 			<div class="form-label">
-				<label for="form-mydata-2"><strong>Je suis né.e le&nbsp;… à&nbsp;…</strong></label>
+				<label for="form-mydata-fname"><strong>Mon prénom&nbsp;:</strong></label>
 			</div>
 			<div class="form-input">
-				<input type="text" id="form-mydata-2">
+				<input type="text" id="form-mydata-fname">
+			</div>
+		</div>
+		<div class="form-item form-item-date">
+			<div class="form-label">
+				<label for="form-mydata-birthdate"><strong>Ma date de naissance&nbsp;:</strong></label>
+			</div>
+			<div class="form-input">
+				<input type="date" id="form-mydata-birthdate">
+			</div>
+		</div>
+		<div class="form-item form-item-text">
+			<div class="form-label">
+				<label for="form-mydata-birthplace"><strong>Mon lieu de naissance&nbsp;:</strong></label>
+			</div>
+			<div class="form-input">
+				<input type="text" id="form-mydata-birthplace">
+			</div>
+		</div>
+		<div class="form-item form-item-text">
+			<div class="form-label">
+				<label for="form-mydata-email"><strong>Mon adresse e-mail&nbsp;:</strong></label>
+			</div>
+			<div class="form-input">
+				<input type="email" id="form-mydata-email">
 			</div>
 		</div>
 		<div class="form-item form-item-textarea">
 			<div class="form-label">
-				<label for="form-mydata-3"><strong>Je présente ma famille et mes proches&nbsp;:</strong></label>
+				<label for="form-mydata-representative"><strong>Mon ou mes <glossary link=representant>représentant(s) thérapeutique(s)</glossary></strong> (l’ordre des noms détermine l’ordre de priorité)</label>
 			</div>
 			<div class="form-input">
-				<textarea id="form-mydata-3"></textarea>
+				<textarea id="form-mydata-representative"></textarea>
 			</div>
 		</div>
 		<div class="form-item form-item-textarea">
 			<div class="form-label">
-				<label for="form-mydata-4"><strong>Je me sens responsable de&nbsp;…</strong> (de mes enfants, de mon chien, de la comptabilité de ma famille, etc…)</label>
+				<label for="form-mydata-responsible"><strong>Je me sens responsable de&nbsp;…</strong> (de mes enfants, mes animaux, la comptabilité de ma famille, etc…)</label>
 			</div>
 			<div class="form-input">
-				<textarea id="form-mydata-4"></textarea>
+				<textarea id="form-mydata-responsible"></textarea>
 			</div>
 		</div>
 		<div class="form-item form-item-textarea">
 			<div class="form-label">
-				<label for="form-mydata-5"><strong>Je me décris&nbsp;…</strong> (mes loisirs, mes passions, mes activités, mon caractère, mes relations)</label>
+				<label for="form-mydata-other"><strong>Autres choses importantes à dire sur mon entourage</strong> (je me sens particulièrement proche de…, mon/ma soignant.e préféré.e est…, etc…)</label>
 			</div>
 			<div class="form-input">
-				<textarea id="form-mydata-5"></textarea>
+				<textarea id="form-mydata-other"></textarea>
 			</div>
 		</div>
 

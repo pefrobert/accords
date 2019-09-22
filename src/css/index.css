@@ -207,6 +207,18 @@ a {
     line-height: 1;
     font-family: 'Roboto Condensed', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif; }
 
+.section-intro-more {
+  margin-top: 25px;
+  text-align: right; }
+  .section-intro-more h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: normal; }
+  .section-intro-more a {
+    text-decoration: none; }
+  .section-intro-more + .section-intro-more {
+    margin-top: 10px; }
+
 .section-summary .section-entry a {
   display: block;
   padding: 10px 15px;
@@ -253,6 +265,16 @@ dl.glossary-item dt {
   font-size: 20px;
   margin-bottom: 20px;
   color: #009586; }
+dl.glossary-item dd p {
+  margin: 10px 0; }
+dl.glossary-item dd ul, dl.glossary-item dd ol {
+  margin: 10px 0 10px 20px; }
+dl.glossary-item dd ul {
+  list-style: square; }
+dl.glossary-item dd .more {
+  margin: 15px 0 15px 10%;
+  padding: 5px 10px;
+  background-color: #eee; }
 dl.glossary-item dd .syns {
   margin-bottom: 15px;
   padding: 2px 5px;
@@ -467,6 +489,7 @@ body.write .bookmark-btn.on {
     display: block; }
 
 input[type="text"],
+input[type="date"],
 input[type="email"],
 input[type="number"],
 select,
@@ -478,6 +501,7 @@ textarea {
   font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
   border: 1px solid #bbb; }
   input[type="text"]:focus,
+  input[type="date"]:focus,
   input[type="email"]:focus,
   input[type="number"]:focus,
   select:focus,
@@ -485,18 +509,21 @@ textarea {
     border-color: #bf841a;
     background-color: #ffefd3; }
   input[type="text"]::-webkit-input-placeholder,
+  input[type="date"]::-webkit-input-placeholder,
   input[type="email"]::-webkit-input-placeholder,
   input[type="number"]::-webkit-input-placeholder,
   select::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
     font-size: 12px; }
   input[type="text"]:-moz-placeholder,
+  input[type="date"]:-moz-placeholder,
   input[type="email"]:-moz-placeholder,
   input[type="number"]:-moz-placeholder,
   select:-moz-placeholder,
   textarea:-moz-placeholder {
     font-size: 12px; }
   input[type="text"]:placeholder,
+  input[type="date"]:placeholder,
   input[type="email"]:placeholder,
   input[type="number"]:placeholder,
   select:placeholder,
@@ -712,13 +739,14 @@ body.notes .section-intro {
     min-height: 100px; }
 
 body.read input[type="text"]:focus,
+body.read input[type="date"]:focus,
 body.read input[type="email"]:focus,
 body.read input[type="number"]:focus,
 body.read select:focus,
 body.read textarea:focus {
   border-color: #009586;
   background-color: #ccf4f0; }
-body.read .section-content a {
+body.read .app a {
   color: #009586; }
 body.read .back-nav {
   background-color: #00c7b3; }
@@ -728,13 +756,14 @@ body.read .actions .action button {
   background-color: #009586; }
 
 body.talk input[type="text"]:focus,
+body.talk input[type="date"]:focus,
 body.talk input[type="email"]:focus,
 body.talk input[type="number"]:focus,
 body.talk select:focus,
 body.talk textarea:focus {
   border-color: #5f9938;
   background-color: #d2edc0; }
-body.talk .section-content a {
+body.talk .app a {
   color: #5f9938; }
 body.talk .back-nav {
   background-color: #7ecc4b; }
@@ -744,13 +773,14 @@ body.talk .actions .action button {
   background-color: #5f9938; }
 
 body.write input[type="text"]:focus,
+body.write input[type="date"]:focus,
 body.write input[type="email"]:focus,
 body.write input[type="number"]:focus,
 body.write select:focus,
 body.write textarea:focus {
   border-color: #bf841a;
   background-color: #ffefd3; }
-body.write .section-content a {
+body.write .app a {
   color: #bf841a; }
 body.write .back-nav {
   background-color: #ffb023; }
@@ -764,13 +794,14 @@ body.write .form-label {
     color: #bf841a; }
 
 body.notes input[type="text"]:focus,
+body.notes input[type="date"]:focus,
 body.notes input[type="email"]:focus,
 body.notes input[type="number"]:focus,
 body.notes select:focus,
 body.notes textarea:focus {
   border-color: #bf0044;
   background-color: #ffe6ef; }
-body.notes .section-content a {
+body.notes .app a {
   color: #bf0044; }
 body.notes .back-nav {
   background-color: #ff005a; }
