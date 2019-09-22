@@ -18,7 +18,7 @@ var slideTeasers = {
 			l.removeClass('last').addClass('next');
 		}
 	},
-	init: function () {
+	layout: function () {
 		this.root.find('.slogan').each(function () {
 			var t = $(this);
 			var h = t.outerHeight();
@@ -27,14 +27,20 @@ var slideTeasers = {
 			}
 			t.addClass('next').css('visibility', 'visible');
 		});
+		this.root.css('height', this.maxHeight + 20);
+	},
+	init: function () {
+		this.layout();
+		this.root.find('.slogan').eq(0).addClass('active').removeClass('next');
 		this.root.on('click', function () {
 			var text = slideTeasers.root.data('invite');
 			if (text) {
 				alert(text);
 			}
 		});
-		this.root.css('height', this.maxHeight + 20);
-		this.root.find('.slogan').eq(0).addClass('active').removeClass('next');
+		$(window).on('resize', function (e) {
+			slideTeasers.layout();
+		})
 		this.delayInterval = setInterval(function() {
 			slideTeasers.next();
 		}, this.displayTime);

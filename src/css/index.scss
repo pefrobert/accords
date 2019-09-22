@@ -398,43 +398,94 @@ dl.glossary-item {
     }
 }
 
+// about
+.section-about {
+    .sponsors-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0;
+        list-style: none;
+        li {
+            flex: 0 0 33.33%;
+            flex-basis: calc(100% / 3);
+        }
+        img {
+            display: block;
+        }
+    }
+    .contact-us {
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
 
 // popup
-.overlay {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 999999;
-    background-color: rgba(0,0,0,.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    display: none;
-}
-.overlay-content {
-    width: 300px;
-    max-width: 90vw;
-    max-height: 90vh;
-    margin: auto;
-    padding: 10px 15px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px -10px #000;
-}
-.overlay-close {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
-    cursor: pointer;
-    background: transparent url('../img/icon-close.svg') no-repeat 50% 50% scroll;
-    background-size: 24px 24px;
-}
+    // plein écran par défaut
+    .overlay {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 999999;
+        display: none;
+        background-color: #fff;
+    }
+    .overlay-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 10px 15px;
+        padding-top: 60px;
+        overflow: auto;
+        .overlay & > *:first-child {
+            margin-top: 0;
+        }
+        .overlay & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .overlay-close {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        cursor: pointer;
+        background: transparent url('../img/icon-close-black.svg') no-repeat 50% 50% scroll;
+        background-size: 24px 24px;
+    }
+
+    // variante "compact", pas en plein écran
+    .overlay.compact {
+        background-color: rgba(0,0,0,.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        display: none;
+    }
+    .compact .overlay-content {
+        position: relative;
+        width: 300px;
+        max-width: 90vw;
+        max-height: 75vh;
+        margin: auto;
+        padding-top: 10px;
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 0 5px 25px -10px #000;
+    }
+    .compact .overlay-close {
+        background-image: url('../img/icon-close.svg');
+    }
 
 
 // bookmarking
