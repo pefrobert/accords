@@ -84,6 +84,13 @@ gulp.task('nunjucks', function () {
     .pipe(plugins.nunjucksRender({
       path: ['src/html/templates']
     }))
+    // Format HTML files
+    .pipe(plugins.formatHtml({
+      'indent-size': 2,
+      'end_with_newline': true,
+      'preserve_newlines': false,
+      'indent_scripts': 'separate'
+    }))
     // output files in www folder
     .pipe(gulp.dest('www'))
 })
