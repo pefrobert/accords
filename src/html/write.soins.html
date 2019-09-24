@@ -13,49 +13,102 @@
 	<div class="section-intro">
 		<img src="img/icon-write.svg" class="section-icon" alt="">
 		<p class="app-name">ACCORDs</p>
-		<h1>Mes préférences</h1>
-		<p style="text-align: center;">Pour anticiper les soins et les urgences</p>
+		<h1>En cas d'urgence</h1>
 	</div>
+
+	<p>Les réponses que vous aurez données ci-après décrivent vos souhaits et vos préférences pour des situations médicales précises. Ces indications permettront aux soignants ainsi qu’à vos proches de savoir comment agir dans des situations d’urgence.</p>
 
 	<form name="write.soins" id="write.soins">
 
 	<div class="section-content section-form section-urgences">
 
-		<h2>Pour prendre les décisions me concernant&nbsp;:</h2>
-
-		{{ _form.fieldRadioTextarea(
-			"<strong>Si j'ai ma <glossary link=discernement>capacité de discernement</glossary></strong>, je voudrais&nbsp;:"
-			, "discernement"
-			, [{id : 'myself', value : 'myself', label : 'Décider par moi-même'}
-				, {id : 'other', value : 'other', label : 'Associer une ou des personnes'}]
-		) }}
-
 		{{ _form.fieldRadioTextarea(
 			"<strong>Si je n'ai plus ma <glossary link=discernement>capacité de discernement</glossary></strong> à cause d'un <strong>évènement aigu</strong> (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais&nbsp;:"
 			, "no-discernement"
-			, [{id : 'representant', value : 'representant', label : 'Désigner mon <glossary link=representant>représentant thérapeutique</glossary> afin de décider pour moi'}
-				, {id : 'ordre', value : 'ordre', label : "Que mon représentant soit désigné selon l'<glossary link=legal>ordre légal</glossary>" }
-				, {id : 'nobody', value : 'nobody', label : 'Je souhaite que certaines personnes ne soient pas impliquées' }]
+			, [
+				{id : 'representant', value : 'representant', label : 'Je souhaite désigner  mon <glossary link=representant>représentant thérapeutique</glossary> auquel j’ai transmis mes volontés pour qu’il soit en mesure de décider pour moi (il est possible de fournir le nom et les coordonnées de cette ou ces personnes(s) dans la section « Moi et mon entourage »).'}
+				, {id : 'ordre', value : 'nobody', label : "Je ne souhaite pas désigner quelqu’un particulier. Mon représentant thérapeutique sera alors désigné par   l'<glossary link=legal>ordre légal</glossary>" }
+			]
+			, "Remarques complémentaires&nbsp;:"
 		) }}
 
 		{{ _form.fieldRadioTextarea(
-			"<strong>Si mon cœur s'arrêtait soudainement</strong> (arrêt cardiaque), je dirais plutôt&nbsp;:"
+			"<strong>Si mon cœur s'arrêtait soudainement</strong> (arrêt cardiaque)&nbsp;:"
 			, "arret-cardiaque"
-			, [{id : 'tantmieux', value : 'tantmieux', label : 'Que c\'est "tant mieux", c\'est la "belle mort", que l\'on me laisse tranquille", "c\'est une délivrance" …'}
-				, {id : 'chance', value : 'chance', label : "Que l'on fasse tout ce qui indiqué d'un point de vue médical si j'ai des bonnes chances de retrouver mes capacités d'avant" }
-				, {id : 'impossible', value : 'impossible', label : "Que l'on fasse l'impossible même si les chances de récupération sont très faibles ou nulles" }]
+			, [
+				{id : 'impossible', value : 'impossible', label : "Je souhaite que l’on fasse l’impossible même si les chances de récupération sont très faibles." }
+				, {id : 'chance', value : 'chance', label : "Je souhaite que l’on fasse tout ce qui est indiqué d’un point de vue médical si j’ai de bonnes chances de retrouver mes capacités d’avant." }
+				, {id : 'no', value : 'no', label : "Je souhaite que l’on ne me réanime pas." }
+			]
+			, 'Raisons de mon choix (je ne veux pas risquer des séquelles qui rendraient ma situation encore plus difficile, c’est « tant mieux », c’est une « belle mort », c’est une occasion pour moi d’en finir, etc …)&nbsp;:'
+		) }}
+
+		{{ _form.fieldTextarea("arret-cardiaque-more", "Remarques complémentaires&nbsp;:") }}
+
+		{{ _form.fieldRadioTextarea(
+			"<strong>Si j'étais en soins palliatifs</strong> et devais avoir besoin de <strong>traitements contre la douleur&nbsp;:</strong>"
+			, "douleur"
+			, [
+				{id : 'tout', value : 'tout', label : "Je souhaite que l'on fasse tout ce qui indiqué d'un point de vue médical pour me soulager, même si cela devait me faire perdre conscience voire mourir."}
+				, {id : 'conscient', value : 'conscient', label : "Je souhaite rester conscient et pouvoir communiquer, même si cela implique que je souffre." }
+			]
+			, "Remarques complémentaires&nbsp;:"
 		) }}
 
 		{{ _form.fieldRadioTextarea(
-			"<strong>Si j'étais en soins palliatifs</strong> et devais avoir besoin de <strong>traitements contre la douleur</strong>, je dirais plutôt&nbsp;:"
-			, "douleur"
-			, [{id : 'tout', value : 'tout', label : "Que l'on fasse tout ce qui indiqué d'un point de vue médical pour me soulager, même si cela devait me faire perdre conscience voire mourir."}
-				, {id : 'conscient', value : 'conscient', label : "Que je préfère rester conscient et pouvoir communiquer, même si cela devait me laisser encore des douleurs." }]
+			"<strong>Si je me trouve dans une situation où j’ai de la peine à respirer</strong> (insuffisance respiratoire)&nbsp;:"
+			, "insuffisance-respiratoire"
+			, [
+				{id : 'adequat', value : 'adequat', label : "Je souhaite que l’on cherche à rétablir ma respiration à l’aide de tous les moyens médicaux à disposition si l’équipe soignante estime que cela est adéquat (ex. : ventilation assistée de machines, tubes, ouverture de la trachée)."}
+				, {id : 'no-technology', value : 'no-technology', label : "Je souhaite que l’on utilise le moins de technologie possible et accepte les risques que cela impliquerait pour ma santé ou survie." }
+				, {id : 'no-assistance', value : 'no-assistance', label : "Je ne souhaite pas d’assistance respiratoire, même très temporaire (par exemple pour traiter une crise aigüe et passagère avec de très bonnes chances de guérison) et même si mes chances de survie en dépendent." }
+			]
+			, "Précisions&nbsp;:"
 		) }}
 
-		<div class="form-notice">
-			(D'autres questions seront ajoutées par la suite.)
-		</div>
+		{{ _form.fieldRadioTextarea(
+			"Si mon insuffisance respiratoire (dyspnée) me fait souffrir&nbsp;:"
+			, "insuffisance-respiratoire-souffrir"
+			, [
+				{id : 'lucidité', value : 'lucidité', label : "Je souhaite que les médicaments pour me soulager soient dosés de manière à préserver des périodes de lucidité, même au prix de souffrances."}
+				, {id : 'no-souffrance', value : 'no-souffrance', label : "Je souhaite que les médicaments pour me soulager soient dosés de manière à ce que je souffre le moins possible même si cela peut altérer mon état de conscience ou diminuer mes chances de survie." }
+			]
+			, "Remarques complémentaires&nbsp;:"
+		) }}
+
+		{{ _form.fieldRadioTextarea(
+			"<strong>Si je me trouve dans une situation où je ne peux plus m’alimenter par voie normale</strong> et qu’un recours à l’alimentation artificielle est nécessaire (au moyen d’une sonde gastrique, d’une perfusion, d’une pose chirurgicale ou d’une sonde nutritive).&nbsp;:"
+			, "insuffisance-respiratoire-souffrir"
+			, [
+				{id : 'artificiel', value : 'artificiel', label : "Je souhaite que le recours à l’alimentation artificielle soit momentané, pour autant qu’on puisse s’attendre à ce que je sois par la suite à nouveau en mesure de m’alimenter et de me désaltérer par voie normale, éventuellement avec l’aide d’une tierce personne."}
+				, {id : 'apport', value : 'apport', label : "Je souhaite que l’on mette en place l’apport continu de liquides et d’aliments si cela est médicalement indiqué ou si cela n’entraine pas d’effets indésirables." }
+				, {id : 'no-alimentation', value : 'no-alimentation', label : "Je ne souhaite en aucun cas être alimenté artificiellement, même si cette décision pourrait diminuer ma durée de vie. " }
+			]
+			, "Remarques complémentaires&nbsp;:"
+		) }}
+
+		{{ _form.fieldRadioTextarea(
+			"<strong>Concernant le traitement de la douleur et des symptômes&nbsp;:</strong>"
+			, "insuffisance-respiratoire-souffrir"
+			, [
+				{id : 'vigilance', value : 'vigilance', label : "Un état de vigilance et la capacité de communiquer sont pour moi plus importants que le soulagement des douleurs et d’autres symptômes."}
+				, {id : 'touslescas', value : 'touslescas', label : "Je désire en tous les cas que l’on soigne activement mes douleurs et tous les autres symptômes accablants tels que la peur, l’agitation, la détresse respiratoire et les nausées ; j’accepte donc, le cas échéant, une perte de conscience (sédation) due à la thérapie." }
+			]
+			, "Remarques complémentaires&nbsp;:"
+		) }}
+
+		{{ _form.fieldRadioTextarea(
+			"<strong>Concernant le don des données biologiques à la recherche scientifique&nbsp;:</strong>"
+			, "insuffisance-respiratoire-souffrir"
+			, [
+				{id : 'alreadydone', value : 'alreadydone', label : "Je me suis déjà positionnée par rapport à cette question."}
+				, {id : 'hug', value : 'hug', label : "Je m’informe sur le site des HUG." }
+				, {id : 'no-interest', value : 'no-interest', label : "La question du don des données biologiques ne m’intéresse pas." }
+			]
+			, "Remarques complémentaires&nbsp;:"
+		) }}
+
+		{{ _form.fieldTextarea("what-else", "Y a-t-il quelque chose que vous souhaiteriez ajouter&nbsp;?") }}
 
 		<div class="actions">
 			<div class="action export">
@@ -67,7 +120,7 @@
 			<div class="pager-item prev">
 				<a href="write.valeurs.html">
 					<span class="label">Étape précédente</span>
-					<span class="subtitle">Que faut-il savoir de moi</span>
+					<span class="subtitle">Mes valeurs et préférences</span>
 				</a>
 			</div>
 		</nav>
