@@ -1,6 +1,6 @@
 {% extends "base.njk" %}
 
-{% block title %}Que faut-il savoir de moi — ACCORDs{% endblock %}
+{% block title %}Mes valeurs et préférences — ACCORDs{% endblock %}
 {% block body_class %}write{% endblock %}
 {% block parent_page %}write.index.html{% endblock %}
 
@@ -13,115 +13,55 @@
 	<div class="section-intro">
 		<img src="img/icon-write.svg" class="section-icon" alt="">
 		<p class="app-name">ACCORDs</p>
-		<h1>Que faut-il savoir de moi</h1>
+		<h1>Mes valeurs et préférences</h1>
 	</div>
+
+	<p>Les réponses que vous aurez données ci-après décrivent votre attitude face à la vie, expriment vos valeurs, vos souhaits, vos peurs, vos attentes et vos espoirs. Grâce à vos indications, il sera plus facile d’imaginer, pour vos proches et soignants, comment vous auriez aimé être pris.e en charge.</p>
 
 	<form name="write.valeurs" id="write.valeurs">
 
 	<div class="section-content section-form section-valeurs">
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-1"><strong>Une belle journée pour moi dans mon quotidien</strong>, c'est&nbsp;…</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-1"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldTextarea("day","<strong>Une belle journée pour moi, c'est&nbsp;…</strong>") }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-2"><strong>La chose que j'aimerais absolument faire ou vivre avant de mourir</strong> (un événement, une réconciliation, une conversation, une concrétisation d’un souhait, la découverte d’un lieu, un voyage, etc&nbsp;…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-2"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldTextarea("place","<strong>Une pièce où je me sens à l'aise est&nbsp;…</strong> (lumineuse, plutôt sombre, chaude, fraîche, aérée, avec des couleurs pastels, avec des couleurs vives, avec des sons et de la musique, silencieuse, avec la possibilité de recevoir beaucoup de monde, un lieu plus intime, etc&nbsp;…)") }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-3"><strong>Mon apparence</strong> (j'accorde une importance particulière à soigner mon corps, ma tenue, je suis plutôt du genre nature, etc&nbsp;…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-3"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldTextarea("sensation","<strong>Les sensations que je trouve agréables sont&nbsp;…</strong> (l’odeur de la forêt, avoir bon chaud, les contacts physiques, l’odeur du pain, de l’herbe fraîche, le goût du chocolat, le toucher du satin, les musiques rythmées, etc&nbsp;…)") }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-4"><strong>Ce qui me fait peur, m'angoisse</strong> (que vont devenir les gens qui dépendent de moi, mes animaux de companie, perte de maîtrise, peur qu'on ne me dise pas tout, questions financières, perte de maîtrise sur mon destin, souffrance, etc&nbsp;…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-4"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldTextarea("appearence","<strong>Quelques mots sur mon apparence</strong> (j’accorde beaucoup d’importance à mon apparence physique, mon habillement ne me préoccupe pas beaucoup, je préfère les vêtements confortables, etc&nbsp;…)") }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-5"><strong>Ma vie deviendrait insupportable si je devais…</strong> (vivre en chaise roulante, vivre dans une institution de soin, ne plus pouvoir communiquer avec mes proches, ne plus reconnaître mes proches, être alité.e en permanence, être assisté.e pour la toilette, etc&nbsp;…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-5"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldTextarea("others","<strong>Moi et les autres</strong> (j’aime avoir mon espace, j’apprécie le calme, j’aime faire de nouvelles connaissances, j’apprécie le bourdonnement de la vie autour de moi, j’ai noué des amitiés de longue date, je me sens à l’aise quand je discute avec une seule personne, je préfère les discussions de groupe, etc&nbsp;…)") }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-6">Quelques mots sur <strong>mes croyances religieuses ou ma spiritualité</strong></label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-6"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldTextarea("frustration","<strong>Ce qui me contrarie</strong> (quand la fenêtre reste ouverte et qu’il fait froid dehors, quand la radio fonctionne sans cesse, quand on me parle sans arrêt si je ne suis pas en mesure de répondre, on parle de moi comme si j’étais un enfant, quand j’ai le sentiment qu’on ne me laisse pas le choix, quand j’ai l’impression que je ne suis pas entendu.e, quand je me sens mis.e sous pression, etc&nbsp;…)") }}
 
-	</div>
+		{{ _form.fieldTextarea("like","<strong>Ce que j'aime faire</strong> (me promener dans la nature, passer du temps en compagnie de mes proches, de mes amis, de mes animaux, pratiquer ma religion, lire, écrire, regarder la télé, jouer, écouter de la musique, manger de bons petits plats, m’adonner à mon passe-temps, trainer au lit le matin, etc&nbsp;…)") }}
 
-	<div class="section-content section-form section-valeurs">
+		{{ _form.fieldTextarea("spirituality","Quelques mots sur <strong>ma spiritualité, mes croyances religieuses</strong>") }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-7"><strong>Ce que j'aime faire</strong> (me promener dans la nature; passer du temps en compagnie de mes proches et amis, trainer au lit le matin, pratiquer ma religion, m'adonner à mon passe-temps X, etc&nbsp;…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-7"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldTextarea("must","<strong>La ou les chose(s) que j'aimerais absolument faire ou vivre avant de mourir</strong> (me réconcilier avec quelqu’un, clore une affaire non réglée, avoir une conversation, concrétiser un souhait, découvrir un lieu, faire un voyage, une fête, etc&nbsp;…)") }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-8"><strong>Une pièce où je me sens à l'aise ressemble à&nbsp;…</strong> (une petite lumière pour dormir, température fraiche, luminosité, etc&nbsp;…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-8"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldTextarea("fear","<strong>Ce qui me préoccupe, me fait peur, m’angoisse</strong> (que vont devenir les personnes qui dépendent de moi ? Vont-ils souffrir ? Que vont devenir mes animaux de compagnie ? Mes affaires financières sont-elles en ordre ? Est-il possible que les médecins ne me disent pas tout ? Ai-je encore la maîtrise de ma vie ? Vais-je souffrir ? Comment vais-je mourir ? etc&nbsp;…)") }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-9"><strong>Moi et les autres</strong> (j'aime avoir mon espace, le calme, faire de nouvelles connaissances,  le bourdonnement de la vie autour de moi, etc&nbsp;…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-9"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldTextarea("unbearable","<strong>Ma vie deviendrait insupportable si je devais…</strong> (vivre en chaise roulante, vivre dans une institution de soin, ne plus pouvoir communiquer avec mes proches, ne plus reconnaître mes proches, être alité.e en permanence, être assisté.e pour la toilette, pour l’alimentation, pour respirer, etc&nbsp;…)") }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-10"><strong>Les sensations agréables</strong> (l'ordeur de la forêt; avoir bon chaud; des contacts physiques; l'odeur du pain, le goût du chocolat, etc&nbsp;…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-10"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldRadioTextarea(
+			"<strong>À propos du lieu où je recevrai des soins</strong> si j’ai la possibilité de formuler un choix quant au lieu où je recevrai des soins, je souhaiterais&nbsp;:"
+			, "care-place"
+			, [	{id : 'home', value : 'home', label : "Que les traitements soient effectués à domicile."}
+			,	{id : 'institution', value : 'institution', label : "Être prise en charge dans l’institution médicale suivante&nbsp;:" }
+			]
+			, 'Remarques complémentaires') }}
 
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-valeurs-11"><strong>Je suis contrarié·e quand&nbsp;…</strong> (on me parle sans arrêt si je ne suis pas en mesure de répondre, on parle de moi comme si j'étais un enfant, la fenêtre reste ouverte et qu'il fait frois dehors, quand la radio fonctionne sans cesse, etc&nbsp;…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-valeurs-11"></textarea>
-			</div>
-		</div>
+		{{ _form.fieldRadioTextarea(
+		"<strong>Si j’ai la possibilité de formuler un choix quant au lieu où je décéderai</strong> je souhaiterais&nbsp;:"
+		, "die-place"
+		, [	{id : 'die-home', value : 'die-home', label : "Pouvoir mourir chez moi."}
+		,	{id : 'die-other', value : 'die-other', label : "Pouvoir mourir chez …", text : 'Lieu&nbsp;:' }
+		,	{id : 'die-institution', value : 'die-institution', label : "Pouvoir mourir dans une institution (hôpital, foyer, hospice, etc.).", text : "Ma préférence&nbsp;:" }
+		]
+		, 'Remarques complémentaires') }}
+
+		{{ _form.fieldTextarea("comments","<strong>Y a-t-il quelque chose que vous souhaiteriez ajouter ?</strong>") }}
 
 	</div>
 
@@ -130,13 +70,13 @@
 			<div class="pager-item prev">
 				<a href="write.mydata.html">
 					<span class="label">Étape précédente</span>
-					<span class="subtitle">Qui je suis</span>
+					<span class="subtitle">Moi et mon entourage</span>
 				</a>
 			</div>
 			<div class="pager-item next">
 				<a href="write.soins.html">
 					<span class="label">Étape suivante</span>
-					<span class="subtitle">Mes préférences</span>
+					<span class="subtitle">En cas d’urgence</span>
 				</a>
 			</div>
 		</nav>

@@ -23,35 +23,35 @@
 
 		<h2>Pour prendre les décisions me concernant&nbsp;:</h2>
 
-		{{ _form.fieldRadio(
+		{{ _form.fieldRadioTextarea(
 			"<strong>Si j'ai ma <glossary link=discernement>capacité de discernement</glossary></strong>, je voudrais&nbsp;:"
 			, "discernement"
 			, [{id : 'myself', value : 'myself', label : 'Décider par moi-même'}
 				, {id : 'other', value : 'other', label : 'Associer une ou des personnes'}]
-			, true) }}
+		) }}
 
-		{{ _form.fieldRadio(
+		{{ _form.fieldRadioTextarea(
 			"<strong>Si je n'ai plus ma <glossary link=discernement>capacité de discernement</glossary></strong> à cause d'un <strong>évènement aigu</strong> (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais&nbsp;:"
 			, "no-discernement"
 			, [{id : 'representant', value : 'representant', label : 'Désigner mon <glossary link=representant>représentant thérapeutique</glossary> afin de décider pour moi'}
 				, {id : 'ordre', value : 'ordre', label : "Que mon représentant soit désigné selon l'<glossary link=legal>ordre légal</glossary>" }
 				, {id : 'nobody', value : 'nobody', label : 'Je souhaite que certaines personnes ne soient pas impliquées' }]
-			, true) }}
+		) }}
 
-		{{ _form.fieldRadio(
+		{{ _form.fieldRadioTextarea(
 			"<strong>Si mon cœur s'arrêtait soudainement</strong> (arrêt cardiaque), je dirais plutôt&nbsp;:"
 			, "arret-cardiaque"
 			, [{id : 'tantmieux', value : 'tantmieux', label : 'Que c\'est "tant mieux", c\'est la "belle mort", que l\'on me laisse tranquille", "c\'est une délivrance" …'}
 				, {id : 'chance', value : 'chance', label : "Que l'on fasse tout ce qui indiqué d'un point de vue médical si j'ai des bonnes chances de retrouver mes capacités d'avant" }
 				, {id : 'impossible', value : 'impossible', label : "Que l'on fasse l'impossible même si les chances de récupération sont très faibles ou nulles" }]
-			, true) }}
+		) }}
 
-		{{ _form.fieldRadio(
+		{{ _form.fieldRadioTextarea(
 			"<strong>Si j'étais en soins palliatifs</strong> et devais avoir besoin de <strong>traitements contre la douleur</strong>, je dirais plutôt&nbsp;:"
 			, "douleur"
 			, [{id : 'tout', value : 'tout', label : "Que l'on fasse tout ce qui indiqué d'un point de vue médical pour me soulager, même si cela devait me faire perdre conscience voire mourir."}
 				, {id : 'conscient', value : 'conscient', label : "Que je préfère rester conscient et pouvoir communiquer, même si cela devait me laisser encore des douleurs." }]
-			, true) }}
+		) }}
 
 		<div class="form-notice">
 			(D'autres questions seront ajoutées par la suite.)
