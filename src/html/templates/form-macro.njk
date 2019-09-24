@@ -1,14 +1,20 @@
 {% macro inputRadio(id, name, value, label) %}
-	<input type="radio" id="{{ id }}" name="{{ name }}" value="{{ value | escape }}"><label for="{{ id }}">{{ label | safe }}</label>
+	<input type="radio" id="{{ id }}" name="{{ name }}" value="{{ value | escape }}">
+	<label for="{{ id }}">{{ label | safe }}</label>	
 {% endmacro %}
 
-{% macro fieldTextarea(id, value='') %}
-	<div class="form-input">
-		<textarea id="{{id}}">{{ value | escape }}</textarea>
+{% macro fieldTextarea(name, label = '', value='') %}
+	<div class="form-item form-item-textarea">
+		<div class="form-label">
+			<label for="{{ name }}">{{ label | safe}}</label>
+		</div>
+		<div class="form-input">
+			<textarea id="{{ name }}" name="{{ name }}">{{ value | escape }}</textarea>
+		</div>
 	</div>
 {% endmacro %}
 
-{% macro fieldRadio(label, name, options, includeTextArea) %}
+{% macro fieldRadioTextarea(label, name, options, textareaLabel = '', textareaValue = '') %}
 	<div class="form-item form-item-radio">
 		<div class="form-label">{{ label | safe}}</div>
 		<div class="form-input">
@@ -16,10 +22,34 @@
 			<div class="form-input-radio">
 			{{ inputRadio(option.id, name, option.value, option.label) }}
 			</div>
+			{% if option.text %}
+				{% set textName = name + '-text' %}
+				{{ fieldText(textName, option.text) }}
+			{% endif %}
  		{% endfor %}
 		</div>
-		{% if includeTextArea %}
-			{{ fieldTextarea(name + '-textarea') }}
+
+		{% set textareaName = name + "-textarea" %}
+		{% if textareaLabel !== '' %}
+		<div class="form-label">
+			<label for="{{ textareaName }}">{{ textareaLabel | safe}}</label>
+		</div>
 		{% endif %}
+		<div class="form-input">
+			<textarea id="{{ textareaName }}" name="{{ textareaName }}">{{ textareaValue | escape }}</textarea>
+		</div>
+	</div>
+{% endmacro %}
+
+{% macro fieldText(name, label = '', type = 'text', value='') %}
+	<div class="form-item form-item-text">
+		{% if label !== '' %}
+		<div class="form-label">
+			<label for="{{ name }}">{{ label | safe}}</label>
+		</div>
+		{% endif %}
+		<div class="form-input">
+			<input type="{{ type }}" id="{{ name }}" name="{{ name }}" value="{{ value }}">
+		</div>
 	</div>
 {% endmacro %}

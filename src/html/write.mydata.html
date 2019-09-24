@@ -19,76 +19,38 @@
 	<form name="write.mydata" id="write.mydata">
 
 	<div class="section-content section-form section-mydata">
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-mydata-lname"><strong>Mon nom&nbsp;:</strong></label>
-			</div>
-			<div class="form-input">
-				<input type="text" id="form-mydata-lname">
-			</div>
-		</div>
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-mydata-fname"><strong>Mon prénom&nbsp;:</strong></label>
-			</div>
-			<div class="form-input">
-				<input type="text" id="form-mydata-fname">
-			</div>
-		</div>
-		<div class="form-item form-item-date">
-			<div class="form-label">
-				<label for="form-mydata-birthdate"><strong>Ma date de naissance&nbsp;:</strong></label>
-			</div>
-			<div class="form-input">
-				<input type="date" id="form-mydata-birthdate">
-			</div>
-		</div>
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-mydata-birthplace"><strong>Mon lieu de naissance&nbsp;:</strong></label>
-			</div>
-			<div class="form-input">
-				<input type="text" id="form-mydata-birthplace">
-			</div>
-		</div>
-		<div class="form-item form-item-text">
-			<div class="form-label">
-				<label for="form-mydata-email"><strong>Mon adresse e-mail&nbsp;:</strong></label>
-			</div>
-			<div class="form-input">
-				<input type="email" id="form-mydata-email">
-			</div>
-		</div>
-		<div class="form-item form-item-textarea">
-			<div class="form-label">
-				<label for="form-mydata-representative"><strong>Mon ou mes <glossary link=representant>représentant(s) thérapeutique(s)</glossary></strong> (l’ordre des noms détermine l’ordre de priorité)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-mydata-representative"></textarea>
-			</div>
-		</div>
-		<div class="form-item form-item-textarea">
-			<div class="form-label">
-				<label for="form-mydata-responsible"><strong>Je me sens responsable de&nbsp;…</strong> (de mes enfants, mes animaux, la comptabilité de ma famille, etc…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-mydata-responsible"></textarea>
-			</div>
-		</div>
-		<div class="form-item form-item-textarea">
-			<div class="form-label">
-				<label for="form-mydata-other"><strong>Autres choses importantes à dire sur mon entourage</strong> (je me sens particulièrement proche de…, mon/ma soignant.e préféré.e est…, etc…)</label>
-			</div>
-			<div class="form-input">
-				<textarea id="form-mydata-other"></textarea>
-			</div>
-		</div>
+
+		{{ _form.fieldText("lastname","<strong>Mon nom&nbsp;:</strong>") }}
+
+		{{ _form.fieldText("firstname","<strong>Mon prénom&nbsp;:</strong>") }}
+
+		{{ _form.fieldText("birthdate","<strong>Ma date de naissance&nbsp;:</strong>") }}
+
+		{{ _form.fieldText("birthplace","<strong>Mon lieu de naissance&nbsp;:</strong>") }}
+
+		{{ _form.fieldText("email","<strong>Mon adresse mail&nbsp;:</strong>","email") }}
+	
+		{{ _form.fieldTextarea("nurses","<strong>Les personnes qui me soignent habituellement&nbsp;:</strong>") }}
+
+		{{ _form.fieldTextarea("represents","<strong>Mon ou mes <glossary link=\"representant\">représentant(s) thérapeutique(s)</glossary></strong><br>(l’ordre des noms détermine l’ordre de priorité)
+		<ol>
+			<li>Nom et prénom<br>
+			Infos utiles pour le/la contacter (adresse, téléphone, mail…)</li>
+			<li>Nom et prénom<br>
+			Infos utiles pour le/la contacter (adresse, téléphone, mail…)</li>
+		</ol>") }}
+		
+		{{ _form.fieldTextarea("closerelation","<strong>Les personnes qui me soutiennent au quotidien parmi mes proches&nbsp;:</strong>") }}
+
+		{{ _form.fieldTextarea("responsible","<strong>Je me sens responsable de&nbsp;…</strong> (mes enfants, mes animaux, la comptabilité de ma famille, etc…)") }}
+
+		{{ _form.fieldTextarea("important","<strong>Autres choses importantes à dire sur mon entourage</strong> (je me sens particulièrement proche de…, mon/ma soignant.e préféré.e est…, etc…)") }}
 
 		<nav class="pager">
 			<div class="pager-item next">
 				<a href="write.valeurs.html">
 					<span class="label">Étape suivante</span>
-					<span class="subtitle">Que faut-il savoir de moi</span>
+					<span class="subtitle">Mes valeurs et préférences</span>
 				</a>
 			</div>
 		</nav>
