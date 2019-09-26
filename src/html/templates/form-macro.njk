@@ -34,10 +34,10 @@
 		<div class="form-label">
 			<label for="{{ textareaName }}">{{ textareaLabel | safe}}</label>
 		</div>
-		{% endif %}
 		<div class="form-input">
 			<textarea id="{{ textareaName }}" name="{{ textareaName }}">{{ textareaValue | escape }}</textarea>
 		</div>
+		{% endif %}
 	</div>
 {% endmacro %}
 

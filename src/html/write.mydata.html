@@ -32,13 +32,11 @@
 	
 		{{ _form.fieldTextarea("nurses","<strong>Les personnes qui me soignent habituellement&nbsp;:</strong>") }}
 
-		{{ _form.fieldTextarea("represents","<strong>Mon ou mes <glossary link=\"representant\">représentant(s) thérapeutique(s)</glossary></strong><br>(l’ordre des noms détermine l’ordre de priorité)
-		<ol>
-			<li>Nom et prénom<br>
-			Infos utiles pour le/la contacter (adresse, téléphone, mail…)</li>
-			<li>Nom et prénom<br>
-			Infos utiles pour le/la contacter (adresse, téléphone, mail…)</li>
-		</ol>") }}
+		{{ _form.fieldTextarea("represents-1","<strong>Mon ou mes <glossary link=\"representant\">représentant(s) thérapeutique(s)</glossary></strong><br>(l’ordre des noms détermine l’ordre de priorité)
+		<p>&nbsp;</p>
+		1. Nom et prénom<br>Infos utiles pour le/la contacter (adresse, téléphone, mail…)") }}
+
+		{{ _form.fieldTextarea("represents-2","2. Nom et prénom<br>Infos utiles pour le/la contacter (adresse, téléphone, mail…)") }}
 		
 		{{ _form.fieldTextarea("closerelation","<strong>Les personnes qui me soutiennent au quotidien parmi mes proches&nbsp;:</strong>") }}
 

@@ -23,7 +23,7 @@
 	<div class="section-content section-form section-urgences">
 
 		{{ _form.fieldRadioTextarea(
-			"<strong>Si je n'ai plus ma <glossary link=discernement>capacité de discernement</glossary></strong> à cause d'un <strong>évènement aigu</strong> (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais&nbsp;:"
+			"<strong>Si je n'ai plus ma <glossary link=discernement>capacité de discernement</glossary> à cause d'un évènement aigu</strong> (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais&nbsp;:"
 			, "no-discernement"
 			, [
 				{id : 'representant', value : 'representant', label : 'Je souhaite désigner  mon <glossary link=representant>représentant thérapeutique</glossary> auquel j’ai transmis mes volontés pour qu’il soit en mesure de décider pour moi (il est possible de fournir le nom et les coordonnées de cette ou ces personnes(s) dans la section « Moi et mon entourage »).'}
@@ -46,7 +46,7 @@
 		{{ _form.fieldTextarea("arret-cardiaque-more", "Remarques complémentaires&nbsp;:") }}
 
 		{{ _form.fieldRadioTextarea(
-			"<strong>Si j'étais en soins palliatifs</strong> et devais avoir besoin de <strong>traitements contre la douleur&nbsp;:</strong>"
+			"<strong>Si je souffrais d’une maladie grave et devais avoir besoin de traitements contre la douleur&nbsp;:</strong>"
 			, "douleur"
 			, [
 				{id : 'tout', value : 'tout', label : "Je souhaite que l'on fasse tout ce qui indiqué d'un point de vue médical pour me soulager, même si cela devait me faire perdre conscience voire mourir."}
@@ -77,7 +77,7 @@
 		) }}
 
 		{{ _form.fieldRadioTextarea(
-			"<strong>Si je me trouve dans une situation où je ne peux plus m’alimenter par voie normale</strong> et qu’un recours à l’alimentation artificielle est nécessaire (au moyen d’une sonde gastrique, d’une perfusion, d’une pose chirurgicale ou d’une sonde nutritive).&nbsp;:"
+			"<strong>Si je me trouve dans une situation où je ne peux plus m’alimenter par voie normale et qu’un recours à l’alimentation artificielle est nécessaire</strong> (au moyen d’une sonde gastrique, d’une perfusion, d’une pose chirurgicale ou d’une sonde nutritive).&nbsp;:"
 			, "insuffisance-respiratoire-souffrir"
 			, [
 				{id : 'artificiel', value : 'artificiel', label : "Je souhaite que le recours à l’alimentation artificielle soit momentané, pour autant qu’on puisse s’attendre à ce que je sois par la suite à nouveau en mesure de m’alimenter et de me désaltérer par voie normale, éventuellement avec l’aide d’une tierce personne."}
@@ -98,6 +98,17 @@
 		) }}
 
 		{{ _form.fieldRadioTextarea(
+			"<strong>Concernant le don d’organes&nbsp;:</strong>"
+			, "don-organe"
+			, [
+				{id : 'cartedonneur', value : 'cartedonneur', label : "J’ai exprimé ma position sur une carte de donneur d’organe et/ou dans le registre national."}
+				, {id : 'registre', value : 'registre', label : "J’aimerais exprimer mon choix dans le <a href=\"https://www.swisstransplant.org/fr/registre-nationaldu-don-dorganes/\" target=\"_blank\">registre national</a>." }
+				, {id : 'no-interest-don', value : 'no-interest-don', label : "La question du don d’organe ne m’intéresse pas." }
+			]
+			, "Remarques complémentaires&nbsp;:"
+		) }}
+
+		{{ _form.fieldRadioTextarea(
 			"<strong>Concernant le don des données biologiques à la recherche scientifique&nbsp;:</strong>"
 			, "insuffisance-respiratoire-souffrir"
 			, [
@@ -108,7 +119,7 @@
 			, "Remarques complémentaires&nbsp;:"
 		) }}
 
-		{{ _form.fieldTextarea("what-else", "Y a-t-il quelque chose que vous souhaiteriez ajouter&nbsp;?") }}
+		{{ _form.fieldTextarea("what-else", "<strong>Vous arrivez à la fin du questionnaire. Y a-t-il quelque chose que vous souhaiteriez ajouter&nbsp;?</strong>") }}
 
 		<div class="actions">
 			<div class="action export">

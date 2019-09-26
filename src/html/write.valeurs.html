@@ -32,11 +32,11 @@
 
 		{{ _form.fieldTextarea("others","<strong>Moi et les autres</strong> (j’aime avoir mon espace, j’apprécie le calme, j’aime faire de nouvelles connaissances, j’apprécie le bourdonnement de la vie autour de moi, j’ai noué des amitiés de longue date, je me sens à l’aise quand je discute avec une seule personne, je préfère les discussions de groupe, etc&nbsp;…)") }}
 
-		{{ _form.fieldTextarea("frustration","<strong>Ce qui me contrarie</strong> (quand la fenêtre reste ouverte et qu’il fait froid dehors, quand la radio fonctionne sans cesse, quand on me parle sans arrêt si je ne suis pas en mesure de répondre, on parle de moi comme si j’étais un enfant, quand j’ai le sentiment qu’on ne me laisse pas le choix, quand j’ai l’impression que je ne suis pas entendu.e, quand je me sens mis.e sous pression, etc&nbsp;…)") }}
+		{{ _form.fieldTextarea("frustration","<strong>Ce qui me contrarie</strong> (quand la fenêtre reste ouverte et qu’il fait froid dehors, quand la radio fonctionne sans cesse, quand on me parle sans arrêt si je ne suis pas en mesure de répondre, quand on parle de moi comme si j’étais un enfant, quand j’ai le sentiment qu’on ne me laisse pas le choix, quand j’ai l’impression que je ne suis pas entendu.e, quand je me sens mis.e sous pression, etc&nbsp;…)") }}
 
 		{{ _form.fieldTextarea("like","<strong>Ce que j'aime faire</strong> (me promener dans la nature, passer du temps en compagnie de mes proches, de mes amis, de mes animaux, pratiquer ma religion, lire, écrire, regarder la télé, jouer, écouter de la musique, manger de bons petits plats, m’adonner à mon passe-temps, trainer au lit le matin, etc&nbsp;…)") }}
 
-		{{ _form.fieldTextarea("spirituality","Quelques mots sur <strong>ma spiritualité, mes croyances religieuses</strong>") }}
+		{{ _form.fieldTextarea("spirituality","<strong>Quelques mots sur ma spiritualité, mes croyances religieuses</strong>") }}
 
 		{{ _form.fieldTextarea("must","<strong>La ou les chose(s) que j'aimerais absolument faire ou vivre avant de mourir</strong> (me réconcilier avec quelqu’un, clore une affaire non réglée, avoir une conversation, concrétiser un souhait, découvrir un lieu, faire un voyage, une fête, etc&nbsp;…)") }}
 
@@ -48,7 +48,7 @@
 			"<strong>À propos du lieu où je recevrai des soins</strong> si j’ai la possibilité de formuler un choix quant au lieu où je recevrai des soins, je souhaiterais&nbsp;:"
 			, "care-place"
 			, [	{id : 'home', value : 'home', label : "Que les traitements soient effectués à domicile."}
-			,	{id : 'institution', value : 'institution', label : "Être prise en charge dans l’institution médicale suivante&nbsp;:" }
+			,	{id : 'institution', value : 'institution', label : "Être pris.e en charge dans l’institution médicale suivante&nbsp;:", text : "&nbsp;" }
 			]
 			, 'Remarques complémentaires') }}
 
@@ -56,12 +56,12 @@
 		"<strong>Si j’ai la possibilité de formuler un choix quant au lieu où je décéderai</strong> je souhaiterais&nbsp;:"
 		, "die-place"
 		, [	{id : 'die-home', value : 'die-home', label : "Pouvoir mourir chez moi."}
-		,	{id : 'die-other', value : 'die-other', label : "Pouvoir mourir chez …", text : 'Lieu&nbsp;:' }
+		,	{id : 'die-other', value : 'die-other', label : "Pouvoir mourir chez …", text : '&nbsp;:' }
 		,	{id : 'die-institution', value : 'die-institution', label : "Pouvoir mourir dans une institution (hôpital, foyer, hospice, etc.).", text : "Ma préférence&nbsp;:" }
 		]
-		, 'Remarques complémentaires') }}
+		) }}
 
-		{{ _form.fieldTextarea("comments","<strong>Y a-t-il quelque chose que vous souhaiteriez ajouter ?</strong>") }}
+		{{ _form.fieldTextarea("comments","<strong>Y a-t-il quelque chose que vous souhaiteriez ajouter en rapport avec les thèmes discutés ci-dessus&nbsp;?</strong>") }}
 
 	</div>
 
