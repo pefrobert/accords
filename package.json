@@ -10,6 +10,7 @@
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
     "dependencies": {
+        "cordova": "8.1.2",
         "cordova-android": "^7.1.4",
         "cordova-browser": "^5.0.4",
         "cordova-plugin-email-composer": "^0.9.2",
@@ -39,7 +40,7 @@
         "eslint-plugin-import": "^2.18.1",
         "eslint-plugin-node": "^9.1.0",
         "eslint-plugin-promise": "^4.2.1",
-        "eslint-plugin-standard": "^4.0.0",
+        "eslint-plugin-standard": "^4.0.1",
         "eslint-plugin-vue": "^5.2.3",
         "gulp": "^4.0.2",
         "gulp-change": "^1.0.2",
