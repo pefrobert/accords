@@ -60,6 +60,15 @@
 
             <div class="app">
             	{% block content %}{% endblock %}
+                <overlay>
+                    {% for definition in glossary %}
+                    <glossary-item id="{{ definition.id }}" term="{{ definition.terme }}" synonymes="{{ definition.synonymes }}" source="{{ definition.source }}">
+                        <template v-slot:definition>{{ definition.definition | urlize | safe }}</template>
+                        <template v-slot:source>{{ definition.source | urlize |safe }}</template>
+                        <template v-slot:synonymes>{{ definition.synonymes | urlize | safe }}</template>
+                    </glossary-item>
+                    {% endfor %}
+                </overlay>
             </div>
 
             <nav class="main-nav">
@@ -72,18 +81,6 @@
                 </a>
             </nav>
 
-        </div>
-
-        <div id="overlay" class="overlay">
-            <div id="overlay-close" class="overlay-close"></div>
-            <div id="overlay-content" class="overlay-content content-text">
-                <dl id="glossary-discernement" class="glossary-item">
-                    <dt><a name="discernement"></a>Capacité de discernement<span class="bookmark-btn on"></span></dt>
-                    <dd>
-                        <p>Capacité d'une personne à comprendre une situation, les choix qui s'offrent à elle et leurs conséquences, ainsi qu'à finalement prendre une décision raisonnable. Elle est présente ou absente (ex&nbsp;: coma) pour une situation à un moment donné.</p>
-                        <p class="source"><span class="label">Pour en savoir plus&nbsp;:</span> ASSM, 2018 <a href="https://www.assm.ch/fr/Ethique.html">https://www.assm.ch/fr/Ethique.html</a></p></dd>
-                </dl>
-            </div>
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>

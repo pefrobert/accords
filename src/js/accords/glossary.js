@@ -9,5 +9,11 @@ Vue.component('glossary', {
       return 'read.glossary.html#' + this.link
     }
   },
-  template: '<a class="glossary-dfn" v-bind:href="url"><slot></slot></a>'
+  methods: {
+    open: function () {
+      this.$root.$emit('overlayOpen', this.link)
+    }
+  },
+  template: '<a v-if="window.location.pathname === \'/accords/read.glossary.html\'" class="glossary-dfn" v-bind:href="url"><slot></slot></a>' +
+  '<span v-else class="glossary-dfn" v-on:click="open"><slot></slot></span>'
 })

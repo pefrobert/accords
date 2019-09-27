@@ -13,22 +13,12 @@
 
 	<div class="section-content section-glossary">
 	{% for definition in glossary %}
-		<dl class="glossary-item" id="glossary-{{ definition.id }}">
-			<dt>
-				<a name="{{definition.id}}"></a>{{ definition.terme }}
-				<bookmark-button type="glossary" target="{{ definition.id }}"></bookmark-button>
-			</dt>
-			<dd>
-			{% if definition.synonymes.length %}
-				<p class="syns"><span class="label">Synonymes :</span> <span class="content">{{ definition.synonymes }}</span></p>
-			{% endif %}
-			<p>{{ definition.definition | safe }}</p>
-			{% if definition.source %}
-				<p class="source"><span class="label">Pour en savoir plus&nbsp;:</span> {{ definition.source | urlize | safe }}</p>
-			{% endif %}
-			</dd>
-		</dl>
-		{% endfor %}
+		<glossary-item id="{{ definition.id }}" term="{{ definition.terme }}" synonymes="{{ definition.synonymes }}" source="{{ definition.source }}">
+			<template v-slot:definition>{{ definition.definition | urlize | safe }}</template>
+			<template v-slot:source>{{ definition.source | urlize |safe }}</template>
+			<template v-slot:synonymes>{{ definition.synonymes | urlize | safe }}</template>
+		</glossary-item>
+	{% endfor %}
 	</div>
 {% endblock %}
 
