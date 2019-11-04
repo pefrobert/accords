@@ -588,6 +588,32 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-writ
     }
 }
 
+// resources section
+.section-resources {
+    margin-bottom: 35px;
+    .resource-item {
+        clear: both;
+        // margin-bottom: 25px;
+        a {
+            color: $accent2-dark;
+        }
+        .resource-content {}
+        .type {
+            margin-bottom: 10px;
+            padding: 2px 10px;
+            font-size: 12px;
+            text-align: right;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: bold;
+            background-color: $accent2-dark;
+            .label {
+                font-weight: normal;
+            }
+        }
+    }
+}
+
 
 // legal aspects
 .section-legal {

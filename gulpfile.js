@@ -10,12 +10,13 @@ console.log(plugins)
 
 gulp.task('clean', function () {
   return gulp.src('www/**', { read: false, allowEmpty: true })
-    .pipe(plugins.clean({ read: false, force: true }))
+    .pipe(plugins.cleanDir('www/**'))
 })
 
 gulp.task('css', function () {
-  return gulp.src('src/css/*.css')
-    /* ici les plugins Gulp à exécuter */
+  // Compile CSS
+  return gulp.src('src/css/*.scss')
+    .pipe(plugins.sass({ sourceMap: 'www/css/index.css.map' }).on('error', plugins.sass.logError))
     .pipe(gulp.dest('www/css'))
 })
 
@@ -52,26 +53,13 @@ gulp.task('img', function () {
     .pipe(gulp.dest('www/img'))
 })
 
-// Tâche "minify" = minification CSS (source -> destination)
-gulp.task('minifyCSS', function () {
-  return gulp.src('www/css/*.css')
-    .pipe(plugins.csso())
-    .pipe(plugins.rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('www/css'))
-})
-
 gulp.task('nunjucks', function () {
   let templateData = {
     amorces: JSON.parse(fs.readFileSync('www/data/talk.amorces.json')),
-    amorcesString: fs.readFileSync('www/data/talk.amorces.json'),
     art: JSON.parse(fs.readFileSync('www/data/talk.art.json')),
-    artString: fs.readFileSync('www/data/talk.art.json'),
     glossary: JSON.parse(fs.readFileSync('www/data/read.glossary.json')),
-    glossaryString: fs.readFileSync('www/data/read.glossary.json'),
+    resources: JSON.parse(fs.readFileSync('www/data/talk.resources.json')),
     vecu: JSON.parse(fs.readFileSync('www/data/read.vecu.json')),
-    vecuString: fs.readFileSync('www/data/read.vecu.json'),
     timestamp: (new Date()).getUTCMilliseconds()
   }
 
@@ -96,10 +84,7 @@ gulp.task('nunjucks', function () {
 })
 
 // Tâche "build"
-gulp.task('build', gulp.series('webpack-accords', 'csv', gulp.parallel('css', 'js', 'js-vendor', 'img', 'nunjucks')))
-
-// Tâche "prod" = Build + minify
-gulp.task('prod', gulp.series('clean', gulp.parallel('build', 'minifyCSS')))
+gulp.task('build', gulp.series('clean', 'webpack-accords', 'csv', gulp.parallel('css', 'js', 'js-vendor', 'img', 'nunjucks')))
 
 // Tâche "watch" = je surveille *less
 gulp.task('watch', function () {
