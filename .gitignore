@@ -22,6 +22,8 @@ res/
 www/
 
 # Misc
+_archives/
 _docs/
+_sources/
 
 \.docs/

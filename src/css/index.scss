@@ -235,10 +235,31 @@ $page-vpadding: 15px;
         &.section-notes {
             &:hover {
                 background-color: mix($accent4, #fff, 20%);
+                .icon::before {
+                    border-color: mix($accent4, #fff, 20%);
+                }
             }
             &.active,
             &.active a {
                 border-color: $accent4;
+            }
+
+            // ### temporaire : point rouge d'activité
+            .i-con {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -3px;
+                    left: 50%;
+                    left: calc(50% + 4px);
+                    z-index: 1;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50px;
+                    border: 2px solid #fff;
+                    background: #e00;
+                }
             }
         }
     }
@@ -375,10 +396,60 @@ $page-vpadding: 15px;
 
 
 // glossary
-.glossary-dfn {
-    text-decoration: none;
-    border-bottom: 1px dashed;
-}
+
+    // liens glossaire
+        .glossary-dfn {
+            text-decoration: none;
+            cursor: pointer;
+        }
+    // v1 - souligné trétillé + point d'interrogation dans un cercle
+        .glossary-dfn {
+            position: relative;
+            display: inline-block;
+            padding: 0 1.3em 0 0;
+            text-decoration: none;
+            border-bottom: 1px dashed;
+            &::after {
+                content: "?";
+                position: absolute;
+                right: 0;
+                top: 0;
+                color: #fff;
+                font-size: .8em;
+                width: 1.3em;
+                height: 1.3em;
+                line-height: 1.2;
+                text-align: center;
+                background-color: rgba(0,0,0,.65);
+                border-radius: 50px;
+            }
+        }
+    // v2 - encadré avec fond de couleur et point d'interrogation plus foncé
+        // .glossary-dfn {
+        //     position: relative;
+        //     display: inline-block;
+        //     padding: 0 1.4em 0 3px;
+        //     color: #fff !important;
+        //     background-color: #5f9938; // !!! couleurs à faire varier en fonction de chaque section de l'app
+        //     text-decoration: none;
+        //     line-height: 1.2em;
+        //     border-radius: 3px;
+        //     &::after {
+        //         content: "?";
+        //         position: absolute;
+        //         right: 0;
+        //         top: 0;
+        //         bottom: 0;
+        //         color: #fff;
+        //         font-size: 1em;
+        //         width: 1.2em;
+        //         height: 1.2em;
+        //         line-height: 1.2;
+        //         text-align: center;
+        //         background-color: rgba(0,0,0,.35);
+        //         border-radius: 0 3px 3px 0;
+        //     }
+        // }
 dl.glossary-item {
     dt {
         font-size: 20px;
@@ -498,6 +569,24 @@ dl.glossary-item {
         background-size: 24px 24px;
     }
 
+    // variante "presque plein écran"
+    // .overlay {
+    //     background-color: rgba(0,0,0,.5);
+    // }
+    // .overlay-content {
+    //     left: 7%;
+    //     right: 7%;
+    //     top: 5%;
+    //     bottom: 5%;
+    //     padding-top: 10px;
+    //     background: #fff;
+    //     border-radius: 3px;
+    //     box-shadow: 0 5px 25px -10px #000;
+    // }
+    // .overlay-close {
+    //     background-image: url('../img/icon-close.svg');
+    // }
+
     // variante "compact", pas en plein écran
     .overlay.compact {
         background-color: rgba(0,0,0,.5);
@@ -532,16 +621,17 @@ dl.glossary-item {
     font-size: 20px;
     border-radius: 4px;
     background: transparent url('../img/icon-bookmark-off.svg') no-repeat 50% 50% scroll;
+    background-image: url('../img/icon-bookmark-new.svg');
     background-size: 1em 1em;
     vertical-align: text-bottom;
     &.on {
-        background-image: url('../img/icon-bookmark-on.svg');
+        // background-image: url('../img/icon-bookmark-on.svg');
     }
 }
 
-body.read .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-read.svg');}
-body.talk .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-talk.svg');}
-body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-write.svg');}
+body.read .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-read.svg');}
+body.talk .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-talk.svg');}
+body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-write.svg');}
 
 
 // art section
@@ -555,11 +645,12 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-writ
         }
         h2 {
             padding-top: 25px;
+            padding-bottom: 10px;
+            // margin-bottom: 10px;
             color: $accent2;
             font-weight: normal;
             line-height: 1;
-            margin-bottom: 10px;
-            overflow: hidden;
+            overflow: hidden; // pourquoi ?
             .bookmark-btn {
                 float: right;
             }
@@ -712,6 +803,7 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-on-writ
         margin: 15px -15px -12px;
         img {
             display: block;
+            width: 100%;
         }
     }
 }
@@ -972,6 +1064,7 @@ body.notes {
                 cursor: pointer;
                 border-radius: 4px;
                 background: transparent url('../img/icon-bookmark-on.svg') no-repeat 50% 50% scroll;
+                background-image: url('../img/icon-bookmark-new.svg');
                 background-size: 24px 24px;
             }
             &::after {
@@ -989,17 +1082,20 @@ body.notes {
         }
         .section-read {
             .bookmark-item::before {
-                background-image: url('../img/icon-bookmark-on-read.svg');
+                // background-image: url('../img/icon-bookmark-on-read.svg');
+                background-image: url('../img/icon-bookmark-new-on-read.svg');
             }
         }
         .section-talk {
             .bookmark-item::before {
-                background-image: url('../img/icon-bookmark-on-talk.svg');
+                // background-image: url('../img/icon-bookmark-on-talk.svg');
+                background-image: url('../img/icon-bookmark-new-on-talk.svg');
             }
         }
         .section-write {
             .bookmark-item::before {
-                background-image: url('../img/icon-bookmark-on-write.svg');
+                // background-image: url('../img/icon-bookmark-on-write.svg');
+                background-image: url('../img/icon-bookmark-new-on-write.svg');
             }
         }
     }

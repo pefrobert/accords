@@ -29,8 +29,10 @@
 				</div>
 				{% endif %}
 				<p>
-					<bookmark-button type="vecu" target="{{ vignette.id }}"></bookmark-button>
 					{{ vignette.description | safe }}
+				</p>
+				<p class="add-bookmark">
+					<bookmark-button type="vecu" target="{{ vignette.id }}"></bookmark-button>
 				</p>
 				{% if vignette.imgPosition == 'wide' %}
 				<div class="img-wide">
