@@ -5,13 +5,13 @@ import NotesSection from './notes-section.js'
 import Notes from './notes.js'
 import Overlay from './overlay.js'
 
-var ACCORDs = {
+var ACCORD = {
   version: '2019-05-18 22:16:00'
 }
 
 /* global Vue */
 const vm = new Vue({ el: '.app' })
 
-window.ACCORDs = ACCORDs
+window.ACCORD = ACCORD
 
-export default ACCORDs
+export default ACCORD

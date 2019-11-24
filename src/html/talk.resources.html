@@ -1,18 +1,18 @@
 {% extends "base.njk" %}
 
-{% block title %}Ressources pour en parler — ACCORDs{% endblock %}
+{% block title %}Ressources pour en parler — ACCORD{% endblock %}
 {% block body_class %}talk{% endblock %}
 {% block parent_page %}talk.index.html{% endblock %}
 
 {% block content %}
 	<div class="section-intro">
 		<img src="img/icon-talk.svg" class="section-icon" alt="">
-		<p class="app-name">ACCORDs</p>
+		<p class="app-name">ACCORD</p>
 		<h1>Ressources pour en parler</h1>
 	</div>
 
 	{% for section, resourceList in resources | groupby("section") %}
-	<div class="section-content section-resources">		
+	<div class="section-content section-resources">
 		<div class="resource-item">
 			<div class="resource-content">
 				<p class="type"><span class="content">{{ section }}</span></p>
@@ -26,7 +26,7 @@
 				{% endfor %}
 				</ul>
 			</div>
-		</div>	
+		</div>
 	</div>
 	{% endfor %}
 
