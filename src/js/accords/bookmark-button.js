@@ -21,5 +21,5 @@ Vue.component('bookmark-button', {
       }
     }
   },
-  template: '<span class="bookmark-btn" v-on:click="click" v-bind:class="{on: isBookmarked}"></span>'
+  template: '<span class="bookmark-btn" v-on:click="click" v-bind:class="{on: isBookmarked}"><span class="btn-label">Ajouter à mes favoris</span></span>'
 })

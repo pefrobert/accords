@@ -18,8 +18,11 @@
 			<ul>
 			{% for amorce in amorceList %}
 				<li class="amorce">
-					<bookmark-button type="amorce" target="{{ amorce.id }}"></bookmark-button>
-					{{ amorce.amorces | safe }}</li>
+					{{ amorce.amorces | safe }}
+					<p class="action-bookmark">
+						<bookmark-button type="amorce" target="{{ amorce.id }}"></bookmark-button>
+					</p>
+				</li>
 			{% endfor %}
 			</ul>
 		</div>

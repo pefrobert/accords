@@ -406,17 +406,26 @@ dl.glossary-item dd .label {
 .compact .overlay-close {
   background-image: url("../img/icon-close.svg"); }
 
+.action-bookmark {
+  margin: 10px 0 0;
+  text-align: right; }
+
 .bookmark-btn {
   display: inline-block;
-  width: 1.1em;
   height: 1.1em;
+  padding-left: 1.2em;
   cursor: pointer;
   font-size: 20px;
   border-radius: 4px;
-  background: transparent url("../img/icon-bookmark-off.svg") no-repeat 50% 50% scroll;
+  background: transparent url("../img/icon-bookmark-off.svg") no-repeat 0 50% scroll;
   background-image: url("../img/icon-bookmark-new.svg");
   background-size: 1em 1em;
   vertical-align: text-bottom; }
+  .bookmark-btn .btn-label {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    border-bottom: 1px dashed; }
 
 body.read .bookmark-btn.on {
   background-image: url("../img/icon-bookmark-new-on-read.svg"); }
@@ -700,13 +709,11 @@ textarea {
     position: relative;
     margin-bottom: 30px;
     margin-right: 50px;
-    padding: 10px 30px 10px 15px;
+    padding: 10px 15px;
     background-color: #eee;
     border-radius: 5px; }
-    .amorces .amorce .bookmark-btn {
-      position: absolute;
-      right: 5px;
-      top: 5px; }
+    .amorces .amorce .action-bookmark {
+      margin-top: 0; }
     .amorces .amorce::after {
       content: '';
       position: absolute;
@@ -801,7 +808,8 @@ body.read select:focus,
 body.read textarea:focus {
   border-color: #009586;
   background-color: #ccf4f0; }
-body.read .app a {
+body.read .app a,
+body.read .bookmark-btn .btn-label {
   color: #009586; }
 body.read .back-nav {
   background-color: #00c7b3; }
@@ -818,7 +826,8 @@ body.talk select:focus,
 body.talk textarea:focus {
   border-color: #5f9938;
   background-color: #d2edc0; }
-body.talk .app a {
+body.talk .app a,
+body.talk .bookmark-btn .btn-label {
   color: #5f9938; }
 body.talk .back-nav {
   background-color: #7ecc4b; }
@@ -835,7 +844,8 @@ body.write select:focus,
 body.write textarea:focus {
   border-color: #bf841a;
   background-color: #ffefd3; }
-body.write .app a {
+body.write .app a,
+body.write .bookmark-btn .btn-label {
   color: #bf841a; }
 body.write .back-nav {
   background-color: #ffb023; }
@@ -856,7 +866,8 @@ body.notes select:focus,
 body.notes textarea:focus {
   border-color: #bf0044;
   background-color: #ffe6ef; }
-body.notes .app a {
+body.notes .app a,
+body.notes .bookmark-btn .btn-label {
   color: #bf0044; }
 body.notes .back-nav {
   background-color: #ff005a; }

@@ -16,12 +16,14 @@
 		<div class="art-item" id="art-{{ item.ID }}">
 			<h2>
 				{{ item.Titre }}
-				<bookmark-button type="art" target="{{ item.ID }}"></bookmark-button>
 			</h2>
 			<div class="art-content">
 				<img alt="{{ item.Titre }}" src="img/art/{{item.Image}}" class="poster"/>
 				<p class="type"><span class="content">{{ item.Type }}</span></p>
 				<p class="summary">{{ item.Resume | safe}}</p>
+				<div class="action-bookmark">
+					<bookmark-button type="art" target="{{ item.ID }}"></bookmark-button>
+				</div>
 			</div>
 		</div>
 		{% endfor %}

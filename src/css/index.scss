@@ -613,24 +613,34 @@ dl.glossary-item {
 
 
 // bookmarking
+.action-bookmark {
+    margin: 10px 0 0;
+    text-align: right;
+}
 .bookmark-btn {
     display: inline-block;
-    width: 1.1em;
     height: 1.1em;
+    padding-left: 1.2em;
     cursor: pointer;
     font-size: 20px;
     border-radius: 4px;
-    background: transparent url('../img/icon-bookmark-off.svg') no-repeat 50% 50% scroll;
+    background: transparent url('../img/icon-bookmark-off.svg') no-repeat 0 50% scroll;
     background-image: url('../img/icon-bookmark-new.svg');
     background-size: 1em 1em;
     vertical-align: text-bottom;
+    .btn-label {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 14px;
+        border-bottom: 1px dashed;
+    }
     &.on {
-        // background-image: url('../img/icon-bookmark-on.svg');
+        // background-image: url('../img/icon-bookmark-new-on.svg');
     }
 }
 
-body.read .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-read.svg');}
-body.talk .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-talk.svg');}
+body.read  .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-read.svg');}
+body.talk  .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-talk.svg');}
 body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-write.svg');}
 
 
@@ -976,14 +986,11 @@ textarea {
         position: relative;
         margin-bottom: 30px;
         margin-right: 50px;
-        padding: 10px 30px 10px 15px;
+        padding: 10px 15px;
         background-color: #eee;
         border-radius: 5px;
-        .bookmark-btn {
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            // font-size: 20px;
+        .action-bookmark {
+            margin-top: 0;
         }
         &::after {
             content: '';
@@ -1121,7 +1128,8 @@ body.read {
             background-color: $accent1-light;
         }
     }
-    .app a {
+    .app a,
+    .bookmark-btn .btn-label {
         color: $accent1-dark;
     }
     .back-nav {
@@ -1146,7 +1154,8 @@ body.talk {
             background-color: $accent2-light;
         }
     }
-    .app a {
+    .app a,
+    .bookmark-btn .btn-label {
         color: $accent2-dark;
     }
     .back-nav {
@@ -1171,7 +1180,8 @@ body.write {
             background-color: $accent3-light;
         }
     }
-    .app a {
+    .app a,
+    .bookmark-btn .btn-label {
         color: $accent3-dark;
     }
     .back-nav {
@@ -1202,7 +1212,8 @@ body.notes {
             background-color: $accent4-light;
         }
     }
-    .app a {
+    .app a,
+    .bookmark-btn .btn-label {
         color: $accent4-dark;
     }
     .back-nav {
