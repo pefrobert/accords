@@ -8,6 +8,7 @@ Vue.component('notes', {
       art: [],
       glossary: [],
       vecu: [],
+      questions: [],
 
       count: 0
     }
@@ -67,8 +68,20 @@ Vue.component('notes', {
             return term.description
           })
         }
+
+        // Questions
+        let bookmarksQuestions = bookmarks.filter(el => el.type === 'questions')
+        if (bookmarksQuestions.length) {
+          let questionsJson = this.fetchJson('./data/write.questions.json')
+          this.questions = bookmarksQuestions.map(function (bookmark) {
+            let term = questionsJson.find(function (item) {
+              return item.id === bookmark.target
+            })
+            return term.question
+          })
+        }
       }
-      this.count = this.art.length + this.amorces.length + this.glossary.length + this.vecu.length
+      this.count = this.art.length + this.amorces.length + this.glossary.length + this.vecu.length + this.questions.length
     },
     fetchJson: function (url) {
       let json = []
@@ -86,10 +99,11 @@ Vue.component('notes', {
     }
   },
   template: '<div v-if="count>0">' +
-    '<notes-section section="talk" type="amorces" title="Amorces de discussions" v-bind:bookmarks="amorces"></notes-section>' +
-    '<notes-section section="talk" type="art" title="Les soins anticipés dans l\'art" v-bind:bookmarks="art"></notes-section>' +
-    '<notes-section section="read" type="glossary" title="Glossaire" v-bind:bookmarks="glossary"></notes-section>' +
-    '<notes-section section="read" type="vecu" title="Histoires Vécues" v-bind:bookmarks="vecu"></notes-section>' +
+    '<notes-section section="read"  type="glossary"  v-bind:bookmarks="glossary"  title="Je m\'informe : Glossaire"></notes-section>' +
+    '<notes-section section="read"  type="vecu"      v-bind:bookmarks="vecu"      title="Je m\'informe : Histoires Vécues"></notes-section>' +
+    '<notes-section section="talk"  type="amorces"   v-bind:bookmarks="amorces"   title="J\'en parle : Amorces de discussions"></notes-section>' +
+    '<notes-section section="talk"  type="art"       v-bind:bookmarks="art"       title="J\'en parle : Les soins anticipés dans l\'art"></notes-section>' +
+    '<notes-section section="write" type="questions" v-bind:bookmarks="questions" title="J\'écris : En cas d\'urgence"></notes-section>' +
   '</div>' +
   '<div v-else>' +
     '<p class="no-data">Aucune sélection pour l\'instant.</p>' +

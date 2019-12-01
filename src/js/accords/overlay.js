@@ -37,6 +37,6 @@ Vue.component('overlay', {
   template: '<div id="overlay" ref="overlay" class="overlay" v-bind:style="{ display: activeDisplay }">' +
     '<div id="overlay-close" class="overlay-close" v-on:click="close"></div>' +
     '<div id="overlay-content" class="overlay-content content-text">' +
-      '<slot>Loading ...</slot>' +
+      '<slot>Loading…</slot>' +
     '</div>'
 })
