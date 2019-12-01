@@ -7,6 +7,7 @@
 {% block head_javascript %}
 <script type="text/javascript" src="js/vendor/jquery-3.4.1.slim.min.js"></script>
 <script type="text/javascript" src="js/vendor/sisyphus-1.1.3.min.js"></script>
+<script type="text/javascript" src="js/write.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -18,19 +19,13 @@
 
 	<p>Les réponses que vous aurez données ci-après décrivent vos souhaits et vos préférences pour des situations médicales précises. Ces indications permettront aux soignants ainsi qu’à vos proches de savoir comment agir dans des situations d’urgence.</p>
 
+	<div class="notice">
+		<p><strong>En cas de perte de <glossary link=discernement>capacité de discernement</glossary> à cause d'un événement aigu (coma, accident, attaque cérébrale, etc.) les représentants thérapeutiques prennent les décisions à votre place.</strong> Si vous ne vous êtes pas encore prononcé·e sur la question, rendez vous dans la partie <a href="write.mydata.html">Moi et mon entourage</a> pour exprimer votre choix. Sans information, le représentant thérapeutique sera désigné par <glossary link=legal>l'ordre légal</glossary>.</p>
+	</div>
+
 	<form name="write.soins" id="write.soins">
 
 	<div class="section-content section-form section-urgences">
-
-		{{ _form.fieldRadioTextarea(
-			"<strong>Si je n'ai plus ma <glossary link=discernement>capacité de discernement</glossary> à cause d'un évènement aigu</strong> (ex: coma, accident, attaque cérébrale, etc …), je souhaiterais&nbsp;:"
-			, "no-discernement"
-			, [
-				{id : 'representant', value : 'representant', label : 'Je souhaite désigner  mon <glossary link=representant>représentant thérapeutique</glossary> auquel j’ai transmis mes volontés pour qu’il soit en mesure de décider pour moi (il est possible de fournir le nom et les coordonnées de cette ou ces personnes(s) dans la section « Moi et mon entourage »).'}
-				, {id : 'ordre', value : 'nobody', label : "Je ne souhaite pas désigner quelqu’un particulier. Mon représentant thérapeutique sera alors désigné par   l'<glossary link=legal>ordre légal</glossary>" }
-			]
-			, "Remarques complémentaires&nbsp;:"
-		) }}
 
 		{{ _form.fieldRadioTextarea(
 			"<strong>Si mon cœur s'arrêtait soudainement</strong> (arrêt cardiaque)&nbsp;:"
@@ -45,6 +40,13 @@
 
 		{{ _form.fieldTextarea("arret-cardiaque-more", "Remarques complémentaires&nbsp;:") }}
 
+		<div class="action-bookmark">
+			<bookmark-button type="question" target="{{ item.ID }}"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
 		{{ _form.fieldRadioTextarea(
 			"<strong>Si je souffrais d’une maladie grave et devais avoir besoin de traitements contre la douleur&nbsp;:</strong>"
 			, "douleur"
@@ -54,6 +56,13 @@
 			]
 			, "Remarques complémentaires&nbsp;:"
 		) }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="question" target="{{ item.ID }}"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
 
 		{{ _form.fieldRadioTextarea(
 			"<strong>Si je me trouve dans une situation où j’ai de la peine à respirer</strong> (insuffisance respiratoire)&nbsp;:"
@@ -71,14 +80,21 @@
 			, "insuffisance-respiratoire-souffrir"
 			, [
 				{id : 'lucidité', value : 'lucidité', label : "Je souhaite que les médicaments pour me soulager soient dosés de manière à préserver des périodes de lucidité, même au prix de souffrances."}
-				, {id : 'no-souffrance', value : 'no-souffrance', label : "Je souhaite que les médicaments pour me soulager soient dosés de manière à ce que je souffre le moins possible même si cela peut altérer mon état de conscience ou diminuer mes chances de survie." }
+				, {id : 'no-souffrance', value : 'no-souffrance', label : "Je souhaite que les médicaments pour me soulager soient dosés de manière à ce que je souffre le moins possible même si cela peut altérer mon état de conscience." }
 			]
 			, "Remarques complémentaires&nbsp;:"
 		) }}
 
+		<div class="action-bookmark">
+			<bookmark-button type="question" target="{{ item.ID }}"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
 		{{ _form.fieldRadioTextarea(
 			"<strong>Si je me trouve dans une situation où je ne peux plus m’alimenter par voie normale et qu’un recours à l’alimentation artificielle est nécessaire</strong> (au moyen d’une sonde gastrique, d’une perfusion, d’une pose chirurgicale ou d’une sonde nutritive).&nbsp;:"
-			, "insuffisance-respiratoire-souffrir"
+			, "alimentation-artificielle"
 			, [
 				{id : 'artificiel', value : 'artificiel', label : "Je souhaite que le recours à l’alimentation artificielle soit momentané, pour autant qu’on puisse s’attendre à ce que je sois par la suite à nouveau en mesure de m’alimenter et de me désaltérer par voie normale, éventuellement avec l’aide d’une tierce personne."}
 				, {id : 'apport', value : 'apport', label : "Je souhaite que l’on mette en place l’apport continu de liquides et d’aliments si cela est médicalement indiqué ou si cela n’entraine pas d’effets indésirables." }
@@ -86,6 +102,13 @@
 			]
 			, "Remarques complémentaires&nbsp;:"
 		) }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="question" target="{{ item.ID }}"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
 
 		{{ _form.fieldRadioTextarea(
 			"<strong>Concernant le traitement de la douleur et des symptômes&nbsp;:</strong>"
@@ -97,27 +120,48 @@
 			, "Remarques complémentaires&nbsp;:"
 		) }}
 
+		<div class="action-bookmark">
+			<bookmark-button type="question" target="{{ item.ID }}"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
 		{{ _form.fieldRadioTextarea(
 			"<strong>Concernant le don d’organes&nbsp;:</strong>"
 			, "don-organe"
 			, [
-				{id : 'cartedonneur', value : 'cartedonneur', label : "J’ai exprimé ma position sur une carte de donneur d’organe et/ou dans le registre national."}
+				{id : 'cartedonneur', value : 'cartedonneur', label : "J’ai déjà exprimé formellement ma position (pour ou contre le don d’organe)."}
 				, {id : 'registre', value : 'registre', label : "J’aimerais exprimer mon choix dans le <a href=\"https://www.swisstransplant.org/fr/registre-nationaldu-don-dorganes/\" target=\"_blank\">registre national</a>." }
 				, {id : 'no-interest-don', value : 'no-interest-don', label : "La question du don d’organe ne m’intéresse pas." }
 			]
 			, "Remarques complémentaires&nbsp;:"
 		) }}
 
+		<div class="action-bookmark">
+			<bookmark-button type="question" target="{{ item.ID }}"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
 		{{ _form.fieldRadioTextarea(
 			"<strong>Concernant le don des données biologiques à la recherche scientifique&nbsp;:</strong>"
-			, "insuffisance-respiratoire-souffrir"
+			, "donnees-biologiques"
 			, [
 				{id : 'alreadydone', value : 'alreadydone', label : "Je me suis déjà positionnée par rapport à cette question."}
-				, {id : 'hug', value : 'hug', label : "Je m’informe sur le site des HUG." }
+				, {id : 'hug', value : 'hug', label : "Je m’informe <a href=\"https://www.hug-ge.ch/aider-recherche\" target=\"_blank\">sur le site des HUG</a>." }
 				, {id : 'no-interest', value : 'no-interest', label : "La question du don des données biologiques ne m’intéresse pas." }
 			]
 			, "Remarques complémentaires&nbsp;:"
 		) }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="question" target="{{ item.ID }}"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
 
 		{{ _form.fieldTextarea("what-else", "<strong>Vous arrivez à la fin du questionnaire. Y a-t-il quelque chose que vous souhaiteriez ajouter&nbsp;?</strong>") }}
 
@@ -135,6 +179,34 @@
 				</a>
 			</div>
 		</nav>
+
+		<div class="reminder">
+			<p><strong>Au cours d’une vie, on peut changer de priorités. Notre entourage aussi peut changer. Pensez à réactualiser vos directives anticipées.</strong></p>
+
+			{{ _form.fieldCheckboxTextarea(
+				""
+				, ""
+				, [
+					{id : 'accord-reminder', value : 'accord-reminder', label : "<strong>J’aimerais qu’ACCORD me rappelle d’actualiser mes directives anticipées.</strong>" }
+				]
+				, ''
+			) }}
+
+			{{ _form.fieldText("accord-reminder-email", "Par email, à l'adresse suivante&nbsp;:", "email") }}
+			{{ _form.fieldText("accord-reminder-sms", "Par SMS, au numéro suivant&nbsp;:", "tel") }}
+
+			{{ _form.fieldRadioTextarea(
+				"Dans"
+				, "accord-reminder-in"
+				, [
+					{id : 'accord-reminder-in-6', value : 'accord-reminder-in-6', label : "6 mois"},
+					{id : 'accord-reminder-in-12', value : 'accord-reminder-in-12', label : "12 mois"},
+					{id : 'accord-reminder-in-24', value : 'accord-reminder-in-24', label : "24 mois"}
+				]
+			) }}
+
+
+		</div>
 	</div>
 
 	</form>

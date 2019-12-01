@@ -10,7 +10,7 @@ body {
   -webkit-user-select: none;
   /* prevent copy paste, to allow, change 'none' to 'text' */
   background-color: #fff;
-  color: #444;
+  color: #333;
   font-size: 14px;
   line-height: 1.3;
   font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
@@ -181,6 +181,27 @@ a {
         border: 2px solid #fff;
         background: #e00; }
 
+.home .main-nav .nav-item.section-read {
+  background-color: #e6f9f7;
+  border-color: #00c7b3; }
+  .home .main-nav .nav-item.section-read a {
+    border-color: #00c7b3; }
+.home .main-nav .nav-item.section-talk {
+  background-color: #ecf7e4;
+  border-color: #7ecc4b; }
+  .home .main-nav .nav-item.section-talk a {
+    border-color: #7ecc4b; }
+.home .main-nav .nav-item.section-write {
+  background-color: #ffefd3;
+  border-color: #ffb023; }
+  .home .main-nav .nav-item.section-write a {
+    border-color: #ffb023; }
+.home .main-nav .nav-item.section-notes {
+  background-color: #ffccde;
+  border-color: #ff005a; }
+  .home .main-nav .nav-item.section-notes a {
+    border-color: #ff005a; }
+
 .back-nav {
   position: absolute;
   left: 0;
@@ -202,6 +223,9 @@ a {
       margin: 0 auto;
       width: 22px;
       height: 22px; }
+
+.home .back-nav {
+  display: none; }
 
 .section-intro {
   margin-top: 50px;
@@ -238,10 +262,10 @@ a {
 .section-summary .section-entry a {
   display: block;
   padding: 10px 15px;
-  color: #444;
+  color: #333;
   text-decoration: none; }
 .section-summary .section-entry h2 {
-  color: #444;
+  color: #333;
   line-height: 1;
   font-weight: normal; }
 .section-summary .section-entry:last-child {
@@ -258,7 +282,7 @@ a {
   .section-summary .section-main h2 {
     margin-bottom: 10px; }
   .section-summary .section-main .desc {
-    color: #777; }
+    color: #666; }
 .section-summary .section-main + .section-secondary {
   margin-top: 50px; }
 .section-summary .section-secondary h2 {
@@ -427,6 +451,11 @@ dl.glossary-item dd .label {
     font-size: 14px;
     border-bottom: 1px dashed; }
 
+.bookmark-help {
+  margin-top: 5px;
+  color: #777;
+  font-style: italic; }
+
 body.read .bookmark-btn.on {
   background-image: url("../img/icon-bookmark-new-on-read.svg"); }
 
@@ -551,6 +580,7 @@ body.write .bookmark-btn.on {
     display: block;
     width: 100%; }
 
+input[type="tel"],
 input[type="text"],
 input[type="date"],
 input[type="email"],
@@ -563,6 +593,7 @@ textarea {
   line-height: 1.4;
   font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
   border: 1px solid #bbb; }
+  input[type="tel"]:focus,
   input[type="text"]:focus,
   input[type="date"]:focus,
   input[type="email"]:focus,
@@ -571,6 +602,7 @@ textarea {
   textarea:focus {
     border-color: #bf841a;
     background-color: #ffefd3; }
+  input[type="tel"]::-webkit-input-placeholder,
   input[type="text"]::-webkit-input-placeholder,
   input[type="date"]::-webkit-input-placeholder,
   input[type="email"]::-webkit-input-placeholder,
@@ -578,6 +610,7 @@ textarea {
   select::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
     font-size: 12px; }
+  input[type="tel"]:-moz-placeholder,
   input[type="text"]:-moz-placeholder,
   input[type="date"]:-moz-placeholder,
   input[type="email"]:-moz-placeholder,
@@ -585,6 +618,7 @@ textarea {
   select:-moz-placeholder,
   textarea:-moz-placeholder {
     font-size: 12px; }
+  input[type="tel"]:placeholder,
   input[type="text"]:placeholder,
   input[type="date"]:placeholder,
   input[type="email"]:placeholder,
@@ -609,6 +643,10 @@ textarea {
 
 .form-item-radio .form-input {
   margin: 10px 0; }
+  .form-item-radio .form-input .form-item-text {
+    margin: 0; }
+    .form-item-radio .form-input .form-item-text .form-label {
+      display: none; }
 .form-item-radio .form-input-radio {
   position: relative;
   margin: 5px 0; }
@@ -620,8 +658,36 @@ textarea {
     display: block;
     padding: 5px 0 5px 25px;
     border-radius: 2px; }
+    .form-item-radio .form-input-radio label strong {
+      color: #bf841a; }
   .form-item-radio .form-input-radio input:checked + label {
     background-color: #ffefd3; }
+
+.form-item-checkbox .form-input {
+  margin: 10px 0; }
+  .form-item-checkbox .form-input .form-item-text {
+    margin: 0; }
+    .form-item-checkbox .form-input .form-item-text .form-label {
+      display: none; }
+.form-item-checkbox .form-input-checkbox {
+  position: relative;
+  margin: 5px 0; }
+  .form-item-checkbox .form-input-checkbox input {
+    position: absolute;
+    left: 5px;
+    top: 7px; }
+  .form-item-checkbox .form-input-checkbox label {
+    display: block;
+    padding: 5px 0 5px 25px;
+    border-radius: 2px; }
+    .form-item-checkbox .form-input-checkbox label strong {
+      color: #bf841a; }
+  .form-item-checkbox .form-input-checkbox input:checked + label {
+    background-color: #ffefd3; }
+
+.form-note {
+  color: #666;
+  font-style: italic; }
 
 .form-notice {
   text-align: center;
@@ -637,7 +703,7 @@ textarea {
     .pager .pager-item a {
       position: relative;
       display: block;
-      color: #444;
+      color: #333;
       text-decoration: none;
       padding: 5px 10px 35px;
       background-color: #ffefd3; }
@@ -696,6 +762,53 @@ textarea {
       position: absolute;
       left: 6px;
       top: 6px; }
+
+.reminder {
+  margin: 50px 0;
+  padding: 10px 15px;
+  background-color: #eee; }
+  .reminder .form-item {
+    margin-bottom: 0; }
+  .reminder .form-item-radio .form-input-radio {
+    display: inline-block;
+    margin-right: 5px; }
+    .reminder .form-item-radio .form-input-radio label {
+      padding-right: 7px; }
+  .reminder .form-label,
+  .reminder .form-input-radio label,
+  .reminder .form-input-checkbox label {
+    color: #555; }
+    .reminder .form-label strong,
+    .reminder .form-input-radio label strong,
+    .reminder .form-input-checkbox label strong {
+      color: #ac7717; }
+  .reminder .form-item-radio .form-input-radio label strong,
+  .reminder .form-item-checkbox .form-input-checkbox label strong {
+    color: #ac7717; }
+  .reminder .form-item-radio .form-input-radio input:checked + label,
+  .reminder .form-item-checkbox .form-input-checkbox input:checked + label {
+    color: #333;
+    background-color: #eddec4; }
+    .reminder .form-item-radio .form-input-radio input:checked + label strong,
+    .reminder .form-item-checkbox .form-input-checkbox input:checked + label strong {
+      color: #8f6314; }
+
+.notice {
+  margin: 25px 0;
+  padding: 10px 15px;
+  color: #333;
+  background-color: #eee; }
+
+.question-more-info {
+  margin: 15px 0 15px 15%;
+  padding: 5px 15px;
+  border-radius: 3px;
+  background-color: #ffefd3; }
+  .question-more-info .glossary-dfn {
+    padding-right: 0;
+    color: #bf841a; }
+    .question-more-info .glossary-dfn::after {
+      display: none; }
 
 .amorces {
   margin-bottom: 50px; }
@@ -800,6 +913,7 @@ body.notes .section-intro {
     width: 100%;
     min-height: 100px; }
 
+body.read input[type="tel"]:focus,
 body.read input[type="text"]:focus,
 body.read input[type="date"]:focus,
 body.read input[type="email"]:focus,
@@ -818,6 +932,7 @@ body.read .section-summary .section-entry h2 {
 body.read .actions .action button {
   background-color: #009586; }
 
+body.talk input[type="tel"]:focus,
 body.talk input[type="text"]:focus,
 body.talk input[type="date"]:focus,
 body.talk input[type="email"]:focus,
@@ -836,6 +951,7 @@ body.talk .section-summary .section-entry h2 {
 body.talk .actions .action button {
   background-color: #5f9938; }
 
+body.write input[type="tel"]:focus,
 body.write input[type="text"]:focus,
 body.write input[type="date"]:focus,
 body.write input[type="email"]:focus,
@@ -853,11 +969,16 @@ body.write .section-summary .section-entry h2 {
   color: #bf841a; }
 body.write .actions .action button {
   background-color: #bf841a; }
-body.write .form-label {
+body.write .form-label,
+body.write .form-input-radio label,
+body.write .form-input-checkbox label {
   color: #666; }
-  body.write .form-label strong {
+  body.write .form-label strong,
+  body.write .form-input-radio label strong,
+  body.write .form-input-checkbox label strong {
     color: #bf841a; }
 
+body.notes input[type="tel"]:focus,
 body.notes input[type="text"]:focus,
 body.notes input[type="date"]:focus,
 body.notes input[type="email"]:focus,

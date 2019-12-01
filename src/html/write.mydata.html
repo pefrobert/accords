@@ -7,6 +7,7 @@
 {% block head_javascript %}
 <script type="text/javascript" src="js/vendor/jquery-3.4.1.slim.min.js"></script>
 <script type="text/javascript" src="js/vendor/sisyphus-1.1.3.min.js"></script>
+<script type="text/javascript" src="js/write.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -20,29 +21,37 @@
 
 	<div class="section-content section-form section-mydata">
 
-		{{ _form.fieldText("lastname","<strong>Mon nom&nbsp;:</strong>") }}
+		{{ _form.fieldText("name","<strong>Mes nom et prénom</strong>") }}
 
-		{{ _form.fieldText("firstname","<strong>Mon prénom&nbsp;:</strong>") }}
+		{{ _form.fieldText("birthdate","<strong>Ma date de naissance</strong>") }}
 
-		{{ _form.fieldText("birthdate","<strong>Ma date de naissance&nbsp;:</strong>") }}
+		{{ _form.fieldText("email","<strong>Mon adresse mail</strong>","email") }}
 
-		{{ _form.fieldText("birthplace","<strong>Mon lieu de naissance&nbsp;:</strong>") }}
+		{{ _form.fieldTextarea("nurses","<strong>Les personnes qui me soignent habituellement</strong>") }}
 
-		{{ _form.fieldText("email","<strong>Mon adresse mail&nbsp;:</strong>","email") }}
+		{{ _form.fieldTextarea("represents-1","<strong>Mon ou mes <glossary link=\"representant\">représentant(s) thérapeutique(s)</glossary></strong><div class=\"question-more-info\"><glossary link=\"representant\">Pourquoi sont-ils si importants&nbsp;?</glossary></div>
+		1. Nom et prénom *<br>Infos utiles pour le/la contacter (adresse, téléphone, mail…)") }}
 
-		{{ _form.fieldTextarea("nurses","<strong>Les personnes qui me soignent habituellement&nbsp;:</strong>") }}
+		{{ _form.fieldTextarea("represents-2","2. Nom et prénom *<br>Infos utiles pour le/la contacter (adresse, téléphone, mail…)") }}
 
-		{{ _form.fieldTextarea("represents-1","<strong>Mon ou mes <glossary link=\"representant\">représentant(s) thérapeutique(s)</glossary></strong><br>(l’ordre des noms détermine l’ordre de priorité)
-		<p>&nbsp;</p>
-		1. Nom et prénom<br>Infos utiles pour le/la contacter (adresse, téléphone, mail…)") }}
+		<div class="form-note">* L’ordre des noms détermine l’ordre de priorité.</div>
 
-		{{ _form.fieldTextarea("represents-2","2. Nom et prénom<br>Infos utiles pour le/la contacter (adresse, téléphone, mail…)") }}
+		{{ _form.fieldCheckboxTextarea(
+			""
+			, ""
+			, [
+				{id : 'represents-no', value : 'represents-no', label : "Je ne souhaite pas désigner quelqu'un en particulier. Mon représentant thérapeutique sera alors désigné par <glossary link=legal>l'ordre légal</glossary>." }
+			]
+			, ''
+		) }}
 
-		{{ _form.fieldTextarea("closerelation","<strong>Les personnes qui me soutiennent au quotidien parmi mes proches&nbsp;:</strong>") }}
+		{{ _form.fieldTextarea("closerelation","<strong>Les personnes qui me soutiennent au quotidien parmi mes proches</strong>") }}
 
-		{{ _form.fieldTextarea("responsible","<strong>Je me sens responsable de&nbsp;…</strong> (mes enfants, mes animaux, la comptabilité de ma famille, etc…)") }}
+		{{ _form.fieldTextarea("responsible","<strong>En cas de coup dur, je serais en souci pour</strong> (mes enfants, mes animaux, la comptabilité de ma famille, etc.) et <strong>je souhaiterais que…</strong> (cette personne s’occupe de…, etc)") }}
 
-		{{ _form.fieldTextarea("important","<strong>Autres choses importantes à dire sur mon entourage</strong> (je me sens particulièrement proche de…, ma soignante préférée est…, etc…)") }}
+		{{ _form.fieldTextarea("transmettre","<strong>Les choses importantes à transmettre à mon entourage</strong> (j’ai écrit une lettre pour…, j’aimerais que cet objet revienne à…, etc)") }}
+
+		{{ _form.fieldTextarea("important","<strong>Autres choses importantes à dire sur mon entourage</strong> (je me sens particulièrement proche de…, ma soignante préférée est…, je ne souhaite pas la visite de…, etc)") }}
 
 		<nav class="pager">
 			<div class="pager-item next">

@@ -14,8 +14,8 @@ $accent2-light: mix($accent2, #fff, 35%);
 $accent3-light: mix($accent3, #fff, 20%);
 $accent4-light: mix($accent4, #fff, 10%);
 
-$text1: #444; // petit texte, couleur principale
-$text2: #777; // grand texte, sous-titres
+$text1: #333; // petit texte, couleur principale
+$text2: #666; // grand texte, sous-titres
 $text3: #999; // éléments désactivés
 
 * {
@@ -265,6 +265,13 @@ $page-vpadding: 15px;
     }
 }
 
+.home .main-nav .nav-item {
+    &.section-read  {background-color: mix($accent1, #fff, 10%); border-color: $accent1; a {border-color: $accent1;}}
+    &.section-talk  {background-color: mix($accent2, #fff, 15%); border-color: $accent2; a {border-color: $accent2;}}
+    &.section-write {background-color: mix($accent3, #fff, 20%); border-color: $accent3; a {border-color: $accent3;}}
+    &.section-notes {background-color: mix($accent4, #fff, 20%); border-color: $accent4; a {border-color: $accent4;}}
+}
+
 .back-nav {
     position: absolute;
     left: 0;
@@ -288,6 +295,10 @@ $page-vpadding: 15px;
             height: 22px;
         }
     }
+}
+
+.home .back-nav {
+    display: none;
 }
 
 
@@ -638,6 +649,12 @@ dl.glossary-item {
         // background-image: url('../img/icon-bookmark-new-on.svg');
     }
 }
+.bookmark-help {
+    margin-top: 5px;
+    color: #777;
+    // font-size: .9em;
+    font-style: italic;
+}
 
 body.read  .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-read.svg');}
 body.talk  .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-talk.svg');}
@@ -819,6 +836,7 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-
 }
 
 // form elements
+input[type="tel"],
 input[type="text"],
 input[type="date"],
 input[type="email"],
@@ -860,6 +878,12 @@ textarea {
 .form-item-radio {
     .form-input {
         margin: 10px 0;
+        .form-item-text {
+            margin: 0;
+            .form-label {
+                display: none;
+            }
+        }
     }
     .form-input-radio {
         position: relative;
@@ -873,11 +897,49 @@ textarea {
             display: block;
             padding: 5px 0 5px 25px;
             border-radius: 2px;
+            strong {
+                color: $accent3-dark;
+            }
         }
         input:checked + label {
             background-color: $accent3-light;
         }
     }
+}
+.form-item-checkbox {
+    .form-input {
+        margin: 10px 0;
+        .form-item-text {
+            margin: 0;
+            .form-label {
+                display: none;
+            }
+        }
+    }
+    .form-input-checkbox {
+        position: relative;
+        margin: 5px 0;
+        input {
+            position: absolute;
+            left: 5px;
+            top: 7px;
+        }
+        label {
+            display: block;
+            padding: 5px 0 5px 25px;
+            border-radius: 2px;
+            strong {
+                color: $accent3-dark;
+            }
+        }
+        input:checked + label {
+            background-color: $accent3-light;
+        }
+    }
+}
+.form-note {
+    color: $text2;
+    font-style: italic;
 }
 .form-notice {
     text-align: center;
@@ -966,6 +1028,68 @@ textarea {
                 left: 6px;
                 top: 6px;
             }
+        }
+    }
+}
+
+.reminder {
+    margin: 50px 0;
+    padding: 10px 15px;
+    background-color: #eee;
+
+    .form-item {
+        margin-bottom: 0;
+    }
+
+    .form-item-radio {
+        .form-input-radio {
+            display: inline-block;
+            margin-right: 5px;
+            label {
+                padding-right: 7px;
+            }
+        }
+    }
+
+    .form-label,
+    .form-input-radio label,
+    .form-input-checkbox label {
+        color: #555;
+        strong {
+            color: mix($accent3-dark, #000, 90%);
+        }
+    }
+
+    .form-item-radio .form-input-radio label strong,
+    .form-item-checkbox .form-input-checkbox label strong {
+        color: mix($accent3-dark, #000, 90%);
+    }
+
+    .form-item-radio .form-input-radio input:checked + label,
+    .form-item-checkbox .form-input-checkbox input:checked + label {
+        color: #333;
+        background-color: mix($accent3-light, #000, 93%);
+        strong {color: mix($accent3-dark, #000, 75%);}
+    }
+}
+
+.notice {
+    margin: 25px 0;
+    padding: 10px 15px;
+    color: #333;
+    background-color: #eee;
+}
+
+.question-more-info {
+    margin: 15px 0 15px 15%;
+    padding: 5px 15px;
+    border-radius: 3px;
+    background-color: $accent3-light;
+    .glossary-dfn {
+        padding-right: 0;
+        color: $accent3-dark;
+        &::after {
+            display: none;
         }
     }
 }
@@ -1117,6 +1241,7 @@ body.notes {
 
 // color variations
 body.read {
+    input[type="tel"],
     input[type="text"],
     input[type="date"],
     input[type="email"],
@@ -1143,6 +1268,7 @@ body.read {
     }
 }
 body.talk {
+    input[type="tel"],
     input[type="text"],
     input[type="date"],
     input[type="email"],
@@ -1169,6 +1295,7 @@ body.talk {
     }
 }
 body.write {
+    input[type="tel"],
     input[type="text"],
     input[type="date"],
     input[type="email"],
@@ -1193,7 +1320,9 @@ body.write {
     .actions .action button {
         background-color: $accent3-dark;
     }
-    .form-label {
+    .form-label,
+    .form-input-radio label,
+    .form-input-checkbox label {
         color: #666;
         strong {
             color: $accent3-dark;
@@ -1201,6 +1330,7 @@ body.write {
     }
 }
 body.notes {
+    input[type="tel"],
     input[type="text"],
     input[type="date"],
     input[type="email"],

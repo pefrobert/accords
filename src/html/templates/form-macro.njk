@@ -1,6 +1,11 @@
 {% macro inputRadio(id, name, value, label) %}
 	<input type="radio" id="{{ id }}" name="{{ name }}" value="{{ value | escape }}">
-	<label for="{{ id }}">{{ label | safe }}</label>	
+	<label for="{{ id }}">{{ label | safe }}</label>
+{% endmacro %}
+
+{% macro inputCheckbox(id, name, value, label) %}
+	<input type="checkbox" id="{{ id }}" name="{{ name }}" value="{{ value | escape }}">
+	<label for="{{ id }}">{{ label | safe }}</label>
 {% endmacro %}
 
 {% macro fieldTextarea(name, label = '', value='') %}
@@ -21,6 +26,33 @@
 		{% for option in options %}
 			<div class="form-input-radio">
 			{{ inputRadio(option.id, name, option.value, option.label) }}
+			</div>
+			{% if option.text %}
+				{% set textName = name + '-text' %}
+				{{ fieldText(textName, option.text) }}
+			{% endif %}
+ 		{% endfor %}
+		</div>
+
+		{% set textareaName = name + "-textarea" %}
+		{% if textareaLabel !== '' %}
+		<div class="form-label">
+			<label for="{{ textareaName }}">{{ textareaLabel | safe}}</label>
+		</div>
+		<div class="form-input">
+			<textarea id="{{ textareaName }}" name="{{ textareaName }}">{{ textareaValue | escape }}</textarea>
+		</div>
+		{% endif %}
+	</div>
+{% endmacro %}
+
+{% macro fieldCheckboxTextarea(label, name, options, textareaLabel = '', textareaValue = '') %}
+	<div class="form-item form-item-checkbox">
+		<div class="form-label">{{ label | safe}}</div>
+		<div class="form-input">
+		{% for option in options %}
+			<div class="form-input-checkbox">
+			{{ inputCheckbox(option.id, name, option.value, option.label) }}
 			</div>
 			{% if option.text %}
 				{% set textName = name + '-text' %}

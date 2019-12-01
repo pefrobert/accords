@@ -2,7 +2,7 @@ $(function() {
 
 var slideTeasers = {
 	root: $('#teaser-slogans'),
-	displayTime: 6000,
+	displayTime: 7000,
 	maxHeight: 0,
 	viewerWidth: 0,
 	next: function () {
