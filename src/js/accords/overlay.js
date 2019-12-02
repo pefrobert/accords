@@ -38,5 +38,6 @@ Vue.component('overlay', {
     '<div id="overlay-close" class="overlay-close" v-on:click="close"></div>' +
     '<div id="overlay-content" class="overlay-content content-text">' +
       '<slot>Loading…</slot>' +
+    '</div>' +
     '</div>'
 })
