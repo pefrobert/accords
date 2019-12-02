@@ -35,30 +35,13 @@
 				, {id : 'chance', value : 'chance', label : "Je souhaite que l’on fasse tout ce qui est indiqué d’un point de vue médical si j’ai de bonnes chances de retrouver mes capacités d’avant." }
 				, {id : 'no', value : 'no', label : "Je souhaite que l’on ne me réanime pas." }
 			]
-			, 'Raisons de mon choix (je ne veux pas risquer des séquelles qui rendraient ma situation encore plus difficile, c’est « tant mieux », c’est une « belle mort », c’est une occasion pour moi d’en finir, etc …)&nbsp;:'
+			, 'Raisons de mon choix (je ne veux pas risquer des séquelles qui rendraient ma situation encore plus difficile, c’est « tant mieux », c’est une « belle mort », c’est une occasion pour moi d’en finir, etc)&nbsp;:'
 		) }}
 
 		{{ _form.fieldTextarea("arret-cardiaque-more", "Remarques complémentaires&nbsp;:") }}
 
 		<div class="action-bookmark">
 			<bookmark-button type="questions" target="arret-cardiaque"></bookmark-button>
-			<div class="bookmark-help">
-				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
-			</div>
-		</div>
-
-		{{ _form.fieldRadioTextarea(
-			"<strong>Si je souffrais d’une maladie grave et devais avoir besoin de traitements contre la douleur&nbsp;:</strong>"
-			, "douleur"
-			, [
-				{id : 'tout', value : 'tout', label : "Je souhaite que l'on fasse tout ce qui indiqué d'un point de vue médical pour me soulager, même si cela devait me faire perdre conscience voire mourir."}
-				, {id : 'conscient', value : 'conscient', label : "Je souhaite rester conscient et pouvoir communiquer, même si cela implique que je souffre." }
-			]
-			, "Remarques complémentaires&nbsp;:"
-		) }}
-
-		<div class="action-bookmark">
-			<bookmark-button type="questions" target="douleur"></bookmark-button>
 			<div class="bookmark-help">
 				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
 			</div>
@@ -93,11 +76,11 @@
 		</div>
 
 		{{ _form.fieldRadioTextarea(
-			"<strong>Si je me trouve dans une situation où je ne peux plus m’alimenter par voie normale et qu’un recours à l’alimentation artificielle est nécessaire</strong> (au moyen d’une sonde gastrique, d’une perfusion, d’une pose chirurgicale ou d’une sonde nutritive).&nbsp;:"
+			"<strong>Si je me trouve dans une situation où je ne peux plus m’alimenter par voie normale et qu’un recours à l’alimentation artificielle est nécessaire</strong> (au moyen d’une sonde gastrique, d’une perfusion, d’une pose chirurgicale ou d’une sonde nutritive)&nbsp;:"
 			, "alimentation-artificielle"
 			, [
-				{id : 'artificiel', value : 'artificiel', label : "Je souhaite que le recours à l’alimentation artificielle soit momentané, pour autant qu’on puisse s’attendre à ce que je sois par la suite à nouveau en mesure de m’alimenter et de me désaltérer par voie normale, éventuellement avec l’aide d’une tierce personne."}
-				, {id : 'apport', value : 'apport', label : "Je souhaite que l’on mette en place l’apport continu de liquides et d’aliments si cela est médicalement indiqué ou si cela n’entraine pas d’effets indésirables." }
+				{id : 'apport', value : 'apport', label : "Je souhaite que l’on mette en place l’apport continu de liquides et d’aliments si cela est médicalement indiqué." }
+				, {id : 'artificiel', value : 'artificiel', label : "Je souhaite que le recours à l’alimentation artificielle soit momentané, pour autant qu’on puisse s’attendre à ce que je sois par la suite à nouveau en mesure de m’alimenter et de me désaltérer par voie normale, éventuellement avec l’aide d’une tierce personne."}
 				, {id : 'no-alimentation', value : 'no-alimentation', label : "Je ne souhaite en aucun cas être alimenté artificiellement, même si cette décision pourrait diminuer ma durée de vie. " }
 			]
 			, "Remarques complémentaires&nbsp;:"
@@ -114,8 +97,8 @@
 			"<strong>Concernant le traitement de la douleur et des symptômes&nbsp;:</strong>"
 			, "douleur-symptomes"
 			, [
-				{id : 'vigilance', value : 'vigilance', label : "Un état de vigilance et la capacité de communiquer sont pour moi plus importants que le soulagement des douleurs et d’autres symptômes."}
-				, {id : 'touslescas', value : 'touslescas', label : "Je désire en tous les cas que l’on soigne activement mes douleurs et tous les autres symptômes accablants tels que la peur, l’agitation, la détresse respiratoire et les nausées ; j’accepte donc, le cas échéant, une perte de conscience (sédation) due à la thérapie." }
+				{id : 'no-pain', value : 'no-pain', label : "Je souhaite que l’on fasse tout ce qui est indiqué d’un point de vue médical pour soulager mes douleurs et symptômes accablants (peur, agitation, nausées) même si cela peut altérer mon état de conscience."}
+				, {id : 'vigilance', value : 'vigilance', label : "Il est particulièrement important pour moi de conserver un état de vigilance et ma capacité de communiquer, même au prix de douleurs et autres symptômes." }
 			]
 			, "Remarques complémentaires&nbsp;:"
 		) }}
@@ -131,7 +114,7 @@
 			"<strong>Concernant le don d’organes&nbsp;:</strong>"
 			, "don-organe"
 			, [
-				{id : 'cartedonneur', value : 'cartedonneur', label : "J’ai déjà exprimé formellement ma position (pour ou contre le don d’organe)."}
+				{id : 'cartedonneur', value : 'cartedonneur', label : "J’ai déjà exprimé formellement ma position (mon consentement ou non-consentement à donner mes organes après mon décès)."}
 				, {id : 'registre', value : 'registre', label : "J’aimerais exprimer mon choix dans le <a href=\"https://www.swisstransplant.org/fr/registre-nationaldu-don-dorganes/\" target=\"_blank\">registre national</a>." }
 				, {id : 'no-interest-don', value : 'no-interest-don', label : "La question du don d’organe ne m’intéresse pas." }
 			]
@@ -149,7 +132,7 @@
 			"<strong>Concernant le don des données biologiques à la recherche scientifique&nbsp;:</strong>"
 			, "donnees-biologiques"
 			, [
-				{id : 'alreadydone', value : 'alreadydone', label : "Je me suis déjà positionnée par rapport à cette question."}
+				{id : 'alreadydone', value : 'alreadydone', label : "J’ai déjà exprimé formellement ma position par rapport à cette question."}
 				, {id : 'hug', value : 'hug', label : "Je m’informe <a href=\"https://www.hug-ge.ch/aider-recherche\" target=\"_blank\">sur le site des HUG</a>." }
 				, {id : 'no-interest', value : 'no-interest', label : "La question du don des données biologiques ne m’intéresse pas." }
 			]

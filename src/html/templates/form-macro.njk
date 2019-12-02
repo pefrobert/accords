@@ -9,7 +9,7 @@
 {% endmacro %}
 
 {% macro fieldTextarea(name, label = '', value='') %}
-	<div class="form-item form-item-textarea">
+	<div class="form-item form-item-textarea field-name-{{ name | safe}}">
 		<div class="form-label">
 			<label for="{{ name }}">{{ label | safe}}</label>
 		</div>
@@ -20,7 +20,7 @@
 {% endmacro %}
 
 {% macro fieldRadioTextarea(label, name, options, textareaLabel = '', textareaValue = '') %}
-	<div class="form-item form-item-radio">
+	<div class="form-item form-item-radio field-name-{{ name | safe}}">
 		<div class="form-label">{{ label | safe}}</div>
 		<div class="form-input">
 		{% for option in options %}
@@ -36,18 +36,20 @@
 
 		{% set textareaName = name + "-textarea" %}
 		{% if textareaLabel !== '' %}
-		<div class="form-label">
-			<label for="{{ textareaName }}">{{ textareaLabel | safe}}</label>
-		</div>
-		<div class="form-input">
-			<textarea id="{{ textareaName }}" name="{{ textareaName }}">{{ textareaValue | escape }}</textarea>
+		<div class="form-item form-item-comp-textarea">
+			<div class="form-label">
+				<label for="{{ textareaName }}">{{ textareaLabel | safe}}</label>
+			</div>
+			<div class="form-input">
+				<textarea id="{{ textareaName }}" name="{{ textareaName }}">{{ textareaValue | escape }}</textarea>
+			</div>
 		</div>
 		{% endif %}
 	</div>
 {% endmacro %}
 
 {% macro fieldCheckboxTextarea(label, name, options, textareaLabel = '', textareaValue = '') %}
-	<div class="form-item form-item-checkbox">
+	<div class="form-item form-item-checkbox field-name-{{ name | safe}}">
 		<div class="form-label">{{ label | safe}}</div>
 		<div class="form-input">
 		{% for option in options %}
@@ -63,18 +65,20 @@
 
 		{% set textareaName = name + "-textarea" %}
 		{% if textareaLabel !== '' %}
-		<div class="form-label">
-			<label for="{{ textareaName }}">{{ textareaLabel | safe}}</label>
-		</div>
-		<div class="form-input">
-			<textarea id="{{ textareaName }}" name="{{ textareaName }}">{{ textareaValue | escape }}</textarea>
+		<div class="form-item form-item-comp-textarea">
+			<div class="form-label">
+				<label for="{{ textareaName }}">{{ textareaLabel | safe}}</label>
+			</div>
+			<div class="form-input">
+				<textarea id="{{ textareaName }}" name="{{ textareaName }}">{{ textareaValue | escape }}</textarea>
+			</div>
 		</div>
 		{% endif %}
 	</div>
 {% endmacro %}
 
 {% macro fieldText(name, label = '', type = 'text', value='') %}
-	<div class="form-item form-item-text">
+	<div class="form-item form-item-text field-name-{{ name | safe}}">
 		{% if label !== '' %}
 		<div class="form-label">
 			<label for="{{ name }}">{{ label | safe}}</label>

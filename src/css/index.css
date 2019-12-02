@@ -499,21 +499,31 @@ body.write .bookmark-btn.on {
 
 .section-resources {
   margin-bottom: 35px; }
+  .section-resources .resource-section a {
+    color: #5f9938; }
+  .section-resources .resource-section .section-name {
+    margin-bottom: 10px;
+    color: #888;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 4px solid #7ecc4b; }
   .section-resources .resource-item {
-    clear: both; }
-    .section-resources .resource-item a {
-      color: #5f9938; }
-    .section-resources .resource-item .type {
-      margin-bottom: 10px;
-      padding: 2px 10px;
-      font-size: 12px;
-      text-align: right;
-      color: #fff;
-      border-radius: 3px;
-      font-weight: bold;
-      background-color: #5f9938; }
-      .section-resources .resource-item .type .label {
-        font-weight: normal; }
+    overflow: hidden;
+    margin-bottom: 10px; }
+  .section-resources .resource-name {
+    float: left;
+    font-weight: bold; }
+  .section-resources .resource-link {
+    float: right;
+    padding-left: 10px; }
+  .section-resources .resource-item.soon {
+    margin: 50px 0;
+    color: #777;
+    text-align: center;
+    font-style: italic; }
+    .section-resources .resource-item.soon .resource-name {
+      font-weight: normal;
+      float: none; }
 
 .legal-intro {
   font-style: italic; }
@@ -684,6 +694,10 @@ textarea {
       color: #bf841a; }
   .form-item-checkbox .form-input-checkbox input:checked + label {
     background-color: #ffefd3; }
+
+.form-item-comp-textarea {
+  margin: 0;
+  padding-left: 25px; }
 
 .form-note {
   color: #666;

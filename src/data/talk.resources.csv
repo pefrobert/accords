@@ -1,9 +1,9 @@
-section;title;url
-Genève;Association Alzheimer Genève;http://alz-ge.ch/
-Genève;Cette liste sera bientôt complétée;
-Vaud;;
-Fribourg;;
-Valais;;
-Neuchâtel;;
-Berne;;
-Jura;;
+section;title;url;class
+Genève;Association Alzheimer Genève;http://alz-ge.ch/;
+Genève;Cette liste sera bientôt complétée.;;soon
+Vaud;;;
+Fribourg;;;
+Valais;;;
+Neuchâtel;;;
+Berne;;;
+Jura;;;
