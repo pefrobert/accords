@@ -477,6 +477,9 @@ dl.glossary-item {
         ul {
             list-style: square;
         }
+        a {
+            color: $accent1-dark;
+        }
         .more {
             margin: 15px 0 15px 10%;
             padding: 5px 10px;
@@ -502,6 +505,9 @@ dl.glossary-item {
             font-weight: bold;
             margin-right: 5px;
         }
+
+        .bookmark-btn .btn-label {color: $accent1-dark;}
+        .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-read.svg');}
     }
 }
 .section-glossary {
@@ -577,7 +583,7 @@ dl.glossary-item {
         z-index: 2;
         cursor: pointer;
         background: transparent url('../img/icon-close-black.svg') no-repeat 50% 50% scroll;
-        background-size: 24px 24px;
+        background-size: 36px 36px;
     }
 
     // variante "presque plein écran"
@@ -609,9 +615,9 @@ dl.glossary-item {
     }
     .compact .overlay-content {
         position: relative;
-        width: 300px;
-        max-width: 90vw;
-        max-height: 75vh;
+        width: 500px;
+        max-width: 85vw;
+        max-height: 85vh;
         margin: auto;
         padding-top: 10px;
         background: #fff;

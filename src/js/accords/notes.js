@@ -99,8 +99,8 @@ Vue.component('notes', {
     }
   },
   template: '<div v-if="count>0">' +
-    '<notes-section section="read"  type="glossary"  v-bind:bookmarks="glossary"  title="Je m\'informe : Glossaire"></notes-section>' +
-    '<notes-section section="read"  type="vecu"      v-bind:bookmarks="vecu"      title="Je m\'informe : Histoires Vécues"></notes-section>' +
+    '<notes-section section="read"  type="glossary"  v-bind:bookmarks="glossary"  title="Je m\'informe : Définitions"></notes-section>' +
+    '<notes-section section="read"  type="vecu"      v-bind:bookmarks="vecu"      title="Je m\'informe : Histoires vécues"></notes-section>' +
     '<notes-section section="talk"  type="amorces"   v-bind:bookmarks="amorces"   title="J\'en parle : Amorces de discussions"></notes-section>' +
     '<notes-section section="talk"  type="art"       v-bind:bookmarks="art"       title="J\'en parle : Les soins anticipés dans l\'art"></notes-section>' +
     '<notes-section section="write" type="questions" v-bind:bookmarks="questions" title="J\'écris : En cas d\'urgence"></notes-section>' +

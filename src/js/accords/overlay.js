@@ -25,7 +25,7 @@ Vue.component('overlay', {
       document.getElementById('glossary-' + glossaryId).style.display = 'block'
 
       this.isOpened = true
-      this.activeDisplay = 'block'
+      this.activeDisplay = 'flex'
       document.body.classList.add('overlay-open')
     },
     close: function () {
@@ -34,7 +34,7 @@ Vue.component('overlay', {
       document.body.classList.remove('overlay-open')
     }
   },
-  template: '<div id="overlay" ref="overlay" class="overlay" v-bind:style="{ display: activeDisplay }">' +
+  template: '<div id="overlay" ref="overlay" class="overlay compact" v-bind:style="{ display: activeDisplay }">' +
     '<div id="overlay-close" class="overlay-close" v-on:click="close"></div>' +
     '<div id="overlay-content" class="overlay-content content-text">' +
       '<slot>Loading…</slot>' +

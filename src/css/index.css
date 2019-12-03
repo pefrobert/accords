@@ -331,6 +331,8 @@ dl.glossary-item dd ul, dl.glossary-item dd ol {
   margin: 10px 0 10px 20px; }
 dl.glossary-item dd ul {
   list-style: square; }
+dl.glossary-item dd a {
+  color: #009586; }
 dl.glossary-item dd .more {
   margin: 15px 0 15px 10%;
   padding: 5px 10px;
@@ -350,6 +352,10 @@ dl.glossary-item dd .source {
 dl.glossary-item dd .label {
   font-weight: bold;
   margin-right: 5px; }
+dl.glossary-item dd .bookmark-btn .btn-label {
+  color: #009586; }
+dl.glossary-item dd .bookmark-btn.on {
+  background-image: url("../img/icon-bookmark-new-on-read.svg"); }
 
 .section-glossary dl.glossary-item {
   margin: 10px 0;
@@ -406,7 +412,7 @@ dl.glossary-item dd .label {
   z-index: 2;
   cursor: pointer;
   background: transparent url("../img/icon-close-black.svg") no-repeat 50% 50% scroll;
-  background-size: 24px 24px; }
+  background-size: 36px 36px; }
 
 .overlay.compact {
   background-color: rgba(0, 0, 0, 0.5);
@@ -418,9 +424,9 @@ dl.glossary-item dd .label {
 
 .compact .overlay-content {
   position: relative;
-  width: 300px;
-  max-width: 90vw;
-  max-height: 75vh;
+  width: 500px;
+  max-width: 85vw;
+  max-height: 85vh;
   margin: auto;
   padding-top: 10px;
   background: #fff;
