@@ -1,10 +1,10 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/js/accords/index.js',
+  entry: './src/js/accord/index.js',
   output: {
     path: path.resolve(__dirname, 'www/js'),
-    filename: 'accords.js'
+    filename: 'accord.js'
   },
   mode: 'production'
 }

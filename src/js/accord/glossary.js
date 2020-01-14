@@ -14,6 +14,6 @@ Vue.component('glossary', {
       this.$root.$emit('overlayOpen', this.link)
     }
   },
-  template: '<a v-if="window.location.pathname === \'/accords/read.glossary.html\'" class="glossary-dfn" v-bind:href="url"><slot></slot></a>' +
+  template: '<a v-if="window.location.pathname.endsWith(\'read.glossary.html\')" class="glossary-dfn" v-bind:href="url"><slot></slot></a>' +
   '<span v-else class="glossary-dfn" v-on:click="open"><slot></slot></span>'
 })

@@ -1,8 +1,8 @@
 {
-    "name": "com.hug.accords",
-    "displayName": "ACCORDs",
+    "name": "com.hug.accord",
+    "displayName": "ACCORD",
     "version": "1.0.0",
-    "description": "ACCORDs.",
+    "description": "ACCORD",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"

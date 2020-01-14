@@ -41,8 +41,8 @@ gulp.task('js-vendor', function () {
     .pipe(gulp.dest('www/js/vendor'))
 })
 
-gulp.task('webpack-accords', function () {
-  return gulp.src('src/js/accords/index.js')
+gulp.task('webpack-accord', function () {
+  return gulp.src('src/js/accord/index.js')
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('www/js'))
 })
@@ -84,7 +84,7 @@ gulp.task('nunjucks', function () {
 })
 
 // Tâche "build"
-gulp.task('build', gulp.series('clean', 'webpack-accords', 'csv', gulp.parallel('css', 'js', 'js-vendor', 'img', 'nunjucks')))
+gulp.task('build', gulp.series('clean', 'webpack-accord', 'csv', gulp.parallel('css', 'js', 'js-vendor', 'img', 'nunjucks')))
 
 // Tâche "watch" = je surveille *less
 gulp.task('watch', function () {
