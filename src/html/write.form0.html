@@ -1,0 +1,71 @@
+{% extends "base.njk" %}
+
+{% block head_title %}J'écris — ACCORD{% endblock %}
+{% block body_class %}write{% endblock %}
+{% block parent_page %}index.html{% endblock %}
+
+{% block content %}
+
+<div class="section-intro">
+	<img src="img/icon-write.svg" class="section-icon" alt="">
+	<p class="app-name">ACCORD</p>
+	<h1>J'écris</h1>
+</div>
+
+<div class="section-chapo">
+	<p>Explorez et remplissez à votre rythme les différentes parties du questionnaire.<br>&nbsp;</p>
+	<p><strong>Répondez uniquement aux questions qui vous importent.</strong></p>
+	<p><strong>Vos réponses peuvent être modifiées en tout temps.</strong></p>
+</div>
+
+<div class="section-summary">
+	<div class="section-entry section-main">
+		<a href="write.form1.html">
+			<h2>Moi et mon entourage</h2>
+		</a>
+	</div>
+	<div class="section-entry section-main">
+		<a href="write.form2.html">
+			<h2>Mes valeurs et préférences</h2>
+		</a>
+	</div>
+	<div class="section-entry section-main">
+		<a href="write.form3.html">
+			<h2>Interventions pour ma survie</h2>
+		</a>
+	</div>
+	<div class="section-entry section-main">
+		<a href="write.form4.html">
+			<h2>Ma fin de vie</h2>
+		</a>
+	</div>
+	<div class="section-entry section-main">
+		<a href="write.form5.html">
+			<h2>En cas de crise psychologique</h2>
+		</a>
+	</div>
+	<div class="section-entry section-main">
+		<a href="write.form6.html">
+			<h2>Bonus biographique</h2>
+		</a>
+	</div>
+
+	<div class="section-entry section-main form-export">
+		<a href="write.form7.html">
+			<h2>Finaliser mon questionnaire</h2>
+		</a>
+	</div>
+
+<!-- 	<div class="actions">
+		<div class="action export">
+			<button type="button" class="export-data">Exporter mon formulaire</button>
+		</div>
+	</div> -->
+</div>
+
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('write')}}
+{% endblock %}

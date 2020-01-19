@@ -20,10 +20,10 @@
 	<p>Les réponses que vous aurez données ci-après décrivent vos souhaits et vos préférences pour des situations médicales précises. Ces indications permettront aux soignants ainsi qu’à vos proches de savoir comment agir dans des situations d’urgence.</p>
 
 	<div class="notice">
-		<p><strong>En cas de perte de <glossary link=discernement>capacité de discernement</glossary> à cause d'un événement aigu (coma, accident, attaque cérébrale, etc.) les représentants thérapeutiques prennent les décisions à votre place.</strong> Si vous ne vous êtes pas encore prononcé·e sur la question, rendez vous dans la partie <a href="write.mydata.html">Moi et mon entourage</a> pour exprimer votre choix. Sans information, le représentant thérapeutique sera désigné par <glossary link=legal>l'ordre légal</glossary>.</p>
+		<p><strong>En cas de perte de <glossary link=discernement>capacité de discernement</glossary> à cause d'un événement aigu (coma, accident, attaque cérébrale, etc) les représentants thérapeutiques prennent les décisions à votre place.</strong> Si vous ne vous êtes pas encore prononcé·e sur la question, rendez vous dans la partie <a href="write.form1.html">Moi et mon entourage</a> pour exprimer votre choix. Sans information, le représentant thérapeutique sera désigné par <glossary link=legal>l'ordre légal</glossary>.</p>
 	</div>
 
-	<form name="write.soins" id="write.soins">
+	<form name="write.form3" id="write.form3">
 
 	<div class="section-content section-form section-urgences">
 
@@ -110,86 +110,21 @@
 			</div>
 		</div>
 
-		{{ _form.fieldRadioTextarea(
-			"<strong>Concernant le don d’organes&nbsp;:</strong>"
-			, "don-organe"
-			, [
-				{id : 'cartedonneur', value : 'cartedonneur', label : "J’ai déjà exprimé formellement ma position (mon consentement ou non-consentement à donner mes organes après mon décès)."}
-				, {id : 'registre', value : 'registre', label : "J’aimerais exprimer mon choix dans le <a href=\"https://www.swisstransplant.org/fr/registre-nationaldu-don-dorganes/\" target=\"_blank\">registre national</a>." }
-				, {id : 'no-interest-don', value : 'no-interest-don', label : "La question du don d’organe ne m’intéresse pas." }
-			]
-			, "Remarques complémentaires&nbsp;:"
-		) }}
-
-		<div class="action-bookmark">
-			<bookmark-button type="questions" target="don-organes"></bookmark-button>
-			<div class="bookmark-help">
-				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
-			</div>
-		</div>
-
-		{{ _form.fieldRadioTextarea(
-			"<strong>Concernant le don des données biologiques à la recherche scientifique&nbsp;:</strong>"
-			, "donnees-biologiques"
-			, [
-				{id : 'alreadydone', value : 'alreadydone', label : "J’ai déjà exprimé formellement ma position par rapport à cette question."}
-				, {id : 'hug', value : 'hug', label : "Je m’informe <a href=\"https://www.hug-ge.ch/aider-recherche\" target=\"_blank\">sur le site des HUG</a>." }
-				, {id : 'no-interest', value : 'no-interest', label : "La question du don des données biologiques ne m’intéresse pas." }
-			]
-			, "Remarques complémentaires&nbsp;:"
-		) }}
-
-		<div class="action-bookmark">
-			<bookmark-button type="questions" target="donnees-biologiques"></bookmark-button>
-			<div class="bookmark-help">
-				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
-			</div>
-		</div>
-
-		{{ _form.fieldTextarea("what-else", "<strong>Vous arrivez à la fin du questionnaire. Y a-t-il quelque chose que vous souhaiteriez ajouter&nbsp;?</strong>") }}
-
-		<div class="actions">
-			<div class="action export">
-				<button type="button" class="export-data">Exporter mon formulaire</button>
-			</div>
-		</div>
-
 		<nav class="pager">
 			<div class="pager-item prev">
-				<a href="write.valeurs.html">
+				<a href="write.form2.html">
 					<span class="label">Étape précédente</span>
 					<span class="subtitle">Mes valeurs et préférences</span>
 				</a>
 			</div>
+			<div class="pager-item next">
+				<a href="write.form4.html">
+					<span class="label">Étape suivante</span>
+					<span class="subtitle">Ma fin de vie</span>
+				</a>
+			</div>
 		</nav>
 
-		<div class="reminder">
-			<p><strong>Au cours d’une vie, on peut changer de priorités. Notre entourage aussi peut changer. Pensez à réactualiser vos directives anticipées.</strong></p>
-
-			{{ _form.fieldCheckboxTextarea(
-				""
-				, ""
-				, [
-					{id : 'accord-reminder', value : 'accord-reminder', label : "<strong>J’aimerais qu’ACCORD me rappelle d’actualiser mes directives anticipées.</strong>" }
-				]
-				, ''
-			) }}
-
-			{{ _form.fieldText("accord-reminder-email", "Par email, à l'adresse suivante&nbsp;:", "email") }}
-			{{ _form.fieldText("accord-reminder-sms", "Par SMS, au numéro suivant&nbsp;:", "tel") }}
-
-			{{ _form.fieldRadioTextarea(
-				"Dans"
-				, "accord-reminder-in"
-				, [
-					{id : 'accord-reminder-in-6', value : 'accord-reminder-in-6', label : "6 mois"},
-					{id : 'accord-reminder-in-12', value : 'accord-reminder-in-12', label : "12 mois"},
-					{id : 'accord-reminder-in-24', value : 'accord-reminder-in-24', label : "24 mois"}
-				]
-			) }}
-
-
-		</div>
 	</div>
 
 	</form>

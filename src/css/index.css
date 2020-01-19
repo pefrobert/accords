@@ -98,6 +98,17 @@ a {
     background-color: #009586;
     border-radius: 25px;
     box-shadow: 0 5px 20px -10px black; }
+.welcome .how-to {
+  margin: 15px 0 10px;
+  font-size: 18px;
+  text-align: center; }
+  .welcome .how-to a {
+    text-decoration: none; }
+@media (max-height: 700px) {
+  .welcome .logo {
+    margin: 0 auto; }
+  .welcome h1 {
+    margin-top: 0; } }
 
 .main-nav {
   position: fixed;
@@ -229,7 +240,7 @@ a {
 
 .section-intro {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   padding-left: 15px;
   padding-right: 15px; }
   .section-intro .section-icon {
@@ -279,9 +290,8 @@ a {
     background-color: rgba(0, 0, 0, 0.04); }
     .section-summary .section-main a:hover {
       background-color: rgba(0, 0, 0, 0.1); }
-  .section-summary .section-main h2 {
-    margin-bottom: 10px; }
   .section-summary .section-main .desc {
+    margin-top: 10px;
     color: #666; }
 .section-summary .section-main + .section-secondary {
   margin-top: 50px; }
@@ -296,6 +306,14 @@ a {
   list-style: square; }
 .content-text li {
   margin: 10px 0; }
+
+.section-chapo {
+  text-align: center;
+  margin-bottom: 40px; }
+  .section-chapo p:first-child {
+    margin-top: 0; }
+  .section-chapo p:last-child {
+    margin-bottom: 0; }
 
 .glossary-dfn {
   text-decoration: none;
@@ -352,6 +370,8 @@ dl.glossary-item dd .source {
 dl.glossary-item dd .label {
   font-weight: bold;
   margin-right: 5px; }
+dl.glossary-item dd .action-bookmark {
+  margin-bottom: 0; }
 dl.glossary-item dd .bookmark-btn .btn-label {
   color: #009586; }
 dl.glossary-item dd .bookmark-btn.on {
@@ -595,6 +615,12 @@ body.write .bookmark-btn.on {
   .section-vecu .img-wide img {
     display: block;
     width: 100%; }
+
+body.write .section-summary .section-main.form-export a {
+  color: #fff;
+  background-color: #bf841a; }
+  body.write .section-summary .section-main.form-export a h2 {
+    color: #fff; }
 
 input[type="tel"],
 input[type="text"],
@@ -951,6 +977,8 @@ body.read .section-summary .section-entry h2 {
   color: #009586; }
 body.read .actions .action button {
   background-color: #009586; }
+body.read .pager .pager-item a {
+  background-color: #ccf4f0; }
 
 body.talk input[type="tel"]:focus,
 body.talk input[type="text"]:focus,
@@ -970,6 +998,8 @@ body.talk .section-summary .section-entry h2 {
   color: #5f9938; }
 body.talk .actions .action button {
   background-color: #5f9938; }
+body.talk .pager .pager-item a {
+  background-color: #d2edc0; }
 
 body.write input[type="tel"]:focus,
 body.write input[type="text"]:focus,
@@ -997,6 +1027,8 @@ body.write .form-input-checkbox label {
   body.write .form-input-radio label strong,
   body.write .form-input-checkbox label strong {
     color: #bf841a; }
+body.write .pager .pager-item a {
+  background-color: #ffefd3; }
 
 body.notes input[type="tel"]:focus,
 body.notes input[type="text"]:focus,

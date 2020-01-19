@@ -1,0 +1,36 @@
+{% extends "base.njk" %}
+
+{% block title %}Mode d'emploi — ACCORD{% endblock %}
+{% block body_class %}read{% endblock %}
+{% block parent_page %}index.html{% endblock %}
+
+{% block content %}
+	<div class="section-intro">
+		<img src="img/icon-read.svg" class="section-icon" alt="">
+		<p class="app-name">ACCORD</p>
+		<h1>Mode d'emploi</h1>
+	</div>
+
+	<div class="section-content content-text section-essentiel">
+		<div class="legal-q">
+			<p>Comment naviguer dans cette app&nbsp;?</p>
+		</div>
+		<div class="legal-a">
+			<p>Vous pouvez explorer les différentes sections (présentes dans le menu au bas de l'écran), à votre rythme, dans l'ordre qui vous convient le mieux.</p>
+			<p>Quand vous rencontrez un terme souligné (par exemple&nbsp;: <glossary link="objectifs">objectifs de soin</glossary>), cliquez dessus et sa définition apparaît.</p>
+			<p>Quand un élément retient votre attention, vous pouvez l'enregistrer dans la section <a href="notes.index.html">Mes notes</a> grâce au bouton <span class="bookmark-btn"><span class="btn-label">Ajouter à mes notes</span></span>.</p>
+		</div>
+
+		<div class="pager">
+			<div class="pager-item next">
+				<a href="read.index.html">Je commence à explorer.</a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('read')}}
+{% endblock %}

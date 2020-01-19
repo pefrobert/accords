@@ -17,9 +17,12 @@
 		<h1>Mes valeurs et préférences</h1>
 	</div>
 
-	<p>Les réponses que vous aurez données ci-après décrivent votre attitude face à la vie, expriment vos valeurs, vos souhaits, vos peurs, vos attentes et vos espoirs. Grâce à vos indications, il sera plus facile d’imaginer, pour vos proches et soignants, comment vous auriez aimé être pris·e en charge.</p>
+	<div class="section-chapo">
+		<p>Les réponses que vous aurez données ci-après décrivent votre attitude face à la vie, expriment vos valeurs, vos souhaits, vos peurs, vos attentes et vos espoirs. Grâce à vos indications, il sera plus facile d’imaginer, pour vos proches et soignants, comment vous auriez aimé être pris·e en charge.</p>
+	</div>
 
-	<form name="write.valeurs" id="write.valeurs">
+
+	<form name="write.form2" id="write.form2">
 
 	<div class="section-content section-form section-valeurs">
 
@@ -45,39 +48,18 @@
 
 		{{ _form.fieldTextarea("unbearable","<strong>Ma vie deviendrait insupportable si je devais…</strong> (vivre en chaise roulante, vivre dans une institution de soin, ne plus pouvoir communiquer avec mes proches, ne plus reconnaître mes proches, être alité·e en permanence, être assisté·e pour la toilette, pour l’alimentation, pour respirer, etc)") }}
 
-		{{ _form.fieldRadioTextarea(
-			"<strong>À propos du lieu où je recevrai des soins</strong> si cela est possible, je souhaiterais&nbsp;:"
-			, "care-place"
-			, [	{id : 'home', value : 'home', label : "Que les traitements soient effectués à domicile."}
-			,	{id : 'institution', value : 'institution', label : "Être pris·e en charge dans une institution médicale."}
-			]
-			, '') }}
-
-		{{ _form.fieldTextarea("care-place-complement","Remarque ou précision") }}
-
-		{{ _form.fieldRadioTextarea(
-		"<strong>Si j’ai la possibilité de formuler un choix quant au lieu où je décèderai</strong> je souhaiterais&nbsp;:"
-		, "die-place"
-		, [	{id : 'die-home', value : 'die-home', label : "Pouvoir mourir chez moi."}
-		,	{id : 'die-other', value : 'die-other', label : "Pouvoir mourir chez un proche&nbsp;:", text : '&nbsp;' }
-		,	{id : 'die-institution', value : 'die-institution', label : "Pouvoir mourir dans une institution (hôpital, foyer, hospice, etc.), et si possible dans l'établissement suivant&nbsp;:", text : "&nbsp;" }
-		]
-		) }}
-
-		{{ _form.fieldTextarea("comments","<strong>Y a-t-il quelque chose que vous souhaiteriez ajouter en rapport avec les thèmes discutés ci-dessus&nbsp;?</strong>") }}
-
 	</div>
 
 	<div class="section-content section-valeurs">
 		<nav class="pager">
 			<div class="pager-item prev">
-				<a href="write.mydata.html">
+				<a href="write.form1.html">
 					<span class="label">Étape précédente</span>
 					<span class="subtitle">Moi et mon entourage</span>
 				</a>
 			</div>
 			<div class="pager-item next">
-				<a href="write.soins.html">
+				<a href="write.form3.html">
 					<span class="label">Étape suivante</span>
 					<span class="subtitle">En cas d’urgence</span>
 				</a>

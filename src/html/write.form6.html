@@ -1,0 +1,64 @@
+{% extends "base.njk" %}
+
+{% block title %}Bonus biographique — ACCORD{% endblock %}
+{% block body_class %}write{% endblock %}
+{% block parent_page %}write.index.html{% endblock %}
+
+{% block head_javascript %}
+<script type="text/javascript" src="js/vendor/jquery-3.4.1.slim.min.js"></script>
+<script type="text/javascript" src="js/vendor/sisyphus-1.1.3.min.js"></script>
+<script type="text/javascript" src="js/write.js"></script>
+{% endblock %}
+
+{% block content %}
+	<div class="section-intro">
+		<img src="img/icon-write.svg" class="section-icon" alt="">
+		<p class="app-name">ACCORD</p>
+		<h1>Bonus biographique</h1>
+	</div>
+
+	<div class="section-chapo">
+		<p></p>
+	</div>
+
+
+	<form name="write.form5" id="write.form5">
+
+	<div class="section-content section-form section-valeurs">
+
+		<em>En construction...</em>
+
+	</div>
+
+	<div class="section-content section-valeurs">
+		<nav class="pager">
+			<div class="pager-item prev">
+				<a href="write.form5.html">
+					<span class="label">Étape précédente</span>
+					<span class="subtitle">En cas de crise psychologique</span>
+				</a>
+			</div>
+			<div class="pager-item next">
+				<a href="write.form7.html">
+					<span class="label">Étape suivante</span>
+					<span class="subtitle">Finaliser mon questionnaire</span>
+				</a>
+			</div>
+		</nav>
+	</div>
+
+	</form>
+
+{% endblock %}
+
+
+{% block footer_javascript %}
+<script type="text/javascript">
+	$('form').sisyphus();
+</script>
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('write')}}
+{% endblock %}

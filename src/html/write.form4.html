@@ -1,0 +1,119 @@
+{% extends "base.njk" %}
+
+{% block title %}Ma fin de vie — ACCORD{% endblock %}
+{% block body_class %}write{% endblock %}
+{% block parent_page %}write.index.html{% endblock %}
+
+{% block head_javascript %}
+<script type="text/javascript" src="js/vendor/jquery-3.4.1.slim.min.js"></script>
+<script type="text/javascript" src="js/vendor/sisyphus-1.1.3.min.js"></script>
+<script type="text/javascript" src="js/write.js"></script>
+{% endblock %}
+
+{% block content %}
+	<div class="section-intro">
+		<img src="img/icon-write.svg" class="section-icon" alt="">
+		<p class="app-name">ACCORD</p>
+		<h1>Ma fin de vie</h1>
+	</div>
+
+	<div class="section-chapo">
+		<p></p>
+	</div>
+
+
+	<form name="write.form4" id="write.form4">
+
+	<div class="section-content section-form section-valeurs">
+
+		{{ _form.fieldRadioTextarea(
+			"<strong>À propos du lieu où je recevrai des soins</strong> si cela est possible, je souhaiterais&nbsp;:"
+			, "care-place"
+			, [	{id : 'home', value : 'home', label : "Que les traitements soient effectués à domicile."}
+			,	{id : 'institution', value : 'institution', label : "Être pris·e en charge dans une institution médicale."}
+			]
+			, '') }}
+
+		{{ _form.fieldTextarea("care-place-complement","Remarque ou précision") }}
+
+		{{ _form.fieldRadioTextarea(
+		"<strong>Si j’ai la possibilité de formuler un choix quant au lieu où je décèderai</strong> je souhaiterais&nbsp;:"
+		, "die-place"
+		, [	{id : 'die-home', value : 'die-home', label : "Pouvoir mourir chez moi."}
+		,	{id : 'die-other', value : 'die-other', label : "Pouvoir mourir chez un proche&nbsp;:", text : '&nbsp;' }
+		,	{id : 'die-institution', value : 'die-institution', label : "Pouvoir mourir dans une institution (hôpital, foyer, hospice, etc), et si possible dans l'établissement suivant&nbsp;:", text : "&nbsp;" }
+		]
+		) }}
+
+		{{ _form.fieldTextarea("comments","<strong>Y a-t-il quelque chose que vous souhaiteriez ajouter en rapport avec les thèmes discutés ci-dessus&nbsp;?</strong>") }}
+
+		{{ _form.fieldRadioTextarea(
+			"<strong>Concernant le don d’organes&nbsp;:</strong>"
+			, "don-organe"
+			, [
+				{id : 'cartedonneur', value : 'cartedonneur', label : "J’ai déjà exprimé formellement ma position (mon consentement ou non-consentement à donner mes organes après mon décès)."}
+				, {id : 'registre', value : 'registre', label : "J’aimerais exprimer mon choix dans le <a href=\"https://www.swisstransplant.org/fr/registre-nationaldu-don-dorganes/\" target=\"_blank\">registre national</a>." }
+				, {id : 'no-interest-don', value : 'no-interest-don', label : "La question du don d’organe ne m’intéresse pas." }
+			]
+			, "Remarques complémentaires&nbsp;:"
+		) }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="don-organes"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
+		{{ _form.fieldRadioTextarea(
+			"<strong>Concernant le don des données biologiques à la recherche scientifique&nbsp;:</strong>"
+			, "donnees-biologiques"
+			, [
+				{id : 'alreadydone', value : 'alreadydone', label : "J’ai déjà exprimé formellement ma position par rapport à cette question."}
+				, {id : 'hug', value : 'hug', label : "Je m’informe <a href=\"https://www.hug-ge.ch/aider-recherche\" target=\"_blank\">sur le site des HUG</a>." }
+				, {id : 'no-interest', value : 'no-interest', label : "La question du don des données biologiques ne m’intéresse pas." }
+			]
+			, "Remarques complémentaires&nbsp;:"
+		) }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="donnees-biologiques"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
+	</div>
+
+	<div class="section-content section-valeurs">
+		<nav class="pager">
+			<div class="pager-item prev">
+				<a href="write.form3.html">
+					<span class="label">Étape précédente</span>
+					<span class="subtitle">En cas d'urgence</span>
+				</a>
+			</div>
+			<div class="pager-item next">
+				<a href="write.form5.html">
+					<span class="label">Étape suivante</span>
+					<span class="subtitle">En cas de crise psychologique</span>
+				</a>
+			</div>
+		</nav>
+	</div>
+
+	</form>
+
+{% endblock %}
+
+
+{% block footer_javascript %}
+<script type="text/javascript">
+	$('form').sisyphus();
+</script>
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('write')}}
+{% endblock %}

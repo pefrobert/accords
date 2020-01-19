@@ -17,7 +17,11 @@
 		<h1>Moi et mon entourage</h1>
 	</div>
 
-	<form name="write.mydata" id="write.mydata">
+	<div class="section-chapo">
+		<p>Pour que les professionnels sachent qui contacter.</p>
+	</div>
+
+	<form name="write.form1" id="write.form1">
 
 	<div class="section-content section-form section-mydata">
 
@@ -47,15 +51,21 @@
 
 		{{ _form.fieldTextarea("closerelation","<strong>Les personnes qui me soutiennent au quotidien parmi mes proches</strong>") }}
 
-		{{ _form.fieldTextarea("responsible","<strong>En cas de coup dur, je serais en souci pour</strong> (mes enfants, mes animaux, la comptabilité de ma famille, etc.) et <strong>je souhaiterais que…</strong> (cette personne s’occupe de…, etc)") }}
+		{{ _form.fieldTextarea("responsible","<strong>En cas de coup dur, je serais en souci pour</strong> (mes enfants, mes animaux, la comptabilité de ma famille, etc) et <strong>je souhaiterais que…</strong> (cette personne s’occupe de…, etc)") }}
 
 		{{ _form.fieldTextarea("transmettre","<strong>Les choses importantes à transmettre à mon entourage</strong> (j’ai écrit une lettre pour…, j’aimerais que cet objet revienne à…, etc)") }}
 
 		{{ _form.fieldTextarea("important","<strong>Autres choses importantes à dire sur mon entourage</strong> (je me sens particulièrement proche de…, ma soignante préférée est…, je ne souhaite pas la visite de…, etc)") }}
 
 		<nav class="pager">
+			<div class="pager-item prev">
+				<a href="write.form0.html">
+					<span class="label">Retour</span>
+					<span class="subtitle">Liste des étapes</span>
+				</a>
+			</div>
 			<div class="pager-item next">
-				<a href="write.valeurs.html">
+				<a href="write.form2.html">
 					<span class="label">Étape suivante</span>
 					<span class="subtitle">Mes valeurs et préférences</span>
 				</a>

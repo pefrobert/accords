@@ -140,6 +140,24 @@ $page-vpadding: 15px;
             box-shadow: 0 5px 20px -10px rgba(0,0,0,1);
         }
     }
+
+    .how-to {
+        margin: 15px 0 10px;
+        font-size: 18px;
+        text-align: center;
+        a {
+            text-decoration: none;
+        }
+    }
+
+    @media (max-height: 700px) {
+        .logo {
+            margin: 0 auto;
+        }
+        h1 {
+            margin-top: 0;
+        }
+    }
 }
 
 // navigation
@@ -305,7 +323,7 @@ $page-vpadding: 15px;
 // section intro
 .section-intro {
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     padding-left: 15px;
     padding-right: 15px;
     .section-icon {
@@ -372,9 +390,9 @@ $page-vpadding: 15px;
             }
         }
         h2 {
-            margin-bottom: 10px;
         }
         .desc {
+            margin-top: 10px;
             color: $text2;
         }
     }
@@ -402,6 +420,17 @@ $page-vpadding: 15px;
     }
     li {
         margin: 10px 0;
+    }
+}
+
+.section-chapo {
+    text-align: center;
+    margin-bottom: 40px;
+    p:first-child {
+        margin-top: 0;
+    }
+    p:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -506,6 +535,7 @@ dl.glossary-item {
             margin-right: 5px;
         }
 
+        .action-bookmark {margin-bottom: 0;}
         .bookmark-btn .btn-label {color: $accent1-dark;}
         .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-read.svg');}
     }
@@ -520,6 +550,18 @@ dl.glossary-item {
         }
     }
 }
+
+
+// mode d'emploi
+// .invite-enter {
+//     margin: 50px 0;
+//     text-align: center;
+//     font-size: 18px;
+//     a {
+//         text-decoration: none;
+//     }
+// }
+
 
 // about
 .section-about {
@@ -712,6 +754,7 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-
     }
 }
 
+
 // resources section
 .section-resources {
     margin-bottom: 35px;
@@ -853,6 +896,17 @@ body.write .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-
         }
     }
 }
+
+
+// write
+body.write .section-summary .section-main.form-export a {
+    color: #fff;
+    background-color: $accent3-dark;
+    h2 {
+        color: #fff;
+    }
+}
+
 
 // form elements
 input[type="tel"],
@@ -1292,6 +1346,9 @@ body.read {
     .actions .action button {
         background-color: $accent1-dark;
     }
+    .pager .pager-item a {
+        background-color: $accent1-light;
+    }
 }
 body.talk {
     input[type="tel"],
@@ -1318,6 +1375,9 @@ body.talk {
     }
     .actions .action button {
         background-color: $accent2-dark;
+    }
+    .pager .pager-item a {
+        background-color: $accent2-light;
     }
 }
 body.write {
@@ -1353,6 +1413,9 @@ body.write {
         strong {
             color: $accent3-dark;
         }
+    }
+    .pager .pager-item a {
+        background-color: $accent3-light;
     }
 }
 body.notes {

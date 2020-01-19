@@ -12,20 +12,27 @@
 {% block content %}
 
 <div class="welcome">
-	<img src="img/accord-icon.png" class="logo" alt="ACCORD" title="Utilisez le menu ci-dessous pour explorer l'application. Bonne visite !" onclick="alert(this.title); return false;">
+	<a href="read.howto.html"><img src="img/accord-icon.png" class="logo" alt="ACCORD">
 	<h1>
 		Bienvenue dans ACCORD
 		<div class="subtitle">L’app pour aider patients, proches et soignants à accorder les objectifs de soin</div>
 	</h1>
 
-	<div class="teaser-slogans" id="teaser-slogans" data-invite="Utilisez le menu ci-dessous pour explorer l'application. Bonne visite !">
-		<div class="slogan"><div class="slogan-inner">En cas d’urgence grave, vos proches sauraient-ils quoi décider à votre place&nbsp;?</div></div>
+	<a href="read.howto.html">
+	<div class="teaser-slogans" id="teaser-slogans" data-invite-old="Regardez au fond de cet écran. En cliquant sur les icônes ''Je m'informe'', vous rentrez dans les quatre sections d'ACCORD. Bonne visite!">
+		<div class="slogan"><div class="slogan-inner">En cas d’urgence grave, vos proches sauraient-ils que décider à votre place&nbsp;?</div></div>
 		<div class="slogan"><div class="slogan-inner">Avez-vous rempli vos directives anticipées&nbsp;?</div></div>
 		<div class="slogan"><div class="slogan-inner">Vous voulez en parler avec votre médecin&nbsp;? Qui commence&nbsp;?</div></div>
 		<div class="slogan"><div class="slogan-inner">Et si je changeais d’avis au dernier moment&nbsp;?</div></div>
 		<div class="slogan"><div class="slogan-inner">Parler de la mort ensemble, est-ce qu’on ose&nbsp;?</div></div>
 		<div class="slogan"><div class="slogan-inner">Comment briser la glace&nbsp;?</div></div>
 	</div>
+	</a>
+
+	<div class="how-to">
+		<a href="read.howto.html">Comment utiliser cette app&nbsp;?</a>
+	</div>
+
 </div>
 
 {% endblock %}
