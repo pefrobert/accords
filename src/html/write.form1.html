@@ -2,7 +2,7 @@
 
 {% block title %}Moi et mon entourage — ACCORD{% endblock %}
 {% block body_class %}write{% endblock %}
-{% block parent_page %}write.index.html{% endblock %}
+{% block parent_page %}write.form0.html{% endblock %}
 
 {% block head_javascript %}
 <script type="text/javascript" src="js/vendor/jquery-3.4.1.slim.min.js"></script>
@@ -31,9 +31,13 @@
 
 		{{ _form.fieldText("email","<strong>Mon adresse mail</strong>","email") }}
 
-		{{ _form.fieldTextarea("nurses","<strong>Les personnes qui me soignent habituellement</strong>") }}
+		{{ _form.fieldTextarea("nurses","<strong>Les personnes qui me soignent habituellement</strong> (médecin de famille, aide à domicile, thérapeute, etc)") }}
 
-		{{ _form.fieldTextarea("represents-1","<strong>Mon ou mes <glossary link=\"representant\">représentant(s) thérapeutique(s)</glossary></strong><div class=\"question-more-info\"><glossary link=\"representant\">Pourquoi sont-ils si importants&nbsp;?</glossary></div>
+		{{ _form.fieldTextarea("closerelation","<strong>Les personnes qui me soutiennent au quotidien parmi mes proches</strong>") }}
+
+		{{ _form.fieldTextarea("closerelation2","<strong>Parmi les soignants et proches mentionnés ci-dessus, je me sens particulièrement proche de…</strong>") }}
+
+		{{ _form.fieldTextarea("represents-1","<strong>Mon choix de <glossary link=\"representant\">représentant(s) thérapeutique(s)</glossary></strong><div class=\"question-more-info\"><a href=\"write.form1.representants.html\">Pourquoi sont-ils si importants&nbsp;?</a><br><br><a href=\"write.form1.choisir.html\">Comment les choisir&nbsp;?</a></div>
 		1. Nom et prénom *<br>Infos utiles pour le/la contacter (adresse, téléphone, mail…)") }}
 
 		{{ _form.fieldTextarea("represents-2","2. Nom et prénom *<br>Infos utiles pour le/la contacter (adresse, téléphone, mail…)") }}
@@ -49,11 +53,9 @@
 			, ''
 		) }}
 
-		{{ _form.fieldTextarea("closerelation","<strong>Les personnes qui me soutiennent au quotidien parmi mes proches</strong>") }}
+		{{ _form.fieldTextarea("responsible","<strong>En cas de coup dur, je serais en souci pour</strong> (mes enfants, mes animaux, la comptabilité de ma famille, etc) <strong>et je souhaiterais que…</strong> (cette personne s’occupe de…, etc)") }}
 
-		{{ _form.fieldTextarea("responsible","<strong>En cas de coup dur, je serais en souci pour</strong> (mes enfants, mes animaux, la comptabilité de ma famille, etc) et <strong>je souhaiterais que…</strong> (cette personne s’occupe de…, etc)") }}
-
-		{{ _form.fieldTextarea("transmettre","<strong>Les choses importantes à transmettre à mon entourage</strong> (j’ai écrit une lettre pour…, j’aimerais que cet objet revienne à…, etc)") }}
+		{{ _form.fieldTextarea("transmettre","<strong>Les choses importantes à transmettre à mon entourage</strong> (j’ai écrit une lettre pour…, j’aimerais que cet objet revienne à…, j'ai établi un <glossary link=mandat>mandat pour cause d'inaptitude</glossary>, etc)") }}
 
 		{{ _form.fieldTextarea("important","<strong>Autres choses importantes à dire sur mon entourage</strong> (je me sens particulièrement proche de…, ma soignante préférée est…, je ne souhaite pas la visite de…, etc)") }}
 

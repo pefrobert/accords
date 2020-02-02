@@ -351,31 +351,35 @@ dl.glossary-item dd ul {
   list-style: square; }
 dl.glossary-item dd a {
   color: #009586; }
-dl.glossary-item dd .more {
-  margin: 15px 0 15px 10%;
-  padding: 5px 10px;
-  background-color: #eee; }
-dl.glossary-item dd .syns {
+dl.glossary-item dd .bookmark-btn .btn-label {
+  color: #009586; }
+dl.glossary-item dd .bookmark-btn.on {
+  background-image: url("../img/icon-bookmark-new-on-read.svg"); }
+
+.glossary-item dd .syns,
+.onpage-glossary-item dd .syns {
   margin-bottom: 15px;
   padding: 2px 5px;
   font-size: 12px;
   background-color: #eee;
   border-radius: 3px; }
-dl.glossary-item dd .source {
+.glossary-item dd .more,
+.onpage-glossary-item dd .more {
+  margin: 15px 0 15px 10%;
+  padding: 5px 10px;
+  background-color: #eee; }
+.glossary-item dd .source,
+.onpage-glossary-item dd .source {
   margin-top: 15px;
   font-size: 12px; }
-  dl.glossary-item dd .source a {
+  .glossary-item dd .source a,
+  .onpage-glossary-item dd .source a {
     color: #009586;
     text-decoration: none; }
-dl.glossary-item dd .label {
+.glossary-item dd .label,
+.onpage-glossary-item dd .label {
   font-weight: bold;
   margin-right: 5px; }
-dl.glossary-item dd .action-bookmark {
-  margin-bottom: 0; }
-dl.glossary-item dd .bookmark-btn .btn-label {
-  color: #009586; }
-dl.glossary-item dd .bookmark-btn.on {
-  background-image: url("../img/icon-bookmark-new-on-read.svg"); }
 
 .section-glossary dl.glossary-item {
   margin: 10px 0;
@@ -383,6 +387,8 @@ dl.glossary-item dd .bookmark-btn.on {
   border-bottom: 1px dotted #999; }
   .section-glossary dl.glossary-item:last-child {
     border-bottom: none; }
+  .section-glossary dl.glossary-item .action-bookmark {
+    margin-bottom: 0; }
 
 .section-about .sponsors-logos {
   display: flex;

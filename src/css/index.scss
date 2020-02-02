@@ -509,35 +509,35 @@ dl.glossary-item {
         a {
             color: $accent1-dark;
         }
-        .more {
-            margin: 15px 0 15px 10%;
-            padding: 5px 10px;
-            // font-size: .95em;
-            background-color: #eee;
-        }
-        .syns {
-            margin-bottom: 15px;
-            padding: 2px 5px;
-            font-size: 12px;
-            background-color: #eee;
-            border-radius: 3px;
-        }
-        .source {
-            margin-top: 15px;
-            font-size: 12px;
-            a {
-                color: $accent1-dark;
-                text-decoration: none;
-            }
-        }
-        .label {
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
-        .action-bookmark {margin-bottom: 0;}
         .bookmark-btn .btn-label {color: $accent1-dark;}
         .bookmark-btn.on {background-image: url('../img/icon-bookmark-new-on-read.svg');}
+    }
+}
+.glossary-item dd,
+.onpage-glossary-item dd {
+    .syns {
+        margin-bottom: 15px;
+        padding: 2px 5px;
+        font-size: 12px;
+        background-color: #eee;
+        border-radius: 3px;
+    }
+    .more {
+        margin: 15px 0 15px 10%;
+        padding: 5px 10px;
+        background-color: #eee;
+    }
+    .source {
+        margin-top: 15px;
+        font-size: 12px;
+        a {
+            color: $accent1-dark;
+            text-decoration: none;
+        }
+    }
+    .label {
+        font-weight: bold;
+        margin-right: 5px;
     }
 }
 .section-glossary {
@@ -548,6 +548,7 @@ dl.glossary-item {
         &:last-child {
             border-bottom: none;
         }
+        .action-bookmark {margin-bottom: 0;}
     }
 }
 

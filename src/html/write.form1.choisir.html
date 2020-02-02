@@ -1,0 +1,50 @@
+{% extends "base.njk" %}
+
+{% block title %}Moi et mon entourage : Conseils pour choisir son ou ses représentant(s) thérapeutiques — ACCORD{% endblock %}
+{% block body_class %}write{% endblock %}
+{% block parent_page %}write.form1.html{% endblock %}
+
+{% block head_javascript %}
+<script type="text/javascript" src="js/vendor/jquery-3.4.1.slim.min.js"></script>
+<script type="text/javascript" src="js/vendor/sisyphus-1.1.3.min.js"></script>
+<script type="text/javascript" src="js/write.js"></script>
+{% endblock %}
+
+{% block content %}
+	<div class="section-intro">
+		<img src="img/icon-write.svg" class="section-icon" alt="">
+		<p class="app-name">ACCORD</p>
+		<h1>Conseils pour choisir son ou ses représentant(s) thérapeutiques</h1>
+	</div>
+
+	<div class="section-content content-text section-mydata">
+
+		<ol>
+			<li>La personne devrait se sentir prête à prendre des décisions lourdes et à défendre vos choix, possiblement contre l'avis d'autrui (assurez-vous de son accord et laissez-lui le choix de dire non).</li>
+			<li>La personne devrait pouvoir prendre le temps de discuter avec vous et chercher à vous comprendre (par exemple en parcourant ACCORD).</li>
+			<li>La personne devrait être proche géographiquement et doit pouvoir se déplacer pour rencontrer les soignants.</li>
+		</ol>
+
+		<nav class="pager">
+			<div class="pager-item prev">
+				<a href="write.form1.html#closerelation2">
+					<span class="label">Retour</span>
+					<span class="subtitle">Moi et mon entourage</span>
+				</a>
+			</div>
+		</nav>
+
+	</div>
+
+{% endblock %}
+
+{% block footer_javascript %}
+<script type="text/javascript">
+	$('form').sisyphus();
+</script>
+{% endblock %}
+
+{% block navigation %}
+	{% import 'nav-macro.njk' as nav %}
+	{{nav.active('write')}}
+{% endblock %}
