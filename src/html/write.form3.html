@@ -17,10 +17,20 @@
 		<h1>Interventions pour ma survie</h1>
 	</div>
 
-	<p>Les réponses que vous aurez données ci-après décrivent vos souhaits et vos préférences pour des situations médicales précises. Ces indications permettront aux soignants ainsi qu’à vos proches de savoir comment agir dans des situations d’urgence.</p>
+	<div class="section-content content-text">
+		<p>Les données que vous fournirez dans cette partie permettront aux soignants ainsi qu’à vos proches de savoir comment agir dans les situations médicales précises, notamment en urgence et aux soins intensifs.</p>
 
-	<div class="notice">
-		<p><strong>En cas de perte de <glossary link=discernement>capacité de discernement</glossary> à cause d'un événement aigu (coma, accident, attaque cérébrale, etc) les représentants thérapeutiques prennent les décisions à votre place.</strong> Si vous ne vous êtes pas encore prononcé·e sur la question, rendez vous dans la partie <a href="write.form1.html">Moi et mon entourage</a> pour exprimer votre choix. Sans information, le représentant thérapeutique sera désigné par <glossary link=legal>l'ordre légal</glossary>.</p>
+		<p class="accent"><strong>Vos soignants pourraient mieux vous comprendre si vous mettez à leur disposition votre profil psychologique par rapport à l’anticipation des soins.</strong></p>
+
+		<div class="chart">
+			<img src="img/charts/spider-chart-temp.png" alt="">
+		</div>
+
+		<div class="notice">
+			<strong>Ce profil est encore vide ou ne vous correspond pas&nbsp;?</strong><br><br>
+				Vous pouvez le créer ou le modifier en vous rendant <a href="">dans la section «&nbsp;Jeu et quizz&nbsp;»</a>.<br><br>
+				Vous pouvez remettre les valeurs du profil à zéro <a href="">en cliquant ici</a>.
+		</div>
 	</div>
 
 	<form name="write.form3" id="write.form3">
@@ -28,87 +38,224 @@
 	<div class="section-content section-form section-urgences">
 
 		{{ _form.fieldRadioTextarea(
-			"<strong>Si mon cœur s'arrêtait soudainement</strong> (arrêt cardiaque)&nbsp;:"
-			, "arret-cardiaque"
+			""
+			, "profile"
 			, [
-				{id : 'impossible', value : 'impossible', label : "Je souhaite que l’on fasse l’impossible même si les chances de récupération sont très faibles." }
-				, {id : 'chance', value : 'chance', label : "Je souhaite que l’on fasse tout ce qui est indiqué d’un point de vue médical si j’ai de bonnes chances de retrouver mes capacités d’avant." }
-				, {id : 'no', value : 'no', label : "Je souhaite que l’on ne me réanime pas." }
+				{id : 'profile-ok', value : 'profile-ok', label : "Je valide ce profil. Il me correspond." }
+				, {id : 'profile-no', value : 'profile-no', label : "Je préfère ne pas ajouter mon profil psychologique." }
 			]
-			, 'Raisons de mon choix (je ne veux pas risquer des séquelles qui rendraient ma situation encore plus difficile, c’est « tant mieux », c’est une « belle mort », c’est une occasion pour moi d’en finir, etc)&nbsp;:'
+			, 'Je commente mon profil&nbsp;:'
 		) }}
 
-		{{ _form.fieldTextarea("arret-cardiaque-more", "Remarques complémentaires&nbsp;:") }}
+		<p class="accent"><strong>Il est possible que vous ne souhaitiez pas la même prise en charge dans différentes situations de vie. Nous vous proposons donc de répondre aux mêmes questions dans deux mondes possibles.</strong></p>
 
-		<div class="action-bookmark">
-			<bookmark-button type="questions" target="arret-cardiaque"></bookmark-button>
-			<div class="bookmark-help">
-				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+		<div class="world-color world-color-blue">
+			<h2 class="world-color-title">Le monde bleu</h2>
+
+			{{ _form.fieldTextarea("blue-current-situation", "<strong>Décrivez votre état de santé actuel.</strong> Pour remplir cette rubrique, n’hésitez pas à demander conseil à vos soignants&nbsp;!") }}
+
+			<p><strong>Imaginez que</strong> demain, un événement grave survienne (accident de route, accident cardio-vasculaire, infection généralisée, etc) et vous fait perdre votre <glossary link=discernement>capacité de discernement</glossary>. Quels sont vos choix face aux mesures suivantes&nbsp;:</p>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Si mon cœur s’arrêtait soudainement (arrêt cardiaque) et qu’une procédure de <glossary link=reanimation>réanimation</glossary> était nécessaire&nbsp;:</strong>"
+				, "blue-reanimation"
+				, [
+					{id : 'blue-reanimation-max', value : 'blue-reanimation-max', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
+					{id : 'blue-reanimation-medium', value : 'blue-reanimation-medium', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué si j’ai de bonnes chances de retrouver mes capacités d’avant." },
+					{id : 'blue-reanimation-min', value : 'blue-reanimation-min', label : "Je souhaite que l’on ne me réanime pas." }
+				]
+				, 'Raison de mon choix&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="blue-reanimation"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
 			</div>
-		</div>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Si l’utilisation de machines était nécessaire pour soutenir le fonctionnement de mes organes vitaux (dialyse, ventilation assistée, etc)&nbsp;:</strong>"
+				, "blue-machines"
+				, [
+					{id : 'blue-machines-max', value : 'blue-machines-max', label : "Je souhaite que l’on emploie tous les moyens médicalement indiqués pour ma survie même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
+					{id : 'blue-machines-medium', value : 'blue-machines-medium', label : "Je souhaite que l’on emploie tous les moyens médicalement indiqués pour ma survie si j’ai de bonnes chances de retrouver mes capacités d’avant." },
+					{id : 'blue-machines-min', value : 'blue-machines-min', label : "Je souhaite qu’aucune machine nécessaire au soutien de mes organes vitaux ne soit employée, et comprends que cela peut engendrer mon décès." }
+				]
+				, 'Raison de mon choix&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="blue-machines"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Si des mesures chirurgicales sont envisagées par l’équipe soignante&nbsp;:</strong>"
+				, "blue-chirurgie"
+				, [
+					{id : 'blue-chirurgie-max', value : 'blue-chirurgie-max', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
+					{id : 'blue-chirurgie-medium', value : 'blue-chirurgie-medium', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si j’ai de bonnes chances de retrouver mes capacités d’avant." },
+					{id : 'blue-chirurgie-min', value : 'blue-chirurgie-min', label : "Je souhaite qu’aucune mesure chirurgicale ne soit pratiquée, et comprend que cela pourrait engendrer mon décès ou une dégradation supplémentaire de mon état de santé." }
+				]
+				, 'Raison de mon choix&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="blue-chirurgie"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Si l’utilisation de médicaments ou de thérapies de support était nécessaire pour soutenir le fonctionnement de mes organes vitaux (antibiotiques, hydratation, <glossary link=alimentation>alimentation artificielle</glossary>, etc)&nbsp;:</strong>"
+				, "blue-support"
+				, [
+					{id : 'blue-support-max', value : 'blue-support-max', label : "Je souhaite que l’on utilise tous les traitements médicalement indiqués pour ma survie même si mes chances de récupération sont très faibles." },
+					{id : 'blue-support-medium', value : 'blue-support-medium', label : "Je souhaite que l’on utilise tous les traitements médicalement indiqués si j’ai de bonnes chances de retrouver mes capacités d’avant." },
+					{id : 'blue-support-min', value : 'blue-support-min', label : "Je souhaite uniquement des <glossary link=soins-palliatifs>mesures palliatives</glossary>." }
+				]
+				, 'Raison de mon choix&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="blue-support"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Concernant le traitement de la douleur et des symptômes&nbsp;:</strong>"
+				, "blue-douleur"
+				, [
+					{id : 'blue-douleur-max', value : 'blue-douleur-max', label : "Je souhaite que l’on fasse tout ce qui est indiqué d’un point de vue médical pour soulager mes douleurs et symptômes accablants (peur, agitation, difficultés à respirer, nausées), même si cela peut altérer mon état de conscience." },
+					{id : 'blue-douleur-min', value : 'blue-douleur-min', label : "Il est particulièrement important pour moi de conserver un état de conscience et ma capacité de communiquer, même au prix de douleurs et autres symptômes." }
+				]
+				, 'Remarques complémentaires&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="blue-douleur"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+		</div> <!-- ! end blue world -->
+
+		<div class="world-color world-color-green">
+			<h2 class="world-color-title">Le monde vert</h2>
+
+			<p>Imaginez que vous ayez de graves problèmes de santé (coma prolongé suite à un accident ou à une infection généralisée, Alzheimer avancé dans lequel vous ne reconnaissez plus vos proches, état de faiblesse généralisée due à l’âge, etc).</p>
+
+			{{ _form.fieldTextarea("green-situation", "<strong>Décrivez une ou des situations de ce type qui pourraient vous arriver.</strong> Pour remplir cette rubrique, il est conseillé demander conseil à vos soignants&nbsp;!") }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="green-situation"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+
+			<p>&nbsp;</p>
+
+			<p><strong>Imaginez que</strong> dans cet état-là, une équipe soignante doit prendre une décision de traitement alors que vous avez (temporairement ou durablement) perdu votre capacité de discernement. Quels sont vos choix face aux mesures suivantes&nbsp;:</p>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Si mon cœur s’arrêtait soudainement (arrêt cardiaque) et qu’une procédure de <glossary link=reanimation>réanimation</glossary> était nécessaire&nbsp;:</strong>"
+				, "green-reanimation"
+				, [
+					{id : 'green-reanimation-max', value : 'green-reanimation-max', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
+					{id : 'green-reanimation-medium', value : 'green-reanimation-medium', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué si j’ai de bonnes chances de retrouver mes capacités (limitées) d’avant." },
+					{id : 'green-reanimation-min', value : 'green-reanimation-min', label : "Je souhaite que l’on ne me réanime pas." }
+				]
+				, 'Raison de mon choix&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="green-reanimation"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Si l’utilisation de machines était nécessaire pour soutenir le fonctionnement de mes organes vitaux (dialyse, ventilation assistée, etc)&nbsp;:</strong>"
+				, "green-machines"
+				, [
+					{id : 'green-machines-max', value : 'green-machines-max', label : "Je souhaite que l’on emploie tous les moyens médicalement indiqués pour ma survie même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
+					{id : 'green-machines-medium', value : 'green-machines-medium', label : "Je souhaite que l’on emploie tous les moyens médicalement indiqués pour ma survie si j’ai de bonnes chances de retrouver mes capacités (limitées) d’avant." },
+					{id : 'green-machines-min', value : 'green-machines-min', label : "Je souhaite qu’aucune machine nécessaire au soutien de mes organes vitaux ne soit employée, et comprends que cela peut engendrer mon décès." }
+				]
+				, 'Raison de mon choix&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="green-machines"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Si des mesures chirurgicales sont envisagées par l’équipe soignante&nbsp;:</strong>"
+				, "green-chirurgie"
+				, [
+					{id : 'green-chirurgie-max', value : 'green-chirurgie-max', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
+					{id : 'green-chirurgie-medium', value : 'green-chirurgie-medium', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si j’ai de bonnes chances de retrouver mes capacités (limitées) d’avant." },
+					{id : 'green-chirurgie-min', value : 'green-chirurgie-min', label : "Je souhaite qu’aucune mesure chirurgicale ne soit pratiquée, et comprend que cela pourrait engendrer mon décès ou une dégradation supplémentaire de mon état de santé." }
+				]
+				, 'Raison de mon choix&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="green-chirurgie"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Si l’utilisation de médicaments ou de thérapies de support était nécessaire pour soutenir le fonctionnement de mes organes vitaux (antibiotiques, hydratation, <glossary link=alimentation>alimentation artificielle</glossary>, etc)&nbsp;:</strong>"
+				, "green-support"
+				, [
+					{id : 'green-support-max', value : 'green-support-max', label : "Je souhaite que l’on utilise tous les traitements médicalement indiqués pour ma survie même si mes chances de récupération sont très faibles." },
+					{id : 'green-support-medium', value : 'green-support-medium', label : "Je souhaite que l’on utilise tous les traitements médicalement indiqués si j’ai de bonnes chances de retrouver mes capacités (limitées) d’avant." },
+					{id : 'green-support-min', value : 'green-support-min', label : "Je souhaite uniquement des <glossary link=soins-palliatifs>mesures palliatives</glossary>." }
+				]
+				, 'Raison de mon choix&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="green-support"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+
+			{{ _form.fieldRadioTextarea(
+				"<strong>Concernant le traitement de la douleur et des symptômes&nbsp;:</strong>"
+				, "green-douleur"
+				, [
+					{id : 'green-douleur-max', value : 'green-douleur-max', label : "Je souhaite que l’on fasse tout ce qui est indiqué d’un point de vue médical pour soulager mes douleurs et symptômes accablants (peur, agitation, difficultés à respirer, nausées), même si cela peut altérer mon état de conscience." },
+					{id : 'green-douleur-min', value : 'green-douleur-min', label : "Il est particulièrement important pour moi de conserver un état de conscience et ma capacité de communiquer, même au prix de douleurs et autres symptômes." }
+				]
+				, 'Remarques complémentaires&nbsp;:'
+			) }}
+			<div class="action-bookmark">
+				<bookmark-button type="questions" target="green-douleur"></bookmark-button>
+				<div class="bookmark-help">
+					J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+				</div>
+			</div>
+		</div> <!-- ! end green world -->
 
 		{{ _form.fieldRadioTextarea(
-			"<strong>Si je me trouve dans une situation où j’ai de la peine à respirer</strong> (insuffisance respiratoire)&nbsp;:"
-			, "insuffisance-respiratoire"
+			"<strong>Pour que vos souhaits puissent être correctement interprétés par les équipes soignantes,</strong> il est fortement recommandé d’en discuter avec eux et d’établir un plan des mesures médicales futures adaptées à votre état de santé et à vos priorités (<glossary link=psa>projet de soins</glossary>)."
+			, "discussion-psa"
 			, [
-				{id : 'adequat', value : 'adequat', label : "Je souhaite que l’on cherche à rétablir ma respiration à l’aide de tous les moyens médicaux à disposition si l’équipe soignante estime que cela est adéquat (ex. : ventilation assistée de machines, tubes, ouverture de la trachée)."}
-				, {id : 'no-technology', value : 'no-technology', label : "Je souhaite que l’on utilise le moins de technologie possible et accepte les risques que cela impliquerait pour ma santé ou survie." }
-				, {id : 'no-assistance', value : 'no-assistance', label : "Je ne souhaite pas d’assistance respiratoire, même très temporaire (par exemple pour traiter une crise aigüe et passagère avec de très bonnes chances de guérison) et même si mes chances de survie en dépendent." }
+				{id : 'oui', value : 'oui', label : "J’ai discuté de mes <glossary link=objectifs>objectifs de soin</glossary> avec mes soignants de référence."},
+				{id : 'non', value : 'non', label : "Je n’ai pas discuté et établi de mes objectifs de soin et suis conscient·e que mes souhaits ci-dessus peuvent être difficiles à interpréter."}
 			]
-			, "Précisions&nbsp;:"
+			, ""
 		) }}
 
-		{{ _form.fieldRadioTextarea(
-			"Si mon insuffisance respiratoire (dyspnée) me fait souffrir&nbsp;:"
-			, "insuffisance-respiratoire-souffrir"
-			, [
-				{id : 'lucidité', value : 'lucidité', label : "Je souhaite que les médicaments pour me soulager soient dosés de manière à préserver des périodes de lucidité, même au prix de souffrances."}
-				, {id : 'no-souffrance', value : 'no-souffrance', label : "Je souhaite que les médicaments pour me soulager soient dosés de manière à ce que je souffre le moins possible même si cela peut altérer mon état de conscience." }
-			]
-			, "Remarques complémentaires&nbsp;:"
-		) }}
+		<p>De plus, nos préférences évoluent avec le temps. Il est donc important de régulièrement mettre à jour vos réponses à ce questionnaire.</p>
 
-		<div class="action-bookmark">
-			<bookmark-button type="questions" target="insuffisance-respiratoire"></bookmark-button>
-			<div class="bookmark-help">
-				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
-			</div>
-		</div>
-
-		{{ _form.fieldRadioTextarea(
-			"<strong>Si je me trouve dans une situation où je ne peux plus m’alimenter par voie normale et qu’un recours à l’alimentation artificielle est nécessaire</strong> (au moyen d’une sonde gastrique, d’une perfusion, d’une pose chirurgicale ou d’une sonde nutritive)&nbsp;:"
-			, "alimentation-artificielle"
-			, [
-				{id : 'apport', value : 'apport', label : "Je souhaite que l’on mette en place l’apport continu de liquides et d’aliments si cela est médicalement indiqué." }
-				, {id : 'artificiel', value : 'artificiel', label : "Je souhaite que le recours à l’alimentation artificielle soit momentané, pour autant qu’on puisse s’attendre à ce que je sois par la suite à nouveau en mesure de m’alimenter et de me désaltérer par voie normale, éventuellement avec l’aide d’une tierce personne."}
-				, {id : 'no-alimentation', value : 'no-alimentation', label : "Je ne souhaite en aucun cas être alimenté artificiellement, même si cette décision pourrait diminuer ma durée de vie. " }
-			]
-			, "Remarques complémentaires&nbsp;:"
-		) }}
-
-		<div class="action-bookmark">
-			<bookmark-button type="questions" target="alimentation-artificielle"></bookmark-button>
-			<div class="bookmark-help">
-				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
-			</div>
-		</div>
-
-		{{ _form.fieldRadioTextarea(
-			"<strong>Concernant le traitement de la douleur et des symptômes&nbsp;:</strong>"
-			, "douleur-symptomes"
-			, [
-				{id : 'no-pain', value : 'no-pain', label : "Je souhaite que l’on fasse tout ce qui est indiqué d’un point de vue médical pour soulager mes douleurs et symptômes accablants (peur, agitation, nausées) même si cela peut altérer mon état de conscience."}
-				, {id : 'vigilance', value : 'vigilance', label : "Il est particulièrement important pour moi de conserver un état de vigilance et ma capacité de communiquer, même au prix de douleurs et autres symptômes." }
-			]
-			, "Remarques complémentaires&nbsp;:"
-		) }}
-
-		<div class="action-bookmark">
-			<bookmark-button type="questions" target="douleur-symptomes"></bookmark-button>
-			<div class="bookmark-help">
-				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
-			</div>
-		</div>
+		{{ _form.fieldTextarea("form3-commentaire","<strong>Vous pouvez ajouter un commentaire en rapport avec cette section du questionnaire.</strong> Y a-t-il quelque chose que vous souhaiteriez ajouter&nbsp;?") }}
 
 		<nav class="pager">
 			<div class="pager-item prev">

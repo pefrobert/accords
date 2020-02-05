@@ -490,6 +490,7 @@ $page-vpadding: 15px;
         //         border-radius: 0 3px 3px 0;
         //     }
         // }
+.overlay dl.glossary-item,
 dl.glossary-item {
     dt {
         font-size: 20px;
@@ -1172,8 +1173,74 @@ textarea {
     }
 }
 
-// form-items - cas particuliers
-    .field-name-arret-cardiaque {}
+.world-color {
+    margin: 25px 0;
+    padding: 5px 10px;
+    color: rgba(0,0,0,.8);
+    .form-item {
+        input[type="tel"],
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            background-color: rgba(255,255,255,.5);
+            border-color: rgba(0,0,0,.25);
+            &:focus {
+                background-color: #fff;
+                border-color: rgba(0,0,0,.5);
+            }
+        }
+        .form-label,
+        .form-input-radio label,
+        .form-input-checkbox label {
+            color: rgba(0,0,0,.6);
+        }
+    }
+    .form-item-radio .form-input-radio input:checked + label {
+        color: #000;
+    }
+    .action-bookmark .bookmark-help {
+        color: rgba(0,0,0,.5);
+    }
+}
+
+.world-color-title {
+    margin: 0 0 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.world-color-blue {
+    background-color: mix(#fff, #33b5e5, 80%);
+    .action-bookmark .bookmark-btn .btn-label,
+    .world-color-title {
+        color: mix(#000, #33b5e5, 25%);
+    }
+    .form-item .form-label strong {
+        color: mix(#000, #33b5e5, 25%);
+    }
+    .form-item-radio .form-input-radio input:checked + label {
+        background-color: mix(#fff, #33b5e5, 60%);
+    }
+    .action-bookmark .bookmark-btn.on {
+        background-image: url('../img/icon-bookmark-new-on-world-blue.svg');
+    }
+}
+.world-color-green {
+    background-color: mix(#fff, #99cc00, 80%);
+    .action-bookmark .bookmark-btn .btn-label,
+    .world-color-title {
+        color: mix(#000, #99cc00, 25%);
+    }
+    .form-item .form-label strong {
+        color: mix(#000, #99cc00, 25%);
+    }
+    .action-bookmark .bookmark-btn.on {
+        background-image: url('../img/icon-bookmark-new-on-world-green.svg');
+    }
+}
 
 // amorces
 .amorces {
@@ -1334,6 +1401,7 @@ body.read {
             background-color: $accent1-light;
         }
     }
+    .accent,
     .app a,
     .bookmark-btn .btn-label {
         color: $accent1-dark;
@@ -1364,6 +1432,7 @@ body.talk {
             background-color: $accent2-light;
         }
     }
+    .accent,
     .app a,
     .bookmark-btn .btn-label {
         color: $accent2-dark;
@@ -1394,6 +1463,7 @@ body.write {
             background-color: $accent3-light;
         }
     }
+    .accent,
     .app a,
     .bookmark-btn .btn-label {
         color: $accent3-dark;
@@ -1432,6 +1502,7 @@ body.notes {
             background-color: $accent4-light;
         }
     }
+    .accent,
     .app a,
     .bookmark-btn .btn-label {
         color: $accent4-dark;

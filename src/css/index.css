@@ -339,20 +339,28 @@ a {
     background-color: rgba(0, 0, 0, 0.65);
     border-radius: 50px; }
 
+.overlay dl.glossary-item dt,
 dl.glossary-item dt {
   font-size: 20px;
   margin-bottom: 20px;
   color: #009586; }
+.overlay dl.glossary-item dd p,
 dl.glossary-item dd p {
   margin: 10px 0; }
-dl.glossary-item dd ul, dl.glossary-item dd ol {
+.overlay dl.glossary-item dd ul, .overlay dl.glossary-item dd ol,
+dl.glossary-item dd ul,
+dl.glossary-item dd ol {
   margin: 10px 0 10px 20px; }
+.overlay dl.glossary-item dd ul,
 dl.glossary-item dd ul {
   list-style: square; }
+.overlay dl.glossary-item dd a,
 dl.glossary-item dd a {
   color: #009586; }
+.overlay dl.glossary-item dd .bookmark-btn .btn-label,
 dl.glossary-item dd .bookmark-btn .btn-label {
   color: #009586; }
+.overlay dl.glossary-item dd .bookmark-btn.on,
 dl.glossary-item dd .bookmark-btn.on {
   background-image: url("../img/icon-bookmark-new-on-read.svg"); }
 
@@ -862,6 +870,64 @@ textarea {
     .question-more-info .glossary-dfn::after {
       display: none; }
 
+.world-color {
+  margin: 25px 0;
+  padding: 5px 10px;
+  color: rgba(0, 0, 0, 0.8); }
+  .world-color .form-item input[type="tel"],
+  .world-color .form-item input[type="text"],
+  .world-color .form-item input[type="date"],
+  .world-color .form-item input[type="email"],
+  .world-color .form-item input[type="number"],
+  .world-color .form-item select,
+  .world-color .form-item textarea {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.25); }
+    .world-color .form-item input[type="tel"]:focus,
+    .world-color .form-item input[type="text"]:focus,
+    .world-color .form-item input[type="date"]:focus,
+    .world-color .form-item input[type="email"]:focus,
+    .world-color .form-item input[type="number"]:focus,
+    .world-color .form-item select:focus,
+    .world-color .form-item textarea:focus {
+      background-color: #fff;
+      border-color: rgba(0, 0, 0, 0.5); }
+  .world-color .form-item .form-label,
+  .world-color .form-item .form-input-radio label,
+  .world-color .form-item .form-input-checkbox label {
+    color: rgba(0, 0, 0, 0.6); }
+  .world-color .form-item-radio .form-input-radio input:checked + label {
+    color: #000; }
+  .world-color .action-bookmark .bookmark-help {
+    color: rgba(0, 0, 0, 0.5); }
+
+.world-color-title {
+  margin: 0 0 20px;
+  font-weight: bold;
+  font-size: 16px; }
+
+.world-color-blue {
+  background-color: #d6f0fa; }
+  .world-color-blue .action-bookmark .bookmark-btn .btn-label,
+  .world-color-blue .world-color-title {
+    color: #2688ac; }
+  .world-color-blue .form-item .form-label strong {
+    color: #2688ac; }
+  .world-color-blue .form-item-radio .form-input-radio input:checked + label {
+    background-color: #ade1f5; }
+  .world-color-blue .action-bookmark .bookmark-btn.on {
+    background-image: url("../img/icon-bookmark-new-on-world-blue.svg"); }
+
+.world-color-green {
+  background-color: #ebf5cc; }
+  .world-color-green .action-bookmark .bookmark-btn .btn-label,
+  .world-color-green .world-color-title {
+    color: #739900; }
+  .world-color-green .form-item .form-label strong {
+    color: #739900; }
+  .world-color-green .action-bookmark .bookmark-btn.on {
+    background-image: url("../img/icon-bookmark-new-on-world-green.svg"); }
+
 .amorces {
   margin-bottom: 50px; }
   .amorces h3 {
@@ -974,6 +1040,7 @@ body.read select:focus,
 body.read textarea:focus {
   border-color: #009586;
   background-color: #ccf4f0; }
+body.read .accent,
 body.read .app a,
 body.read .bookmark-btn .btn-label {
   color: #009586; }
@@ -995,6 +1062,7 @@ body.talk select:focus,
 body.talk textarea:focus {
   border-color: #5f9938;
   background-color: #d2edc0; }
+body.talk .accent,
 body.talk .app a,
 body.talk .bookmark-btn .btn-label {
   color: #5f9938; }
@@ -1016,6 +1084,7 @@ body.write select:focus,
 body.write textarea:focus {
   border-color: #bf841a;
   background-color: #ffefd3; }
+body.write .accent,
 body.write .app a,
 body.write .bookmark-btn .btn-label {
   color: #bf841a; }
@@ -1045,6 +1114,7 @@ body.notes select:focus,
 body.notes textarea:focus {
   border-color: #bf0044;
   background-color: #ffe6ef; }
+body.notes .accent,
 body.notes .app a,
 body.notes .bookmark-btn .btn-label {
   color: #bf0044; }
