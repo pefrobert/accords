@@ -859,6 +859,10 @@ textarea {
   color: #333;
   background-color: #eee; }
 
+.chart img {
+  display: block;
+  margin: 0 auto; }
+
 .question-more-info {
   margin: 15px 0 15px 15%;
   padding: 5px 15px;
@@ -925,6 +929,8 @@ textarea {
     color: #739900; }
   .world-color-green .form-item .form-label strong {
     color: #739900; }
+  .world-color-green .form-item-radio .form-input-radio input:checked + label {
+    background-color: #d6eb99; }
   .world-color-green .action-bookmark .bookmark-btn.on {
     background-image: url("../img/icon-bookmark-new-on-world-green.svg"); }
 
