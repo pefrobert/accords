@@ -1,7 +1,25 @@
-id;question
-arret-cardiaque;"<strong>Si mon cœur s'arrêtait soudainement</strong> (arrêt cardiaque)…"
-insuffisance-respiratoire;"<strong>Si je me trouve dans une situation où j’ai de la peine à respirer</strong> (insuffisance respiratoire)…"
-alimentation-artificielle;"<strong>Si je me trouve dans une situation où je ne peux plus m’alimenter par voie normale et qu’un recours à l’alimentation artificielle est nécessaire</strong> (au moyen d’une sonde gastrique, d’une perfusion, d’une pose chirurgicale ou d’une sonde nutritive)…"
-douleur-symptomes;"Concernant le <strong>traitement de la douleur et des symptômes</strong>…"
-don-organes;"Concernant le <strong>don d’organes</strong>…"
-donnees-biologiques;"Concernant le <strong>don des données biologiques à la recherche scientifique</strong>…"
+id;question;page
+arret-cardiaque;"<strong>Si mon cœur s'arrêtait soudainement</strong> (arrêt cardiaque)…";form3.old
+insuffisance-respiratoire;"<strong>Si je me trouve dans une situation où j’ai de la peine à respirer</strong> (insuffisance respiratoire)…";form3.old
+alimentation-artificielle;"<strong>Si je me trouve dans une situation où je ne peux plus m’alimenter par voie normale et qu’un recours à l’alimentation artificielle est nécessaire</strong> (au moyen d’une sonde gastrique, d’une perfusion, d’une pose chirurgicale ou d’une sonde nutritive)…";form3.old
+douleur-symptomes;"Concernant le <strong>traitement de la douleur et des symptômes</strong>…";form3.old
+blue-reanimation;"Monde bleu - <strong>Si mon cœur s’arrêtait soudainement</strong> (arrêt cardiaque) et qu’une procédure de réanimation était nécessaire…";form3
+blue-machines;"Monde bleu - <strong>Si l’utilisation de machines était nécessaire pour soutenir le fonctionnement de mes organes vitaux</strong> (dialyse, ventilation assistée, etc)…";form3
+blue-chirurgie;"Monde bleu - <strong>Si des mesures chirurgicales sont envisagées par l’équipe soignante…</strong>";form3
+blue-support;"Monde bleu - <strong>Si l’utilisation de médicaments ou de thérapies de support était nécessaire pour soutenir le fonctionnement de mes organes vitaux</strong> (antibiotiques, hydratation, alimentation artificielle, etc)…</strong>";form3
+blue-douleur;"Monde bleu - <strong>Concernant le traitement de la douleur et des symptômes…</strong>";form3
+green-situation;"Monde vert - <strong>Décrivez une ou des situations de ce type qui pourraient vous arriver…</strong>";form3
+green-reanimation;"Monde vert - <strong>Si mon cœur s’arrêtait soudainement</strong> (arrêt cardiaque) et qu’une procédure de réanimation était nécessaire…";form3
+green-machines;"Monde vert - <strong>Si l’utilisation de machines était nécessaire pour soutenir le fonctionnement de mes organes vitaux</strong> (dialyse, ventilation assistée, etc)…";form3
+green-chirurgie;"Monde vert - <strong>Si des mesures chirurgicales sont envisagées par l’équipe soignante…</strong>";form3
+green-support;"Monde vert - <strong>Si l’utilisation de médicaments ou de thérapies de support était nécessaire pour soutenir le fonctionnement de mes organes vitaux</strong> (antibiotiques, hydratation, alimentation artificielle, etc)…</strong>";form3
+green-douleur;"Monde vert - <strong>Concernant le traitement de la douleur et des symptômes…</strong>";form3
+care-place;"<strong>À propos du lieu où je recevrai des soins</strong> si cela est possible, je souhaiterais…";form4
+die-place;"<strong>Si j’ai la possibilité de formuler un choix quant au lieu où je décèderai</strong> je souhaiterais…";form4
+don-organes;"Concernant le <strong>don d’organes</strong>…";form4
+donnees-biologiques;"Concernant le <strong>don des données biologiques à la recherche scientifique</strong>…";form4
+crise-psy-situations;"<strong>Description de la ou des situations de crise psychologique que je crains parce que je perdrais ma capacité à prendre des décisions qui me correspondent…</strong>";form5
+crise-psy-contact;"<strong>Si je suis pris·e en charge dans une telle situation de crise psychologique</strong>, si possible, je souhaite que l’on contacte et prenne conseil auprès des personnes suivantes…";form5
+crise-psy-souhait;"<strong>Mes souhaits en cas de crise psychologique…</strong>";form5
+crise-psy-signes;"<strong>J’ai identifié certains signes précurseurs de crise psychologique, qui pourraient alerter mon entourage…</strong>";form5
+crise-psy-signes-reaction;"<strong>Si je présente ces signes précurseurs de crise psychologique, si possible, je souhaite que mon entourage ou mes soignants réagissent de manière suivante…</strong>";form5

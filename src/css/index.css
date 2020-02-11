@@ -364,28 +364,23 @@ dl.glossary-item dd .bookmark-btn .btn-label {
 dl.glossary-item dd .bookmark-btn.on {
   background-image: url("../img/icon-bookmark-new-on-read.svg"); }
 
-.glossary-item dd .syns,
-.onpage-glossary-item dd .syns {
+.glossary-item dd .syns {
   margin-bottom: 15px;
   padding: 2px 5px;
   font-size: 12px;
   background-color: #eee;
   border-radius: 3px; }
-.glossary-item dd .more,
-.onpage-glossary-item dd .more {
+.glossary-item dd .more {
   margin: 15px 0 15px 10%;
   padding: 5px 10px;
   background-color: #eee; }
-.glossary-item dd .source,
-.onpage-glossary-item dd .source {
+.glossary-item dd .source {
   margin-top: 15px;
   font-size: 12px; }
-  .glossary-item dd .source a,
-  .onpage-glossary-item dd .source a {
+  .glossary-item dd .source a {
     color: #009586;
     text-decoration: none; }
-.glossary-item dd .label,
-.onpage-glossary-item dd .label {
+.glossary-item dd .label {
   font-weight: bold;
   margin-right: 5px; }
 

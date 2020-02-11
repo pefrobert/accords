@@ -18,19 +18,80 @@
 	</div>
 
 	<div class="section-chapo">
-		<p></p>
+		<p>Remplissez ces questions uniquement si vous craignez d’expérimenter une ou des crises d’ordre psychologique durant lesquelles vous n’êtes plus vous-même ou ressentez une souffrance morale intense.</p>
 	</div>
-
 
 	<form name="write.form5" id="write.form5">
 
-	<div class="section-content section-form section-valeurs">
+	<div class="section-content section-form">
 
-		<em>En construction...</em>
+		{{ _form.fieldCheckboxTextarea(
+			""
+			, ""
+			, [
+				{id : 'crise-psy-no', value : 'crise-psy-no', label : "<strong>Je ne remplis pas cette partie du questionnaire</strong> qui est peu pertinente pour moi." }
+			]
+			, ''
+		) }}
+
+		{{ _form.fieldTextarea("crise-psy-situations","<strong>Description de la ou des situations que je crains parce que je perdrais ma capacité à prendre des décisions qui me correspondent.</strong>") }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="crise-psy-situations"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
+		{{ _form.fieldCheckboxTextarea(
+			"Si je suis pris·e en charge dans une telle situation, si possible, je souhaite que l’on contacte et prenne conseil auprès des personnes suivantes&nbsp;:"
+			, "crise-psy-contact"
+			, [
+				{id : 'crise-psy-contact-representant', value : 'crise-psy-contact-representant', label : "Mon ou mes représentant(s) thérapeutique(s) (désigné dans la partie <a href=write.form1.html>Moi et mon entourage</a>)"},
+				{id : 'crise-psy-contact-autre', value : 'crise-psy-contact-autre', label : "Autres personnes (proche, soignant, professionnel de la santé)&nbsp;:"}
+			]
+			, ' ', ''
+		) }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="crise-psy-contact"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
+		{{ _form.fieldTextarea("crise-psy-souhait","<strong>Par ailleurs, dans une telle situation, je souhaite</strong> (que l’on me parle de telle ou telle manière, recevoir ce traitement ou cette prise en charge qui avait été efficace par le passé, que l’on évite ce médicament particulier, que l’on ne contacte pas ou ne prenne pas conseil auprès telle personne, etc)") }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="crise-psy-souhait"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
+		{{ _form.fieldTextarea("crise-psy-signes","<strong>J’ai identifié certains signes précurseurs qui pourraient alerter mon entourage</strong> (je me plains d’insomnies, j’achète de manière compulsive, j’annule mes rendez-vous médicaux, je réagis de manière violente, je me néglige, je surestime mes capacités, etc)") }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="crise-psy-signes"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
+		{{ _form.fieldTextarea("crise-psy-signes-reaction","<strong>Si je présente ces signes-là, si possible, je souhaite que mon entourage ou mes soignants réagissent de manière suivante</strong> (me proposent un traitement particulier, contactent une personne particulière, me disent certaines choses, me montrent une lettre que j’ai écrite, une vidéo que j’ai préenregistrée, etc)") }}
+
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="crise-psy-signes-reaction"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
+		{{ _form.fieldTextarea("crise-psy-remarques","<strong>Y a-t-il quelque chose que vous souhaiteriez ajouter par rapport à cette section&nbsp;?</strong>") }}
 
 	</div>
 
-	<div class="section-content section-valeurs">
+	<div class="section-content">
 		<nav class="pager">
 			<div class="pager-item prev">
 				<a href="write.form4.html">

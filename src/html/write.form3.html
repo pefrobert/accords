@@ -17,9 +17,11 @@
 		<h1>Interventions pour ma survie</h1>
 	</div>
 
-	<div class="section-content content-text">
-		<p>Les données que vous fournirez dans cette partie permettront aux soignants ainsi qu’à vos proches de savoir comment agir dans les situations médicales précises, notamment en urgence et aux soins intensifs.</p>
+	<div class="section-chapo">
+		<p>Les données que vous fournirez dans cette partie permettront aux soignants ainsi qu’à vos proches de savoir comment agir dans les situations médicales précises, notamment en <glossary link=urgences>urgence</glossary> et aux <glossary link=soins-intensifs>soins intensifs</glossary>.</p>
+	</div>
 
+	<div class="section-content content-text">
 		<p class="accent"><strong>Vos soignants pourraient mieux vous comprendre si vous mettez à leur disposition votre profil psychologique par rapport à l’anticipation des soins.</strong></p>
 
 		<div class="chart">
@@ -35,7 +37,7 @@
 
 	<form name="write.form3" id="write.form3">
 
-	<div class="section-content section-form section-urgences">
+	<div class="section-content section-form">
 
 		{{ _form.fieldRadioTextarea(
 			""
@@ -74,7 +76,7 @@
 			</div>
 
 			{{ _form.fieldRadioTextarea(
-				"<strong>Si l’utilisation de machines était nécessaire pour soutenir le fonctionnement de mes organes vitaux (dialyse, ventilation assistée, etc)&nbsp;:</strong>"
+				"<strong>Si l’utilisation de machines était nécessaire pour soutenir le fonctionnement de mes organes vitaux (<glossary link=dialyse>dialyse</glossary>, <glossary link=ventilation>ventilation assistée</glossary>, etc)&nbsp;:</strong>"
 				, "blue-machines"
 				, [
 					{id : 'blue-machines-max', value : 'blue-machines-max', label : "Je souhaite que l’on emploie tous les moyens médicalement indiqués pour ma survie même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
@@ -95,7 +97,7 @@
 				, "blue-chirurgie"
 				, [
 					{id : 'blue-chirurgie-max', value : 'blue-chirurgie-max', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
-					{id : 'blue-chirurgie-medium', value : 'blue-chirurgie-medium', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si j’ai de bonnes chances de retrouver mes capacités d’avant." },
+					{id : 'blue-chirurgie-medium', value : 'blue-chirurgie-medium', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué si j’ai de bonnes chances de retrouver mes capacités d’avant." },
 					{id : 'blue-chirurgie-min', value : 'blue-chirurgie-min', label : "Je souhaite qu’aucune mesure chirurgicale ne soit pratiquée, et comprend que cela pourrait engendrer mon décès ou une dégradation supplémentaire de mon état de santé." }
 				]
 				, 'Raison de mon choix&nbsp;:'
@@ -176,7 +178,7 @@
 			</div>
 
 			{{ _form.fieldRadioTextarea(
-				"<strong>Si l’utilisation de machines était nécessaire pour soutenir le fonctionnement de mes organes vitaux (dialyse, ventilation assistée, etc)&nbsp;:</strong>"
+				"<strong>Si l’utilisation de machines était nécessaire pour soutenir le fonctionnement de mes organes vitaux (<glossary link=dialyse>dialyse</glossary>, <glossary link=ventilation>ventilation assistée</glossary>, etc)&nbsp;:</strong>"
 				, "green-machines"
 				, [
 					{id : 'green-machines-max', value : 'green-machines-max', label : "Je souhaite que l’on emploie tous les moyens médicalement indiqués pour ma survie même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
@@ -197,7 +199,7 @@
 				, "green-chirurgie"
 				, [
 					{id : 'green-chirurgie-max', value : 'green-chirurgie-max', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si mes chances de récupération sont très faibles (le risque de séquelles graves est important)." },
-					{id : 'green-chirurgie-medium', value : 'green-chirurgie-medium', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué même si j’ai de bonnes chances de retrouver mes capacités (limitées) d’avant." },
+					{id : 'green-chirurgie-medium', value : 'green-chirurgie-medium', label : "Je souhaite que l’on fasse tout ce qui est médicalement indiqué si j’ai de bonnes chances de retrouver mes capacités (limitées) d’avant." },
 					{id : 'green-chirurgie-min', value : 'green-chirurgie-min', label : "Je souhaite qu’aucune mesure chirurgicale ne soit pratiquée, et comprend que cela pourrait engendrer mon décès ou une dégradation supplémentaire de mon état de santé." }
 				]
 				, 'Raison de mon choix&nbsp;:'
@@ -247,15 +249,15 @@
 			"<strong>Pour que vos souhaits puissent être correctement interprétés par les équipes soignantes,</strong> il est fortement recommandé d’en discuter avec eux et d’établir un plan des mesures médicales futures adaptées à votre état de santé et à vos priorités (<glossary link=psa>projet de soins</glossary>)."
 			, "discussion-psa"
 			, [
-				{id : 'oui', value : 'oui', label : "J’ai discuté de mes <glossary link=objectifs>objectifs de soin</glossary> avec mes soignants de référence."},
-				{id : 'non', value : 'non', label : "Je n’ai pas discuté et établi de mes objectifs de soin et suis conscient·e que mes souhaits ci-dessus peuvent être difficiles à interpréter."}
+				{id : 'oui', value : 'oui', label : "J’ai discuté de mes <glossary link=objectifs>objectifs de soins</glossary> avec mes soignants de référence."},
+				{id : 'non', value : 'non', label : "Je n’ai pas discuté de mes objectifs de soins et je comprends que mes souhaits ci-dessus peuvent être difficiles à interpréter."}
 			]
 			, ""
 		) }}
 
 		<p>De plus, nos préférences évoluent avec le temps. Il est donc important de régulièrement mettre à jour vos réponses à ce questionnaire.</p>
 
-		{{ _form.fieldTextarea("form3-commentaire","<strong>Vous pouvez ajouter un commentaire en rapport avec cette section du questionnaire.</strong> Y a-t-il quelque chose que vous souhaiteriez ajouter&nbsp;?") }}
+		{{ _form.fieldTextarea("form3-commentaire","<strong>Y a-t-il quelque chose que vous souhaiteriez ajouter en rapport avec cette section&nbsp;?</strong>") }}
 
 		<nav class="pager">
 			<div class="pager-item prev">

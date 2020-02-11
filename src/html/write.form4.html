@@ -18,13 +18,12 @@
 	</div>
 
 	<div class="section-chapo">
-		<p></p>
+		<p>Les réponses que vous donnerez ci-après décrivent vos souhaits et préférences pour la planification de votre fin de vie. Ces indications permettront aux soignants ainsi qu’à vos proches de savoir comment agir et que décider le moment venu.</p>
 	</div>
-
 
 	<form name="write.form4" id="write.form4">
 
-	<div class="section-content section-form section-valeurs">
+	<div class="section-content section-form">
 
 		{{ _form.fieldRadioTextarea(
 			"<strong>À propos du lieu où je recevrai des soins</strong> si cela est possible, je souhaiterais&nbsp;:"
@@ -36,8 +35,15 @@
 
 		{{ _form.fieldTextarea("care-place-complement","Remarque ou précision") }}
 
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="care-place"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
+
 		{{ _form.fieldRadioTextarea(
-		"<strong>Si j’ai la possibilité de formuler un choix quant au lieu où je décèderai</strong> je souhaiterais&nbsp;:"
+		"<strong>Si j’ai la possibilité de formuler un choix quant au <glossary link=lieu-fin>lieu où je décèderai</glossary></strong> je souhaiterais&nbsp;:"
 		, "die-place"
 		, [	{id : 'die-home', value : 'die-home', label : "Pouvoir mourir chez moi."}
 		,	{id : 'die-other', value : 'die-other', label : "Pouvoir mourir chez un proche&nbsp;:", text : '&nbsp;' }
@@ -45,14 +51,19 @@
 		]
 		) }}
 
-		{{ _form.fieldTextarea("comments","<strong>Y a-t-il quelque chose que vous souhaiteriez ajouter en rapport avec les thèmes discutés ci-dessus&nbsp;?</strong>") }}
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="die-place"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
 
 		{{ _form.fieldRadioTextarea(
 			"<strong>Concernant le don d’organes&nbsp;:</strong>"
 			, "don-organe"
 			, [
 				{id : 'cartedonneur', value : 'cartedonneur', label : "J’ai déjà exprimé formellement ma position (mon consentement ou non-consentement à donner mes organes après mon décès)."}
-				, {id : 'registre', value : 'registre', label : "J’aimerais exprimer mon choix dans le <a href=\"https://www.swisstransplant.org/fr/registre-nationaldu-don-dorganes/\" target=\"_blank\">registre national</a>." }
+				, {id : 'registre', value : 'registre', label : "Je souhaite m’informer sur <a href=\"https://www.swisstransplant.org/fr/registre-nationaldu-don-dorganes/\" target=\"_blank\">Swisstransplant</a> et exprimer mon choix dans le registre national." }
 				, {id : 'no-interest-don', value : 'no-interest-don', label : "La question du don d’organe ne m’intéresse pas." }
 			]
 			, "Remarques complémentaires&nbsp;:"
@@ -85,7 +96,7 @@
 
 	</div>
 
-	<div class="section-content section-valeurs">
+	<div class="section-content">
 		<nav class="pager">
 			<div class="pager-item prev">
 				<a href="write.form3.html">

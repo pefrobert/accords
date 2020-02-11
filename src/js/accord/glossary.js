@@ -15,5 +15,5 @@ Vue.component('glossary', {
     }
   },
   template: '<a v-if="window.location.pathname.endsWith(\'read.glossary.html\')" class="glossary-dfn" v-bind:href="url"><slot></slot></a>' +
-  '<span v-else class="glossary-dfn" v-on:click="open"><slot></slot></span>'
+  '<span v-else class="glossary-dfn" v-on:click.prevent="open"><slot></slot></span>'
 })
