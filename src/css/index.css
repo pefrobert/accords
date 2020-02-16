@@ -682,8 +682,15 @@ textarea {
   min-height: 70px;
   resize: vertical; }
 
-.form-section-title {
-  margin: 35px 0 25px;
+.form-group {
+  margin: 35px 0; }
+
+.form-group-bg {
+  padding: 10px 15px;
+  background-color: #eee; }
+
+.form-group-title {
+  margin: 0 0 25px;
   color: #bf841a;
   font-size: 20px; }
 

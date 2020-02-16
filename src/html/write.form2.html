@@ -25,28 +25,35 @@
 
 	<div class="section-content section-form">
 
-		{{ _form.fieldTextarea("day","<strong>Aujourd’hui, une belle journée pour moi, c'est&nbsp;…</strong>") }}
+		<div class="form-group">
+			<div class="form-group-title">Pour commencer, voici quatre questions importantes&nbsp;:</div>
 
-		{{ _form.fieldTextarea("place","<strong>Une pièce où je me sens à l'aise est&nbsp;…</strong> (lumineuse, plutôt sombre, chaude, fraîche, aérée, avec des couleurs pastels, avec des couleurs vives, avec des sons et de la musique, silencieuse, avec la possibilité de recevoir beaucoup de monde, un lieu plus intime, etc)") }}
+			{{ _form.fieldTextarea("day","<strong>Aujourd’hui, une belle journée pour moi, c'est&nbsp;…</strong>") }}
 
-		{{ _form.fieldTextarea("sensation","<strong>Je trouve agréable&nbsp;…</strong> (l’odeur de la forêt, l’air frais, avoir bon chaud, le goût du chocolat, les musiques rythmées, les gestes tendres et attentionnés, les massages, etc)") }}
+			{{ _form.fieldTextarea("must","<strong>La ou les chose(s) que j'aimerais absolument faire ou vivre avant de mourir</strong> (découvrir un lieu, faire un voyage, une fête, concrétiser un souhait, avoir une conversation, clore une affaire non réglée, me réconcilier avec quelqu’un, etc)") }}
 
-		{{ _form.fieldTextarea("appearence","<strong>Quelques mots sur mon apparence</strong> (j’accorde beaucoup d’importance à mon apparence physique, mon habillement ne me préoccupe pas beaucoup, je préfère les vêtements confortables, etc)") }}
+			{{ _form.fieldTextarea("fear","<strong>Ce qui me préoccupe, me fait peur, m’angoisse</strong> (que vont devenir les personnes qui dépendent de moi&nbsp;? Vont-ils souffrir ? Que vont devenir mes animaux de compagnie&nbsp;? Mes affaires financières sont-elles en ordre&nbsp;? Est-il possible qu'on ne me dise pas tout&nbsp;? Ai-je encore la maîtrise de ma vie&nbsp;? Vais-je souffrir&nbsp;? Comment vais-je mourir&nbsp;? etc)") }}
 
-		{{ _form.fieldTextarea("others","<strong>Moi et les autres</strong> (j’aime avoir mon espace, j’apprécie le calme, j’aime faire de nouvelles connaissances, j’apprécie le bourdonnement de la vie autour de moi, j’ai noué des amitiés de longue date, je me sens à l’aise quand je discute avec une seule personne, je préfère les discussions de groupe, etc)") }}
+			{{ _form.fieldTextarea("unbearable","<strong>Ma vie deviendrait insupportable si je devais…</strong> (vivre en chaise roulante, vivre dans une institution de soin, ne plus pouvoir communiquer avec mes proches, ne plus reconnaître mes proches, être alité·e en permanence, être assisté·e pour la toilette, pour l’alimentation, pour respirer, etc)") }}
+		</div>
 
-		{{ _form.fieldTextarea("frustration","<strong>Ce qui me contrarie</strong> (quand la fenêtre reste ouverte et qu’il fait froid dehors, quand la radio fonctionne sans cesse, quand on me parle sans arrêt si je ne suis pas en mesure de répondre, quand on parle de moi comme si j’étais un enfant, quand j’ai le sentiment qu’on ne me laisse pas le choix, quand j’ai l’impression que je ne suis pas entendu·e, quand je me sens mis·e sous pression, etc)") }}
+		<div class="form-group form-group-bg">
+			<div class="form-group-title">Si vous souhaitez en dire plus, voici quelques questions supplémentaires&nbsp;:</div>
 
-		{{ _form.fieldTextarea("like","<strong>Ce que j'aime faire</strong> (me promener dans la nature, passer du temps en compagnie de mes proches, de mes amis, de mes animaux, pratiquer ma religion, lire, écrire, regarder la télé, jouer, écouter de la musique, manger de bons petits plats, m’adonner à mon passe-temps, trainer au lit le matin, etc)") }}
+			{{ _form.fieldTextarea("spirituality","<strong>Quelques mots sur ma spiritualité, mes croyances religieuses</strong>") }}
 
-		{{ _form.fieldTextarea("spirituality","<strong>Quelques mots sur ma spiritualité, mes croyances religieuses</strong>") }}
+			{{ _form.fieldTextarea("appearence","<strong>Quelques mots sur mon apparence</strong> (j’accorde beaucoup d’importance à mon apparence physique, mon habillement ne me préoccupe pas beaucoup, je préfère les vêtements confortables, etc)") }}
 
-		{{ _form.fieldTextarea("must","<strong>La ou les chose(s) que j'aimerais absolument faire ou vivre avant de mourir</strong> (découvrir un lieu, faire un voyage, une fête, concrétiser un souhait, avoir une conversation, clore une affaire non réglée, me réconcilier avec quelqu’un, etc)") }}
+			{{ _form.fieldTextarea("others","<strong>Moi et les autres</strong> (j’aime avoir mon espace, j’apprécie le calme, j’aime faire de nouvelles connaissances, j’apprécie le bourdonnement de la vie autour de moi, j’ai noué des amitiés de longue date, je me sens à l’aise quand je discute avec une seule personne, je préfère les discussions de groupe, etc)") }}
 
-		{{ _form.fieldTextarea("fear","<strong>Ce qui me préoccupe, me fait peur, m’angoisse</strong> (que vont devenir les personnes qui dépendent de moi&nbsp;? Vont-ils souffrir ? Que vont devenir mes animaux de compagnie&nbsp;? Mes affaires financières sont-elles en ordre&nbsp;? Est-il possible qu'on ne me dise pas tout&nbsp;? Ai-je encore la maîtrise de ma vie&nbsp;? Vais-je souffrir&nbsp;? Comment vais-je mourir&nbsp;? etc)") }}
+			{{ _form.fieldTextarea("like","<strong>Ce que j'aime faire</strong> (me promener dans la nature, passer du temps en compagnie de mes proches, de mes amis, de mes animaux, pratiquer ma religion, lire, écrire, regarder la télé, jouer, écouter de la musique, manger de bons petits plats, m’adonner à mon passe-temps, trainer au lit le matin, etc)") }}
 
-		{{ _form.fieldTextarea("unbearable","<strong>Ma vie deviendrait insupportable si je devais…</strong> (vivre en chaise roulante, vivre dans une institution de soin, ne plus pouvoir communiquer avec mes proches, ne plus reconnaître mes proches, être alité·e en permanence, être assisté·e pour la toilette, pour l’alimentation, pour respirer, etc)") }}
+			{{ _form.fieldTextarea("sensation","<strong>Je trouve agréable&nbsp;…</strong> (l’odeur de la forêt, l’air frais, avoir bon chaud, le goût du chocolat, les musiques rythmées, les gestes tendres et attentionnés, les massages, etc)") }}
 
+			{{ _form.fieldTextarea("place","<strong>Une pièce où je me sens à l'aise est&nbsp;…</strong> (lumineuse, plutôt sombre, chaude, fraîche, aérée, avec des couleurs pastels, avec des couleurs vives, avec des sons et de la musique, silencieuse, avec la possibilité de recevoir beaucoup de monde, un lieu plus intime, etc)") }}
+
+			{{ _form.fieldTextarea("frustration","<strong>Ce qui me contrarie</strong> (quand la fenêtre reste ouverte et qu’il fait froid dehors, quand la radio fonctionne sans cesse, quand on me parle sans arrêt si je ne suis pas en mesure de répondre, quand on parle de moi comme si j’étais un enfant, quand j’ai le sentiment qu’on ne me laisse pas le choix, quand j’ai l’impression que je ne suis pas entendu·e, quand je me sens mis·e sous pression, etc)") }}
+		</div>
 	</div>
 
 	<div class="section-content">
