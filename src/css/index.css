@@ -929,6 +929,37 @@ textarea {
   .world-color-green .action-bookmark .bookmark-btn.on {
     background-image: url("../img/icon-bookmark-new-on-world-green.svg"); }
 
+.bonus-bio-example {
+  margin: 25px 0;
+  padding: 15px 20px;
+  border: 1px solid #eee;
+  border-radius: 25px;
+  box-shadow: 0 3px 10px -8px #333; }
+  .bonus-bio-example::after {
+    content: '';
+    display: table;
+    clear: both; }
+  .bonus-bio-example .img {
+    width: 35%;
+    max-width: 175px;
+    margin-right: 25px;
+    margin-bottom: 2px;
+    float: left;
+    shape-outside: circle(50%); }
+  .bonus-bio-example .name {
+    margin-top: 0;
+    color: #bf841a;
+    font-size: 1.4em;
+    font-weight: bold; }
+  .bonus-bio-example .text {
+    margin-bottom: 0; }
+
+.form-last-updated {
+  margin: 40px 0;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #ffefd3; }
+
 .amorces {
   margin-bottom: 50px; }
   .amorces h3 {

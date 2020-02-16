@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="section-chapo">
-		<p></p>
+		<p>Ici vous avez la possibilité de rédiger un petit résumé de votre vie. Tout comme pour les autres sections du questionnaire, répondez à celle-ci uniquement si vous le jugez nécessaire.</p>
 	</div>
 
 
@@ -26,8 +26,39 @@
 
 	<div class="section-content section-form">
 
-		<em>En construction...</em>
+		{{ _form.fieldTextarea("bonus-bio","") }}
 
+		<p><strong class="accent">Vous ne savez pas comment l’écrire ?</strong> Inspirez-vous des exemples suivants&nbsp;:</p>
+
+		<div class="bonus-bio-examples">
+			<div class="bonus-bio-example">
+				<div class="img"><img src="img/avatars/2.jpg" alt=""></div>
+				<p class="name">Carlos</p>
+				<p class="text">Je suis né en 1925 au Portugal, mais j’ai grandi en Espagne, à Madrid. J’ai entrepris un apprentissage de serrurier et j’ai ensuite travaillé dans une usine de construction automobile jusqu’à ma retraite au début des années 1990. J’ai été marié et j’ai deux fils nés en 1951 et 1953. Mon épouse est décédée il y a un an des suites d’une maladie. Depuis son décès, je vis avec mon plus jeune fils et sa femme. Je parle portugais, espagnol et français. J’aime lire et regarder le football à la télé&nbsp;: je suis un grand fan du Real Madrid.</p>
+			</div>
+			<div class="bonus-bio-example">
+				<div class="img"><img src="img/avatars/1.jpg" alt=""></div>
+				<p class="name">Thérèse</p>
+				<p class="text">J’ai aujourd’hui 82 ans, j’ai grandi dans la campagne vaudoise. Mes parents étaient paysans et depuis toute petite j’ai travaillé à la ferme. Je suis la troisième d’une fratrie de cinq enfants et je suis particulièrement proche de mon plus jeune frère. J’ai toujours aimé chanter, j’ai fait partie d’une chorale pendant de nombreuses années, mon œuvre préférée restera le Requiem de Fauré. J’ai eu trois enfants, Michel, André et Marie et six petits-enfants. Marie s’occupe beaucoup de moi. Un de mes plus beaux souvenirs est la croisière que mes enfants m’ont offerte pour les 60 ans, c’était la première fois que je voyageais.</p>
+			</div>
+			<div class="bonus-bio-example">
+				<div class="img"><img src="img/avatars/3.jpg" alt=""></div>
+				<p class="name">Sarah</p>
+				<p class="text">Je m’appelle Sarah, je suis née à Genève d’un père iranien et d’une mère belge. Je suis une grande voyageuse, j’ai à de multiples reprises visité l’Asie et l’Amérique du Sud. Actuellement je poursuis des études de médecine, à Genève, dans le but de me spécialiser en médecine communautaire et de pouvoir me rendre à l’étranger pour pratiquer mon métier. Mes proches me disent que je suis infatigable, je fais de la danse, des sports de combat et du ski.</p>
+			</div>
+			<div class="bonus-bio-example">
+				<div class="img"><img src="img/avatars/4.jpg" alt=""></div>
+				<p class="name">Robert</p>
+				<p class="text">Je suis un passionné de moto depuis petit et entre 1993 et 2001 j’ai été président du moto-club 69 du haut Valais. Mon employeur à la fiduciaire me connaît bien et a confiance dans mon travail c’est pour ça qu’il me laisse chaque année trois semaines de vacances pour organiser la virée des cols annuelle de mon club. Ma femme Odile vient avec moi et elle adore.</p>
+			</div>
+		</div>
+
+		<div class="action-bookmark">
+			<bookmark-button type="questions" target="bonus-bio"></bookmark-button>
+			<div class="bookmark-help">
+				J'ajoute cette question à mes notes<br>pour en parler avec mes soignants.
+			</div>
+		</div>
 	</div>
 
 	<div class="section-content section-valeurs">

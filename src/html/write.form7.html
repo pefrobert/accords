@@ -18,29 +18,36 @@
 	</div>
 
 	<div class="section-chapo">
-		<p><em>En construction...</em></p>
+		<p>Vous avez répondu à toutes les questions qui vous importaient&nbsp;? Vous pouvez maintenant finaliser et exporter votre questionnaire en format imprimable.</p>
 	</div>
 
 	<form name="write.form7" id="write.form7">
 
 	<div class="section-content section-form">
 
-		{{ _form.fieldTextarea("what-else", "<strong>Vous arrivez à la fin du questionnaire. Y a-t-il quelque chose que vous souhaiteriez ajouter&nbsp;?</strong>") }}
+		<div class="form-last-updated">
+			<span>Date de dernière mise à jour&nbsp;:</span>
+			<strong>16 janvier 2020</strong>
+		</div>
+
+		{{ _form.fieldCheckboxTextarea(
+			"<strong>Je prévois de déposer une copie de ce document dans les lieux suivants&nbsp;:</strong>"
+			, "depot-document"
+			, [
+				{id : 'depot-document-dossier-electronique', value : 'depot-document-dossier-electronique', label : "Dans mon dossier médical électronique (pour cette démarche, demandez de l’aide à vos soignants)"},
+				{id : 'depot-document-chez-moi', value : 'depot-document-chez-moi', label : "Chez moi.<br>Précisions&nbsp;:", text : 'Précisions'},
+				{id : 'depot-document-representant', value : 'depot-document-representant', label : "Chez mon ou ma représentant(e) thérapeutique.<br>Précisions&nbsp;:", text : 'Précisions'},
+				{id : 'depot-document-medecin', value : 'depot-document-medecin', label : "Chez mon médéecin traitant.<br>Précisions&nbsp;:", text : 'Précisions'},
+				{id : 'depot-document-autre', value : 'depot-document-autre', label : "Autre.<br>Précisions&nbsp;:", text : 'Précisions'}
+			]
+			, '', ''
+		) }}
 
 		<div class="actions">
 			<div class="action export">
 				<button type="button" class="export-data">Exporter mon formulaire</button>
 			</div>
 		</div>
-
-		<nav class="pager">
-			<div class="pager-item prev">
-				<a href="write.form6.html">
-					<span class="label">Étape précédente</span>
-					<span class="subtitle">Bonus biographique</span>
-				</a>
-			</div>
-		</nav>
 
 		<div class="reminder">
 			<p><strong>Au cours d’une vie, on peut changer de priorités. Notre entourage aussi peut changer. Pensez à réactualiser vos directives anticipées.</strong></p>
@@ -66,9 +73,16 @@
 					{id : 'accord-reminder-in-24', value : 'accord-reminder-in-24', label : "24 mois"}
 				]
 			) }}
-
-
 		</div>
+
+		<nav class="pager">
+			<div class="pager-item prev">
+				<a href="write.form6.html">
+					<span class="label">Étape précédente</span>
+					<span class="subtitle">Bonus biographique</span>
+				</a>
+			</div>
+		</nav>
 	</div>
 
 	</form>
