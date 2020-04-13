@@ -8,94 +8,95 @@ Vue.component('notes', {
       art: [],
       glossary: [],
       vecu: [],
-      questions: [],
-
-      count: 0
+      questions: []
+    }
+  },
+  computed: {
+    count: function () {
+      return this.art.length + this.amorces.length + this.glossary.length + this.vecu.length + this.questions.length
     }
   },
   created: function () {
     this.fetchData()
-    console.log(this._data)
   },
   methods: {
     fetchData () {
+      const fetchSettings = {
+        method: 'GET',
+        mode: 'same-origin',
+        cache: 'default',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
       let bookmarks = BookmarkManager.load()
+
       if (bookmarks.length) {
         // Amorces
         let bookmarksAmorces = bookmarks.filter(el => el.type === 'amorce')
         if (bookmarksAmorces.length) {
-          let amorcesJson = this.fetchJson('./data/talk.amorces.json')
-          this.amorces = bookmarksAmorces.map(function (bookmark) {
-            let term = amorcesJson.find(function (item) {
-              return item.id === bookmark.target
+          fetch('./data/talk.amorces.json', fetchSettings)
+            .then((response) => response.json())
+            .then((amorcesJson) => {
+              this.amorces = bookmarksAmorces.map(function (bookmark) {
+                let term = amorcesJson.find(item => item.id === bookmark.target)
+                return '<strong>' + term.sectionId + '</strong> ' + term.amorces
+              })
             })
-            return '<strong>' + term.sectionId + '</strong> ' + term.amorces
-          })
         }
 
         // Art
         let bookmarksArt = bookmarks.filter(el => el.type === 'art')
         if (bookmarksArt.length) {
-          let artJson = this.fetchJson('./data/talk.art.json')
-          this.art = bookmarksArt.map(function (bookmark) {
-            let term = artJson.find(function (item) {
-              return item.ID === bookmark.target
+          fetch('./data/talk.art.json', fetchSettings)
+            .then((response) => response.json())
+            .then((artJson) => {
+              this.art = bookmarksArt.map(function (bookmark) {
+                let term = artJson.find(item => item.ID === bookmark.target)
+                return '<strong>' + term.Titre + '</strong> - ' + term.Resume
+              })
             })
-            return '<strong>' + term.Titre + '</strong> - ' + term.Resume
-          })
         }
 
         // Glossary
         let bookmarksGlossary = bookmarks.filter(el => el.type === 'glossary')
         if (bookmarksGlossary.length) {
-          let glossaryJson = this.fetchJson('./data/read.glossary.json')
-          this.glossary = bookmarksGlossary.map(function (bookmark) {
-            let term = glossaryJson.find(function (item, index, list) {
-              return item.id === bookmark.target
+          fetch('./data/read.glossary.json', fetchSettings)
+            .then((response) => response.json())
+            .then((glossaryJson) => {
+              this.glossary = bookmarksGlossary.map(function (bookmark) {
+                let term = glossaryJson.find(item => item.id === bookmark.target)
+                return '<strong>' + term.terme + '</strong> : ' + term.definition
+              })
             })
-            return '<strong>' + term.terme + '</strong> : ' + term.definition
-          })
         }
 
         // Vecu
         let bookmarksVecu = bookmarks.filter(el => el.type === 'vecu')
         if (bookmarksVecu.length) {
-          let vecuJson = this.fetchJson('./data/read.vecu.json')
-          this.vecu = bookmarksVecu.map(function (bookmark) {
-            let term = vecuJson.find(function (item, index, list) {
-              return item.id === bookmark.target
+          fetch('./data/read.vecu.json', fetchSettings)
+            .then((response) => response.json())
+            .then((vecuJson) => {
+              this.vecu = bookmarksVecu.map(function (bookmark) {
+                let term = vecuJson.find(item => item.id === bookmark.target)
+                return term.description
+              })
             })
-            return term.description
-          })
         }
 
         // Questions
         let bookmarksQuestions = bookmarks.filter(el => el.type === 'questions')
         if (bookmarksQuestions.length) {
-          let questionsJson = this.fetchJson('./data/write.questions.json')
-          this.questions = bookmarksQuestions.map(function (bookmark) {
-            let term = questionsJson.find(function (item) {
-              return item.id === bookmark.target
+          fetch('./data/write.questions.json', fetchSettings)
+            .then((response) => response.json())
+            .then((questionsJson) => {
+              this.questions = bookmarksQuestions.map(function (bookmark) {
+                let term = questionsJson.find(item => item.id === bookmark.target)
+                return term.question
+              })
             })
-            return term.question
-          })
         }
       }
-      this.count = this.art.length + this.amorces.length + this.glossary.length + this.vecu.length + this.questions.length
-    },
-    fetchJson: function (url) {
-      let json = []
-      let req = new XMLHttpRequest()
-      req.overrideMimeType('application/json')
-      req.open('GET', url, false)
-      req.onload = function () {
-        if (this.status !== 200) {
-          throw new Error('Network response was not ok.')
-        }
-        json = JSON.parse(req.responseText)
-      }
-      req.send(null)
-      return json
     }
   },
   template: '<div v-if="count>0">' +
